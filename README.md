@@ -26,6 +26,19 @@ OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
 </dependency>
 ```
 
+## async-http-client
+
+OSGi bunlde for [async-http-client](https://github.com/sonatype/async-http-client) library. 
+This bundle depends on the [Netty](#netty) bundle.
+
+```xml
+<dependency>
+    <groupId>de.mxro.thrd.asynchttpclient17</groupId>
+    <artifactId>thrdAsyncHttpClient17</artifactId>
+    <version>0.0.3</version>
+</dependency>
+```
+
 ## Apache VFS
 
 OSGi bundle for [Apache Commons VFS](http://commons.apache.org/vfs/):
