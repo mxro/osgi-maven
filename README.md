@@ -14,6 +14,18 @@ All maven artifacts are in the following repository.
 </repositories>
 ```
 
+## Netty
+
+OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
+
+```xml
+<dependency>
+    <groupId>de.mxro.thrd.netty3</groupId>
+    <artifactId>thrdNetty3</artifactId>
+    <version>0.0.2</version>
+</dependency>
+```
+
 ## Apache VFS
 
 OSGi bundle for [Apache Commons VFS](http://commons.apache.org/vfs/):
@@ -22,6 +34,6 @@ OSGi bundle for [Apache Commons VFS](http://commons.apache.org/vfs/):
 <dependency>
    <groupId>de.mxro.thrd.apachevfs</groupId>
    <artifactId>thrdApacheVFS</artifactId>
-	 <version>0.0.2</version>
+   <version>0.0.2</version>
 </dependency>
 ```

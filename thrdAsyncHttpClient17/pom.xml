@@ -4,7 +4,8 @@
 	<groupId>de.mxro.thrd.asynchttpclient17</groupId>
 	<artifactId>thrdAsyncHttpClient17</artifactId>
 	<version>0.0.3</version>
-	<description>Sources from the async http client project prepared as osgi bundle.
+	<description>Sources from the async http client project prepared as
+		osgi bundle.
 	</description>
 
 	<properties>
@@ -16,7 +17,7 @@
 			*
 		</module.importedPackages>
 		<module.exportedPackages>com.ning.*,
-		!*
+			!*
 		</module.exportedPackages>
 		<module.serviceDefinitions>
 		</module.serviceDefinitions>
@@ -205,22 +206,18 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-<!-- 
-	<distributionManagement>
+	<repositories>
 		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
+			<id>onedb Releases</id>
+			<url>http://dl.dropbox.com/u/957046/onedb/mvn-releases</url>
 		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
-		</snapshotRepository>
-	</distributionManagement>
--->
+	</repositories>
+
+	<!-- <distributionManagement> <repository> <id>releases</id> <name>Internal 
+		Releases</name> <url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases 
+		</url> </repository> <snapshotRepository> <id>snapshots</id> <name>Internal 
+		Snapshots</name> <url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots 
+		</url> </snapshotRepository> </distributionManagement> -->
 
 
 
