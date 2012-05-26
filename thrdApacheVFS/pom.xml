@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Only Dependency 26.11.2011 -->
+<project>
+
+	<groupId>de.mxro.thrd.apachevfs</groupId>
+	<artifactId>thrdApacheVFS</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+	<description>Eclipse project for Apache VFS.
+		Requires the SVN snapshot from the Apache site being downloaded and uploaded
+		to a local repository.
+		see
+		http://maxrohde.com/2010/11/26/virtual-file-systems-vfs-in-java/
+	</description>
+
+	<properties>
+
+		<module.importedPackages>
+			!org.apache.commons.vfs.provider.url,
+			!org.apache.commons.vfs.provider.ram,
+			!org.apache.commons.vfs.tasks,
+			!org.apache.commons.vfs.operations.vcs,
+			!org.apache.commons.vfs.provider.bzip2,
+			!org.apache.commons.vfs.provider.compressed,
+			!org.apache.log4j.lf5.viewer.configure,
+			!org.apache.log4j.varia,
+			!org.apache.commons.collections.iterators,
+			!org.apache.log4j.lf5.viewer.images,
+			!org.apache.commons.collections.functors,
+			!org.apache.log4j.config,
+			!org.apache.commons.net.echo,
+			!org.apache.commons.net.discard,
+			!org.apache.log4j.or.jms,
+			!org.apache.commons.net,
+			!org.apache.commons.collections.buffer,
+			!org.apache.log4j.jdbc,
+			!org.apache.commons.collections.comparators,
+			!org.apache.log4j.jmx,
+			!org.apache.log4j.lf5.viewer.categoryexplorer,
+			!org.apache.commons.collections.bag,
+			!org.apache.commons.net.bsd,
+			!org.apache.commons.collections.bidimap,
+			!org.apache.commons.collections.keyvalue,
+			!org.apache.commons.net.pop3,
+			!org.apache.log4j.lf5.config,
+			!org.apache.commons.vfs.provider.ftp,
+			!org.apache.commons.vfs.provider.ftps,
+			!org.apache.commons.vfs.provider.webdav,
+			!org.apache.commons.vfs.auth,
+			!org.apache.commons.vfs.provider.temp,
+			!org.apache.commons.collections*,
+			!org.apache.commons.net*,
+			!org.apache.avalon.framework.logger,
+			!org.apache.jackrabbit.webdav,
+			!org.apache.jackrabbit.webdav.client.methods,
+			!org.apache.jackrabbit.webdav.property,
+			!org.apache.jackrabbit.webdav.version,
+			!org.apache.jackrabbit.webdav.xml,
+			!org.apache.log,
+			!javax.jmdns,
+			!javax.jms,
+			!javax.mail,
+			!javax.mail.internet,
+			!com.sun.jdmk.comm,
+			!com.ibm.uvm.tools,
+			!target.dependency,
+			org.apache.commons.vfs*;version="2.1.0",
+			*
+			<!-- com.jcraft.jsch, javax.crypto, javax.crypto.spec, javax.xml.parsers, 
+				org.apache.commons.collections.map, org.apache.commons.httpclient, org.apache.commons.httpclient.auth, 
+				org.apache.commons.httpclient.methods, org.apache.commons.httpclient.params, 
+				org.apache.commons.httpclient.protocol, org.apache.commons.httpclient.util, 
+				org.apache.commons.logging, org.apache.commons.net.ftp, org.apache.commons.net.ftp.parser, 
+				org.apache.jackrabbit.webdav, org.apache.jackrabbit.webdav.client.methods, 
+				org.apache.jackrabbit.webdav.property, org.apache.jackrabbit.webdav.version, 
+				org.apache.jackrabbit.webdav.xml, org.apache.tools.ant,org.w3c.dom -->
+		</module.importedPackages>
+		<module.exportedContents>
+		</module.exportedContents>
+		<module.exportedPackages>
+			!org.apache.commons.vfs.provider.url,
+			!org.apache.commons.vfs.provider.ram,
+			!org.apache.commons.vfs.tasks,
+			!org.apache.commons.vfs.operations.vcs,
+			!org.apache.commons.vfs.provider.bzip2,
+			!org.apache.commons.vfs.provider.compressed,
+			!org.apache.log4j.lf5.viewer.configure,
+			!org.apache.log4j.varia,
+			!org.apache.commons.collections.iterators,
+			!org.apache.log4j.lf5.viewer.images,
+			!org.apache.commons.collections.functors,
+			!org.apache.log4j.config,
+			!org.apache.commons.net.echo,
+			!org.apache.commons.net.discard,
+			!org.apache.log4j.or.jms,
+			!org.apache.commons.net,
+			!org.apache.commons.collections.buffer,
+			!org.apache.log4j.jdbc,
+			!org.apache.commons.collections.comparators,
+			!org.apache.log4j.jmx,
+			!org.apache.log4j.lf5.viewer.categoryexplorer,
+			!org.apache.commons.collections.bag,
+			!org.apache.commons.net.bsd,
+			!org.apache.commons.collections.bidimap,
+			!org.apache.commons.collections.keyvalue,
+			!org.apache.commons.net.pop3,
+			!org.apache.log4j.lf5.config,
+			!org.apache.commons.vfs.provider.ftp,
+			!org.apache.commons.vfs.provider.ftps,
+			!org.apache.commons.vfs.provider.webdav,
+			!org.apache.commons.vfs.auth,
+			!org.apache.commons.vfs.provider.temp,
+			org.apache.commons.vfs*;version="2.1.0",
+			*
+		</module.exportedPackages>
+		<module.embeddedDependencies>*
+		</module.embeddedDependencies>
+		<module.embedTransitive>true</module.embedTransitive>
+		<module.serviceDefinitions>
+		</module.serviceDefinitions>
+	</properties>
+
+	<!-- DEPENDENCIES -->
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-vfs</artifactId>
+			<version>2.1-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+	</dependencies>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<packaging>bundle</packaging>
+	<name>${project.artifactId}</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+				<version>2.3.2</version>
+			</plugin>
+			<!-- FOR BUNDLE MANAGEMENT -->
+			<!-- The Maven bundle plugin generates Meta-data required for OSGi -->
+
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.1.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Import-Package>${module.importedPackages}</Import-Package>
+						<Export-Package>${module.exportedPackages}</Export-Package>
+						<Service-Component>${module.serviceDefinitions}
+						</Service-Component>
+						<Embed-Dependency>${module.embeddedDependencies}
+						</Embed-Dependency>
+						<Embed-Directory>target/dependency</Embed-Directory>
+						<Embed-Transitive>${module.embedTransitive}</Embed-Transitive>
+						<_exportcontents>${module.exportedContents}</_exportcontents>
+						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6
+						</Bundle-RequiredExecutionEnvironment>
+					</instructions>
+				</configuration>
+			</plugin>
+
+
+
+			<!-- FOR MAVEN ECLIPSE PLUGIN -->
+			<!-- Dependency Plugin used to copy the dependency JARs into the root 
+				project folder. There the Maven eclipse plugin will add them to the classpath 
+				of PDE projects. -->
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+					<!-- for eclipse pde -->
+					<execution>
+						<id>copy-dependencies2</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<!-- <includeArtifactIds>${module.embeddedDependencies}</includeArtifactIds> -->
+							<outputDirectory>${basedir}/target/dependency</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Cleanup necessary because of PDE tweaks, clear the project directory -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${basedir}</directory>
+							<includes>
+								<include>*.jar</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+			<!-- Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF 
+				created by the maven bundle plugin -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<delete file="${basedir}/META-INF/MANIFEST.MF" />
+								<copy file="target/classes/META-INF/MANIFEST.MF" tofile="${basedir}/META-INF/MANIFEST.MF" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+
+
+		<!-- RESOURCES -->
+		<resources>
+			<!-- This entry makes sure that resources, which lie in the same package 
+				as Java classes, are copied into the target. Often external libraries require 
+				resources, which are loaded using Class.getResource or Class.getResourceAsStream 
+				and which are in a subpackage of the class. For instance, the NetBeans template 
+				for the Swing Application Framework does so. -->
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<!-- This entry makes sure component definitions for OSGi declarative 
+				services are copied into the destination -->
+			<resource>
+				<targetPath>OSGI-INF</targetPath>
+				<filtering>false</filtering>
+				<directory>OSGI-INF</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+			<!-- I really do not know why know a manual entry for src/main/resources 
+				is necessary? It should be included following the Maven convention. -->
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+
+		</resources>
+
+
+	</build>
+
+	<!-- DISTRIBUTION MANAGEMENT -->
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Internal Releases</name>
+			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
+			</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
+			</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<!-- ADDITIONAL REPOSITORIES -->
+
+
+</project>
