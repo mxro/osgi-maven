@@ -14,6 +14,9 @@ All maven artifacts are in the following repository.
 </repositories>
 ```
 
+This repository may contain maven pom definitions to link to other maven projects and/or parts of the sourcecode of the referenced libraries.  
+**Use all poms and sources under the license of the referenced original project.**
+
 ## Netty
 
 OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
