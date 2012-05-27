@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<properties>
+		<gwtVersion>2.2.0</gwtVersion>
+		<module.group>de.mxro.thrd.gwtuser</module.group>    <!-- Maven groupId -->
+		<module.name>thrdGWTUser</module.name>             <!-- Maven artifactId -->
+		<module.version>0.0.4-SNAPSHOT</module.version> <!-- Maven artifact version -->
+		<module.importedPackages>javax.servlet;version="2.4.0",
+			javax.servlet.http;version="2.4.0",
+			javax.servlet.resources;version="2.4.0",!*
+		</module.importedPackages>
+		<module.exportedContents>
+		</module.exportedContents>
+		<module.embeddedDependencies>gwt-user
+		</module.embeddedDependencies>
+		<module.embedTransitive>false</module.embedTransitive>
+		<module.serviceDefinitions>
+		</module.serviceDefinitions>
+
+		<module.exportedPackages>
+			!com.google.gwt.autobean.super.com.google.gwt.autobean.shared,
+			!com.google.gwt.requestfactory.super.com.google.gwt.requestfactory.shared.impl,
+			!com.google.gwt.autobean.super.com.google.gwt.autobean.shared.impl,
+			!com.google.gwt.emul.java.math,
+			!com.google.gwt.rpc.super.com.google.gwt.rpc.client.impl,
+			!com.google.gwt.junit.translatable.junit.framework,
+			!com.google.gwt.user.theme.chrome.public.gwt.chrome.images,
+			!com.google.gwt.emul.java.lang,
+			!com.google.gwt.emul.java.io,
+			!com.google.gwt.core.translatable.com.google.gwt.core.client.impl,
+			!com.google.gwt.junit.translatable.com.google.gwt.junit.client,
+			!com.google.gwt.user.theme.dark.public.gwt.dark,
+			!com.google.gwt.user.theme.dark.public.gwt.dark.images.ie6,
+			!com.google.gwt.user.theme.standard.public.gwt.standard.images,
+			!com.google.gwt.emul.java.lang.annotation,
+			!com.google.gwt.emul.java.util.logging,
+			!com.google.gwt.junit.translatable.com.google.gwt.junit.client.impl,
+			!com.google.gwt.user.client.ui.doc-files,
+			!com.google.gwt.regexp.super.com.google.gwt.regexp.shared,
+			!com.google.gwt.junit.public,
+			!com.google.gwt.user.theme.chrome.public.gwt.chrome.images.ie6,
+			!com.google.gwt.benchmarks.translatable.com.google.gwt.benchmarks.client,
+			!com.google.gwt.user.theme.standard.public.gwt.standard.images.ie6,
+			!com.google.gwt.user.theme.dark.public.gwt.dark.images,
+			!com.google.gwt.user.translatable.com.google.gwt.user.client.rpc.core.java.util,
+			!com.google.gwt.user.theme.standard.public.gwt.standard,
+			!com.google.gwt.emul.java.text,
+			!com.google.gwt.safehtml.super.com.google.gwt.safehtml.shared,
+			!com.google.gwt.emul.java.sql,
+			!com.google.gwt.emul.java.util,
+			!com.google.gwt.emul.java.security,
+			!com.google.gwt.user.theme.chrome.public.gwt.chrome,
+			!com.google.gwt.user.public,
+			!com.google.gwt.user.translatable.com.google.gwt.user.client.rpc.impl,
+			com.google.gwt*,
+			!*
+		</module.exportedPackages>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwtVersion}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>${module.group}</groupId>
+	<artifactId>${module.name}</artifactId>
+	<version>${module.version}</version>
+	<name>${module.name}</name>
+	<packaging>bundle</packaging>
+	<build>
+		<!-- Resources -->
+		<resources>
+			<!-- This entry makes sure that resources, which lie in the same package 
+				as Java classes, are copied into the target. Often external libraries require 
+				resources, which are loaded using Class.getResource or Class.getResourceAsStream 
+				and which are in a subpackage of the class. For instance, the NetBeans template 
+				for the Swing Application Framework does so. -->
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<!-- <excludes> <exclude>**/*.java</exclude> </excludes> -->
+			</resource>
+			<!-- This entry makes sure component definitions for OSGi declarative 
+				services are copied into the destination -->
+			<resource>
+				<targetPath>OSGI-INF</targetPath>
+				<filtering>false</filtering>
+				<directory>OSGI-INF</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+			<!-- I really do not know why know a manual entry for src/main/resources 
+				is necessary? It should be included following the Maven convention. -->
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+		</resources>
+		<!-- Resources End -->
+
+		<plugins>
+			<!-- The Maven bundle plugin generates Meta-data required for OSGi -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.2.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${pom.version}</Bundle-Version>
+						<Import-Package>${module.importedPackages}</Import-Package>
+						<Export-Package>${module.exportedPackages}</Export-Package>
+						<Service-Component>${module.serviceDefinitions}
+						</Service-Component>
+						<Embed-Dependency>${module.embeddedDependencies}
+						</Embed-Dependency>
+						<Embed-Transitive>${module.embedTransitive}</Embed-Transitive>
+						<Embed-Directory>target/dependency</Embed-Directory>
+						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6
+						</Bundle-RequiredExecutionEnvironment>
+						<!-- <_exportcontents>${module.exportedContents}</_exportcontents> -->
+					</instructions>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+
+				<executions>
+					<!-- This additional execution can extract all the JARs of the dependencies -->
+
+
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-dependencies2</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<!-- <includeArtifactIds>${module.embeddedDependencies}</includeArtifactIds> -->
+							<outputDirectory>${basedir}/target/dependency</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Cleanup necessary because of PDE tweaks -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${basedir}</directory>
+							<includes>
+								<include>*.jar</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+			<!-- Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF 
+				created by the maven bundle plugin -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<delete file="${basedir}/META-INF/MANIFEST.MF" />
+								<copy file="target/classes/META-INF/MANIFEST.MF" tofile="${basedir}/META-INF/MANIFEST.MF" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> 
+				<configuration> <archive> <manifestFile>META-INF/MANIFEST.MF</manifestFile> 
+				</archive> </configuration> </plugin> -->
+		</plugins>
+	</build>
+
+
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Internal Releases</name>
+			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
+			</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
+			</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
