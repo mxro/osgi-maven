@@ -68,6 +68,18 @@ To avoid namespace collisions with other Hamcrest bundles (eclipse has one by de
 </dependency>
 ```
 
+### Jetty
+
+OSGi bundle for Jetty 6.1.26.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.jetty6</groupId>
+	<artifactId>thrdJetty6</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+</dependency>
+```
+
 ### Netty
 
 OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
@@ -129,6 +141,18 @@ This artifact compiles BabuDB and all its dependencies together in one artifact 
 <dependency>
     <groupId>de.mxro.thrd.babudb05</groupId>
     <artifactId>thrdBabuDb05</artifactId>
+    <version>0.0.2</version>
+</dependency>
+```
+
+### Jettison
+
+[Jettison](http://jettison.codehaus.org/) is a powerful library to process JSON in Java.
+
+```xml
+<dependency>
+    <groupId>de.mxro.thrd.jettison12</groupId>
+    <artifactId>thrdJettison12</artifactId>
     <version>0.0.2</version>
 </dependency>
 ```
