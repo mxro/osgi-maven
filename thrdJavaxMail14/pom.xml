@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.javaxmail14</groupId>
 	<artifactId>thrdJavaxMail14</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3RC</version>
 	<description>
 		Maven dependency to Java Mail Api.
 	</description>
