@@ -4,7 +4,7 @@
 	<groupId>de.mxro.thrd.jtidy</groupId>
 	<artifactId>thrdJTidy</artifactId>
 	<name>thrdJTidy</name>
-	<version>8.0.1</version>
+	<version>8.0.2RC</version>
 	<packaging>bundle</packaging>
 
 	<dependencies>
