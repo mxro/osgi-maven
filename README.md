@@ -110,7 +110,7 @@ This artifact compiles BabuDB and all its dependencies together in one artifact 
 
 This repository contains two versions of the GWT client libraries: 2.2.0 and 2
 
-**Version 2.4.0**
+**Version 2.4.0:**
 ```xml
 <dependency>
     <groupId>de.mxro.thrd.gwtuser24</groupId>
