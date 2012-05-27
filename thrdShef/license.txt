@@ -1,0 +1,1 @@
+SHEF is licensed under LGPL 2.1 (see http://shef.sourceforge.net/)
