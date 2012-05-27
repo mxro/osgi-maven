@@ -92,6 +92,18 @@ This artifact compiles BabuDB and all its dependencies together in one artifact 
 </dependency>
 ```
 
+### Dom4J
+
+[Dom4J](http://dom4j.sourceforge.net/) is a helpful library to work with XML. This artifact is a simple wrapper for this library allowing to deploy it as OSGi bundle.
+
+```xml
+<dependency>
+    <groupId>de.mxro.thrd.dom4j</groupId>
+    <artifactId>thrdDom4j</artifactId>
+    <version>0.0.2</version>
+</dependency>
+```
+
 
 ### Apache VFS
 
