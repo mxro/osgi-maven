@@ -104,6 +104,24 @@ This artifact compiles BabuDB and all its dependencies together in one artifact 
 </dependency>
 ```
 
+### GWT User Library
+
+[Google Web Toolkit](https://developers.google.com/web-toolkit/) applications need to link during compile- (and development-)time to the GWT User library.
+
+This repository contains two versions of the GWT client libraries: 2.2.0 and 2
+
+**Version 2.4.0**
+
+**Version 2.2.0:**
+```xml
+<dependency>
+    <groupId>de.mxro.thrd.gwtuser</groupId>
+    <artifactId>thrdGWTUser</artifactId>
+    <version>0.0.4</version>
+</dependency>
+```
+
+
 ### Ext GWT (GXT)
 
 [Ext GWT](http://www.sencha.com/store/gxt/) is a rich-client library to enhance Googles Web Toolkit.

@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.gwtgxt</groupId>
 	<artifactId>thrdGwtGxt</artifactId>
-	<version>0.0.3RC</version>
+	<version>0.0.3</version>
 	
 	<properties>
 		
@@ -259,6 +259,21 @@
 
 	<distributionManagement>
 		<repository>
+			<id>dropbox-releases</id>
+			<name>Releases to dropbox</name>
+			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>dropbox-snapshots</id>
+			<name>Snapshots to dropbox</name>
+			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+<!-- 
+	<distributionManagement>
+		<repository>
 			<id>releases</id>
 			<name>Internal Releases</name>
 			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
@@ -271,6 +286,7 @@
 			</url>
 		</snapshotRepository>
 	</distributionManagement>
+-->
 
 
 </project>
