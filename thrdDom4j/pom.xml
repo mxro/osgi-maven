@@ -3,7 +3,7 @@
 	<properties>
 		<module.group>de.mxro.thrd.dom4j</module.group>    <!--  Maven groupId -->
 		<module.name>thrdDom4j</module.name>             <!--  Maven artifactId -->
-		<module.version>0.0.2-SNAPSHOT</module.version> <!--  Maven artifact version -->
+		<module.version>0.0.2</module.version> <!--  Maven artifact version -->
 		<module.importedPackages>!electric.xml,
 		!org.jaxen.saxpath,
 		 org.jdom;resolution:=optional,
@@ -229,6 +229,21 @@
 
 	<distributionManagement>
 		<repository>
+			<id>dropbox-releases</id>
+			<name>Releases to dropbox</name>
+			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>dropbox-snapshots</id>
+			<name>Snapshots to dropbox</name>
+			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+<!-- 
+	<distributionManagement>
+		<repository>
 			<id>releases</id>
 			<name>Internal Releases</name>
 			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
@@ -241,4 +256,5 @@
 			</url>
 		</snapshotRepository>
 	</distributionManagement>
+-->
 </project>
