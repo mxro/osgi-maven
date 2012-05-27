@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.jetty6</groupId>
 	<artifactId>thrdJetty6</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<description>
 		Maven dependency to Jetty.
 	</description>
