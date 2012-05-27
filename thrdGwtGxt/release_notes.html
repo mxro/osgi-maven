@@ -1,0 +1,2299 @@
+<html> 
+<head> 
+    <title>Ext GWT Release Notes</title> 
+    <style> 
+		body {
+		   color: #333;
+		   padding: 0 40px 40px;
+		   font-family: Helvetica, Arial, Geneva, sans-serif;
+		   font-size: 12px;
+		   line-height: normal;
+		   width: 800px;
+		   margin: 0 auto;
+		}
+		
+		a#logo {
+		   background: transparent url(welcome/images/logo-sencha-sm.png) no-repeat scroll 0px 100%;
+		   display: block;
+		   height: 58px;
+		   margin: 0;
+		   padding: 0;
+		   width: 134px;
+		
+		   overflow: hidden;
+		   text-indent: 150%;
+		   white-space: nowrap;
+		}
+		
+		h1, h2, h3 {
+		   font-family: 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
+		   font-weight: 600;
+		   margin: 1em 0;
+		}
+		h1 { font-size: 28px; }
+		h2 { font-size: 20px; }
+		h3 { font-size: 16px; }
+		ul li { padding: 2px 0; }
+		.doc { color: blue; }
+		.change { color: #196cb4; }
+		.new { color: #6e7a32; }
+		ul { padding: .1em 1.5em; }
+		.notes { color: #777; }
+		a { color: #0464BB; }
+		a:hover { color: rgb(28, 65, 124); }
+		
+		pre {
+		   background: ghostWhite;
+		   border: 1px solid #ddd;
+		   font-family: Menlo, Monaco, Courier, monospace;
+		   overflow: auto;
+		   padding: 12px;
+		}
+		
+		hr {
+		   color: #e0e0e0;
+		   background-color: #e0e0e0;
+		   height: 4px;
+		   border: none;
+		   outline: none;
+		}
+    </style> 
+</head> 
+ 
+<body> 
+<h1><img src="http://www.extjs.com/assets/images/avatar.gif" alt="Ext JS" /></h1> 
+
+<h1>Ext GWT Library Release Notes</h1>
+<ul>
+  <li><a href="#Release_2.2.1">Release 2.2.1 (11/10/10)</a></li>
+  <li><a href="#Release_2.2.0">Release 2.2.0 (8/31/10)</a></li>
+  <li><a href="#Release_2.2.0.RC">Release 2.2.0 RC (8/16/2010)</a></li>
+  <li><a href="#Release_2.2.0.Beta">Release 2.2.0 Beta (7/19/2010)</a></li>
+  <li><a href="#Release_2.1.3">Release 2.1.3 (4/12/2010)</a></li>
+  <li><a href="#Release_2.1.2">Release 2.1.2 (3/10/2010)</a></li>
+  <li><a href="#Release_2.1.1">Release 2.1.1 (2/2/2010)</a></li>
+  <li><a href="#Release_2.1">Release 2.1 (11/25/2009)</a></li>
+  <li><a href="#Release_2.0.4">Release 2.0.4 (10/20/2009)</a></li>
+  <li><a href="#Release_2.0.3">Release 2.0.3 (10/19/2009)</a></li>
+  <li><a href="#Release_2.0.2">Release 2.0.2 (9/3/2009)</a></li>
+  <li><a href="#Release_2.0.1">Release 2.0.1 (7/22/2009)</a></li>
+  <li><a href="#Release_2.0">Release 2.0 (7/6/2009)</a></li>
+  <li><a href="#Release_2.0.RC2">Release 2.0 RC2</a></li>
+  <li><a href="#Release_2.0.RC1">Release 2.0 RC1</a></li>
+  <li><a href="#Release_2.0.M3">Release 2.0 M3</a></li>
+  <li><a href="#Release_1.2.4">Release 1.2.4 (4/27/2009)</a></li>
+  <li><a href="#Release_1.2.3">Release 1.2.3 (2/17/2009)</a></li>
+  <li><a href="#Release_1.2.2">Release 1.2.2</a></li>
+  <li><a href="#Release_1.2.1">Release 1.2.1</a></li>
+  <li><a href="#Release_1.2">Release 1.2 (12/1/2008)</a></li>
+  <li><a href="#Release_1.1.4">Release 1.1.4</a></li>
+  <li><a href="#Release_1.1.3">Release 1.1.3</a></li>
+  <li><a href="#Release_1.1.2">Release 1.1.2</a></li>
+  <li><a href="#Release_1.1.1">Release 1.1.1</a></li>
+  <li><a href="#Release_1.1">Release 1.1 (9/18/2008)</a></li>
+  <li><a href="#Release_1.0">Release 1.0 (7/7/2008)</a></li>
+</ul>
+
+<h2><a name="Release_2.2.1">Release 2.2.1 (Released November 10th, 2010)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Made TreeGridCellRenderer easier to extend.</li>
+  <li>[98882] Added Slovenian translation.</li>
+  <li>Added Ext GWT version info to MANIFEST.MF file in gxt.jar</li>
+  <li>Refactored FocusManager code. Added new FocusManagerSupport class</li>
+  <li>Added TreeGridFilters</li>
+  <li>Added startElement to DragEvent.</li>
+  <li>Removed BeanModelLookup dependency from NestedModelUtil.</li>
+  <li>Added java.util.Map support to Util.getJsObject.</li>
+  <li>Added detailed documentation to XTemplate</li>
+  <li>Updated TemplateExample to allow users to change and run template code.</li>
+  <li>Added support for GWT 2.1</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Deprecated NestedModelUtil.convertIfNecessary as no longer used.</li>
+  <li>Added isVertical/setVertical to ListViewSelectionModel.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed BufferView not rendering rows on resize of the view correctly.</li>
+  <li>Fixed SlideIn and SlideOut not working correctly under all circumstances.</li>
+  <li>Fixed CollapsePanel showing popup incorrectly aligned the first time under some circumstances.</li>
+  <li>[108715] Fixed GridSelectionModel throws a NullPointerException on hiding a column before rendering the grid.</li>
+  <li>Fixed Filter setValue not working pre render under all circumstances.</li>
+  <li>Fixed StringFilter and NumericFilter not setting the width correctly on the field.</li>
+  <li>Fixed StringFilter and NumericFilter not setting the empty text under all circumstances.</li>
+  <li>Fixed GridFilters throwing a NullPointerException if updating any Filter before the grid is rendered.</li>
+  <li>[109321] Fixed RowEditor not working correctly if used with EditorGrid.</li>
+  <li>[109365] Fixed Grid aggregation row being off by 1px.</li>
+  <li>[109366] Fixed Grid not showing loading on initial load if loading was called before the view was ready.</li>
+  <li>Fixed Window maximize not working correctly if window is already in the maximized size.</li>
+  <li>Fixed Window not disabling the shadow if maximized.</li>
+  <li>Fixed Grid setColumnLines only working prerender.</li>
+  <li>[109354] Fixed GridSelectionModel scrolling horizontal on clicking a cell if that is not fully visible.</li>
+  <li>Fixed TreeGridView not updating icon correctly on the tree cell.</li>
+  <li>Fixed StringFilter working differently remote than local.</li>
+  <li>Fixed SpinnerField cannot be disabled completely.</li>
+  <li>[110087] Fixed BeanModelGenerator wrapping non BeanModel instances into an additional list.</li>
+  <li>Fixed SpinnerField allowing invalid keys if using them with the metakey.</li>
+  <li>Fixed GridFilters can be activated also they are not activatable.</li>
+  <li>[110323] Fixed ToggleButton toggle throwing a ConcurrentModificationException under some circumstances.</li>
+  <li>Fixed GridDragSource, ListViewDragSource, TreeDragSource, TreePanelDragSource and TreeGridDragSource onDragStart checking if drag is allowed on wrong element.</li>
+  <li>Fixed ToolButton not centered in CollapsePanel for south and north region.</li>
+  <li>[110473] Fixed missing closing table tag in ToolBarLayout.</li>
+  <li>Fixed TabPanel trying to set a height on the body also if autoHeight set to true.</li>
+  <li>Fixed Store not using equals method from Store in findModel.</li>
+  <li>Fixed an issue in stateful expand in TreeGrid/TreePanel that lead to more expanded nodes than needed.</li>
+  <li>Fixed TreeGrid internals ListStore not using equal method of the TreeStore bound to the TreeGrid.</li>
+  <li>Fixed TreeGrid/TreePanel starting multiply loads for the same node under some circumstances.</li>
+  <li>Fixed GroupingView showing group start part incorrectly under some circumstances.</li>
+  <li>Fixed TreePanelDropTarget and TreeGridDropTarget ignoring configured feedback.</li>
+  <li>Fixed CheckColumnConfig not checking for correct column correctly on mouse down.</li>
+  <li>Fixed LiveGridEvent getModel returning wrong model.</li>
+  <li>[112360] Fixed MenuItem shouldDeactivate not calculating for browser scrolling.</li>
+  <li>[112289] Fixed CellSelectionModel not checking if cell is selectable under all circumstances.</li>
+  <li>Fixed CellSelectionModel getSelectedItem and getSelectedItems not returning the model associated with the selection.</li>
+  <li>[112257] Fixed incorrect background color for message box in gray, access, and slate theme.</li>
+  <li>Fixed ComboBox selecting item on pressing enter in paging toolbar.</li>
+  <li>Fixed ComboBox not collapsing on blur under all circumstances.</li>
+  <li>Fixed ComboBox list can be bigger than screen.</li>
+  <li>Fixed ColorPalette setValue not working under all circumstances.</li>
+  <li>Fixed EditorSupport not firing ValidateEdit event after editing under all circumstances.</li>
+  <li>Fixed MenuItem not displaying correctly if no text set.</li>
+  <li>Fixed opening multiply Window instances with modal set to true no longer displays multiply masks at once.</li>
+  <li>Fixed HtmlEditor focusing iframe also if in source edit mode.</li>
+  <li>Fixed TriggerField triggerBlur not bluring input element.</li>
+  <li>Fixed CheckBox not aligning boxLabel correctly while hidden.</li>
+  <li>Fixed Button not aligning icon correctly while hidden.</li>
+  <li>Fixed DatePicker not working correctly with DST.</li>
+  <li>Fixed DualListField setEnableDND only works pre rendering.</li>
+  <li>Fixed Button icon alignment issue in IE8 and strict mode.</li>
+  <li>Fixed PagingToolBar not enabling again after canceling Loader.BeforeLoad event.</li>
+  <li>Fixed ListStore and TreeStore firing BeforeDataChanged event before loading, also BeforeLoad event already canceled.</li>
+  <li>Fixed possible exception in ToolTip, QuickTip and DomEvent.within if target element is not a real element.</li>
+  <li>Fixed TreePanel not removing model under all circumstances if model gets removed from the store.</li>
+  <li>Fixed possible exception in GridView, MenuBar and Menu if moving mouse from or to a non element.</li>
+  <li>Fixed Menu hiding submenu if moving mouse slowly to the submenu.</li>
+  <li>Fixed Layer not positioning shim correctly in IE.</li>
+  <li>Fixed possible leak in ToolBarLayout with enanbleOverflow set to true.</li>
+  <li>Fixed shadowOffset being hardcoded in some places in Layer and MenuItem.</li>
+  <li>Fixed LiveGridView showing liveScroller incorrectly after reconfigure.</li>
+  <li>Fixed minor issue in ColumnHeader showColumnMenu which could course a NPE.</li>
+  <li>Fixed font change not working correctly in HtmlEditor.</li>
+  <li>Fixed HtmlEditor not displaying toolbar correctly in IE.</li>
+  <li>Fixed DualListField with mode set to insert does not allow reorder with DND.</li>
+  <li>Fixed disabling FieldSet not disabling toggle item or checkbox.</li>
+  <li>Fixed Radio not working correctly in IE6.</li>
+  <li>Fixed Portal scrolling in IE and strict mode.</li>
+  <li>Fixed GridSelectionModel and ListViewSelectionModel not updating last focused if model gets updated.</li>
+  <li>Fixed rendering issues in ListView with complex templates after a refresh.</li>
+  <li>Fixed CheckBoxListView not saving check state on update.</li>
+  <li>Fixed CheckBoxListView not displaying correctly in IE and strict mode.</li>
+  <li>Fixed AbstractStoreSelectionModel not updating last focused on updating the model.</li>
+  <li>Fixed DomQuery not working in HtmlUnit.</li>
+  <li>Fixed GridView not adjusting empty text width on column hide or resize.</li>
+  <li>Fixed ListStore throwing a NullPointerException if config is null after a load.</li>
+  <li>Fixed Field with autovalidate not canceling validation task on detach.</li>
+  <li>Fixed TimeField not working correctly if date on min/max value is not what was expected.</li>
+  <li>Fixed LiveGridView internal store not using equals method of real grid store.</li>
+  <li>Fixed CheckColumnConfig and CheckBoxSelectionModel not working correctly with LiveGridView.</li>
+  <li>Fixed issue in SpinnerField and NumberField with GWT 2.1.</li>
+  <li>Fixed ColumnHeader not correctly checking if column is resizable.</li>
+  <li>Fixed TreeDragSource, ListViewDragSource causing Tree to scroll to top when contained in scrolling element in IE.</li>
+  <li>Fixed Grid in scrollable container "jumps" when first focused in IE.</li>
+</ul>
+
+
+<h2><a name="Release_2.2.0">Release 2.2.0 (Released August 31st, 2010)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Added bold (ctrl-b), italic (ctrl-i), and underline (ctrl-u) support to HtmlEditor.</li>
+  <li>Removed ModelData dependency from BoxComponent if ModelData not used.</li>
+  <li>Added reconfigure method to TreeGrid.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed ComboBox setStore only working pre render.</li>
+  <li>[107385] Fixed XLabels getRotation throwing NullPointerException if no rotation set.</li>
+  <li>Fixed layout issue in BorderLayout when the container has a border.</li>
+  <li>Fixed Grid with GroupingView throwing exception on resize when empty.</li>
+  <li>Fixed IconButton removeSelectionListener taking wrong argument.</li>
+  <li>Fixed text selection issue in Grid in Safari 5.</li>
+  <li>[s2693] Fixed missing images and paths in Gray and Slate theme.</li>
+  <li>Fixed TreePanel and TreeGrid not updating node icon after loading under all circumstances.</li>
+  <li>Fixed BufferView clearing rows also if buffering is disabled.</li>
+  <li>Fixed an issue in the BeanModelGenerator.</li>
+  <li>Fixed TreeGridView getWidgetCell throwing an exception under some circumstances.</li>
+  <li>[108142] Slate missing menu bar background image.</li>
+  <li>[108370] MenuBar not properly deactivating when auto hiden a menu.</li>
+</ul>
+
+
+<h2><a name="Release_2.2.0.RC">Release 2.2.0 RC (Released August 16th, 2010)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Added keyboard support for home, end, pageup, pagedown to DatePicker.</li>
+  <li>Added additional keyboard support to Menubar (right and left arrows to navigation sub menus).</li>
+  <li>Added Reconfigure event to Grid.</li>
+  <li>Added french translations to RowEditor</li>
+  <li>Added french translations to GridFilters.</li>
+  <li>Added autoScroll support to GridDropTarget.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Removed init method from Filter class of GridFilters.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed MultiField not clearing invalid status on reset.</li>
+  <li>Fixed Field reset and clear firing Events.Invalid.</li>
+  <li>Fixed MultiField clear not calling clear on the fields.</li>
+  <li>Fixed Portal having wrong startCol and startRow under some circumstances.</li>
+  <li>Fixed LiveGridView trying to divide through 0 under some circumstances.</li>
+  <li>Fixed ColumnHeader showing multiply tooltips at once under some circumstances.</li>
+  <li>[104986] Fixed DateFilter not working correctly if onItem is checked.</li>
+  <li>[104698] Fixed slate error tooltip missing icon.</li>
+  <li>[105048] Fixed Grid summaryrow does not align correctly with the columns if content is too big.</li>
+  <li>Fixed ListViewSelectionModel and GridSelectionModel try to do selections also if no item clicked.</li>
+  <li>Fixed CompositeElement getElement throwing an ArrayIndexOutOfBoundsException if index < 0.</li>
+  <li>Fixed a potential NullPointerException in ListStore when adding new items.</li>
+  <li>Fixed TreeStore getLastChild throwing a NullPointerException under some circumstances.</li>
+  <li>Fixed Shortcut setText not working after rendering.</li>
+  <li>Fixed CheckChangedEvent not setting up checked selection correctly under all circumstances.</li>
+  <li>Fixed RowEditor not changing when grid gets reconfigured.</li>
+  <li>Fixed RowEditor not resizing with the grid when grid gets resized.</li>
+  <li>Fixed not able to enable textselection in ListView.</li>
+  <li>[106389] Fixed ColumnHeader updateSortIcon not removing sortIcon if sortDir set to SortDir.NONE.</li>
+  <li>Fixed CheckBox and Radio being too big in IE in strict mode.</li>
+  <li>Fixed ComboBox not working correctly if lazyRender set to false.</li>
+  <li>Fixed GridFilters not supporting i18n.</li>
+  <li>Fixed GridFilters throwing NullPointerException if model has a null value.</li>
+  <li>Fixed Menu not clearing the hovered item correctly under all circumstances.</li>
+  <li>Fixed MenuItem shouldDeactivate sometimes returns true, also it should not be deactivated.</li>
+  <li>Fixed El getSize/getWidth/getHeight returning negative values.</li>
+  <li>Fixed El getStyleSize returning incorrect size under some circumstances.</li>
+  <li>Fixed Button autosizing not working correctly.</li>
+  <li>Fixed PagingToolBar throwing exception while attaching under some circumstances.</li>
+  <li>Fixed PagingToolBar showing higher active page as total page count under some circumstances.</li>
+  <li>Fixed AccordionLayout not removing listener from component when removing the component.</li>
+  <li>Fixed layout issue in RowLayout when orientation is set to horizontal.</li>
+  <li>Fixed SpinnerField in access, gray and slate theme.</li>
+  <li>Fixed ColumnConfig setResizable is not respected.</li>
+</ul>
+
+<h2><a name="Release_2.2.0.Beta">Release 2.2.0 Beta (Released July 19th 2010)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Adding a listener for a browser event now automatically sinks the browser event.</li>
+  <li>Switched order of Cancel / Save buttons in RowEditor.</li>
+  <li>Added keyboard support to DatePicker.</li>
+  <li>Added keyboard support to ColorPalette.</li>
+  <li>Added widget support to MenuItem.</li>
+  <li>Added RowEditor to pt_BR locale file.</li>
+  <li>Changed cancel/no buttons to default buttons in Dialog and MessageBox.</li>
+  <li>ChartModel now accepts a ScaleProvider for a right axis.</li>
+  <li>Added column reordering to Grid and TreeGrid.</li>
+  <li>Added SpinnerField component.</li>
+  <li>Performance improvements around TreeStore, TreePanel and TreeGrid.</li>
+  <li>Performance improvements in Grid if removing multiply rows at once.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Added ColumnHeader setEnableColumnResizing(boolean enable), deprecated enableColumnResizing()</li>
+  <li>Added TreeBeanModelReader.</li>
+  <li>HtmlContainer deferDownload default changed from false to true.</li>
+  <li>NumberField now extends SpinnerField and hides the triggers.</li>
+  <li>Added remove(int index) to ListStore.</li>
+  <li>Added TreeStore hasChildren(M model).</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed Component only stopping right click event when really showing a contextmenu.</li>
+  <li>[96589] Fixed View fireEvent firing the event on controllers, that cannot handle the event.</li>
+  <li>Fixed GridView not clearing row over style under all circumstances.</li>
+  <li>Fixed GridView not striping rows correctly under all circumstances.</li>
+  <li>Fixed starting a drag from a disabled input element not working correctly.</li>
+  <li>[97280] Fixed Portal throwing IndexOutOfBounds exception under some circumstances after dropping active portlet.</li>
+  <li>Fixed Portal ValidateDrop event containing wrong row under some circumstances.</li>
+  <li>Fixed EditorSupport not clearing active record after editing.</li>
+  <li>[97406] Fixed TextField selectOnFocus not working under all circumstances.</li>
+  <li>[96985] Fixed ToolTip not displaying correctly in IE if no title set.</li>
+  <li>[97132] Fixed Grid leaking memory when rendering widgets under some circumstances.</li>
+  <li>[97834] Fixed Grid header menu not showing items correctly under some circumstances.</li>
+  <li>Fixed RowEditor trying to start editing also if the row element cannot be found.</li>
+  <li>Fixed an issue in CheckBox getValueAttribute.</li>
+  <li>[97655] Fixed Desktop startmenu tool item not respecting hideOnClick.</li>
+  <li>[97655] Fixed Desktop startmenu tool item not working correctly with submenus.</li>
+  <li>Fixed GridEvent of an aggregation row does not contain the column index.</li>
+  <li>[96317] Fixed LiveGridView not respecting Grid isLoadMask.</li>
+  <li>Fixed LiveGridView calculating the viewIndex wrong under some circumstances.</li>
+  <li>Fixed FormLayout not hiding/showing the label under all circumstances when needed.</li>
+  <li>Fixed a rare case where ComboBox is not expanding in Internet Explorer.</li>
+  <li>Fixed RadioGroup firing change event to often under some circumstances.</li>
+  <li>Fixed TreeGrid findNode returning first node instead of correct one under some circumstances.</li>
+  <li>[98124] Fixed DateField not bluring on tabbing out of the field.</li>
+  <li>Fixed QuickTip not hiding under all circumstances when needed.</li>
+  <li>Fixed Window throwing NullPointerException if calling maximize/restore when maximizable set to false.</li>
+  <li>Fixed Window not calling layout before showing when needed for correct minimal sizing.</li>
+  <li>Fixed aggregation row in Grid showing wrong mouse cursor.</li>
+  <li>[s2363] Desktop task bar not truncating window name text.</li>
+  <li>[s2421] Fixed DropTarget not unregistering itself when detaching the widget.</li>
+  <li>[99164] Fixed TriggerField and TwinTriggerField size incorrect when trigger is hidden.</li>
+  <li>Fixed DateField throwing a NullPointerException if selecting something on the picker before rendering it.</li>
+  <li>[99671] Fixed Component removeStyleName not working under all circumstances.</li>
+  <li>Fixed Button, SplitButton and ToggleButton not using baseStyle under all circumstances.</li>
+  <li>Fixed ToggleButton not working correctly when subclassed.</li>
+  <li>Fixed RowEditor throwing NullPointerException if renderButtons set to false.</li>
+  <li>Fixed FlashComponent not setting swfWidth and swfHeight to the swfConfig.</li>
+  <li>Fixed rounding issues in LiveGridView.</li>
+  <li>Fixed LiveGridView not refreshing correctly when calling refresh.</li>
+  <li>Fixed GroupingView not expanding the group if a row inside that group gets selected under all circumstances.</li>
+  <li>Fixed ColumnHeader not updating the sort icon on the correct column under all circumstances.</li>
+  <li>Fixed Dialog not clearing focusWidget under all circumstances when needed.</li>
+  <li>Fixed ColumnModel throwing exceptions on calling methods with an invalid column index.</li>
+  <li>Fixed Resizable not syncing handler height after resizing the widget by code.</li>
+  <li>Fixed ProgressBar not stopping auto operation on detach.</li>
+  <li>Fixed aligning being ignored in groups inside the ColumnHeader.</li>
+  <li>Fixed DatePicker not having any default tooltip on the today button.</li>
+  <li>Fixed HtmlContainer not requesting data when provided request builder and deferDownload false.</li>
+  <li>Fixed GroupSummaryView not setting the width correctly on the summary row under all circumstances.</li>
+  <li>Fixed Window throwing a NullPointerException on hiding the window if modal was set to true after showing the window.</li>
+  <li>Fixed ComputedStyleImpl setStyleAttribute throwing an Exception under some circumstances.</li>
+  <li>Fixed CollapsePanel throwing a NullPointerException when showing the popup without rendering the panel before.</li>
+  <li>Fixed Chart bound to an empty store throwing a NullPointerException.</li>
+  <li>[77182] Fixed not being able to set an own PagingToolBarMessages and PagingToolBarImages in PagingToolBar.</li>
+  <li>Fixed date formating in template not working with java.util.Date.</li>
+  <li>Fixed ClickRepeater start dragging of images under some circumstances.</li>
+  <li>Fixed Component fireEvent throws a NullPointerException if called without event.</li>
+  <li>Fixed an issue with remote sorting in ListStore.</li>
+  <li>Fixed ListStore Update event contained wrong index under some circumstances.</li>
+  <li>Fixed GXT not setting isSecure state correctly to the CookieProvider if no state provider was set.</li>
+  <li>Fixed selecting pre rendering not working under all circumstances in TreePanel, ListView and Grid.</li>
+  <li>Fixed TreeGrid not collapsing node correctly under some circumstances.</li>
+  <li>Fixed BufferView rendering too many rows under some circumstances.</li>
+  <li>Fixed TreeStore removeAll not unregistering the models.</li>
+  <li>Fixed TreeStore not swapping instances everywhere on update when needed.</li>
+  <li>Fixed FieldBinding not clearing original value on unbind if updateOriginalValue is set to true.</li>
+  <li>Fixed Menu hiding parent windows if deep is set to true, even though the BeforeHide event was canceled.</li>
+  <li>Fixed Tip flicker under some circumstances on initial show.</li>
+  <li>Fixed ToolTip throws an exception if mouseOffset was set to null.</li>
+  <li>Fixed QuickTip showing with wrong tip under some circumstances.</li>
+</ul>
+
+
+<h2><a name="Release_2.1.3">Release 2.1.3 (Released April 12th 2010)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Added dynamic resizable panel to resizable demo.</li>
+  <li>Changed minimal cache size of LiveGridView to be the visible row count to fix infinite loops.</li>
+  <li>Updated Spanish translation file.</li>
+  <li>Improved resizing time of TriggerField and TwinTriggerField.</li>
+  <li>Added support for PAGEUP, PAGEDOWN, HOME, END keys to grid selection models.</li>
+  <li>Added left / right key support to RowExpander.</li>
+  <li>Updated ToolTipsExample.</li>
+  <li>Added Boolean support to XmlReader.</li>
+  <li>Added new Accessibility theme (see Explorer Demo).</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Added storeInfo config to StoreEvent.</li>
+  <li>[s2087] SortInfo now set on StoreEvent for BeforeSort and SortEvent for ListStore and TreeStore.</li>
+  <li>Deprecated Editor cancelOnInvalid as was duplicate method with revertInvalid.</li>
+  <li>Added closable config to ToolTipConfig.</li>
+  <li>[95591] Changed Info afterShow and afterHide from private to protected.</li>
+  <li>[s2219] Added startButtonText config to desktop TaskBar.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed TimeField findModel not returning the correct model under all circumstances.</li>
+  <li>Fixed JsArray being able to handle primitive types correctly.</li>
+  <li>[84568] Fixed TreePanel updates not working correctly while TreePanel is not visible.</li>
+  <li>Fixed TreePanel statefull expand not working correctly.</li>
+  <li>Fixed notifyHide and notifyShow not working correctly on collapse/expand.</li>
+  <li>[94019] ListView updating wrong model (always 1st) when model updated in store.</li>
+  <li>[73099] Resizable dynamic config not implemented.</li>
+  <li>Fixed ScrollContainer setScrollMode not working under all circumstances.</li>
+  <li>Fixed LiveGridView not refreshing correctly while hidden.</li>
+  <li>[445463] Editor revertInvalid config not honored.</li>
+  <li>Fixed ListField showing input element under some circumstances.</li>
+  <li>Fixed ListField getValue returning null also if one item is selected.</li>
+  <li>Fixed ListField setValue not updating the selection.</li>
+  <li>Fixed ListField setSelection called with an empty list not updating the selection.</li>
+  <li>Fixed GridDropTarget and ListViewDropTarget calculating wrong index under some circumstances.</li>
+  <li>Fixed WidgetTreeGridCellRenderer throwing a ClassCastException if display property not representing a String.</li>
+  <li>Fixed Window not canceling dragging if needed while hiding the Window.</li>
+  <li>Fixed Window layout fails under some circumstances.</li>
+  <li>Fixed MessageBox cannot be hidden while dragged.</li>
+  <li>Fixed ComboBox with forceSelection enabled fails to display the correct items under some circumstances.</li>
+  <li>Fixed TreePanel and BufferView not displaying items correctly if they got removed from the DOM and added again.</li>
+  <li>Fixed NullPointerException in CheckColumnConfig onMouseDown if the model has no state set yet.</li>
+  <li>Fixed GroupingView showing grouped column after reconfiguring the grid also if showGroupedColumn set to false.</li>
+  <li>Fixed LiveGridView using a negative offset under some circumstances.</li>
+  <li>Fixed HtmlEditor showing wrong tips for both list buttons and bold button.</li>
+  <li>Fixed HtmlEditor pushValue and syncValue throwing a NullPointerException if not rendered.</li>
+  <li>Fixed Component isVisible not working correctly if deep set to true under all circumstances.</li>
+  <li>Fixed Button auto sizing not working correctly in IE for icon only buttons.</li>
+  <li>Fixed Grid text selection not working in Chrome and Safari4 also if it was enabled.</li>
+  <li>Fixed DatePicker clicking on previous month not working under all circumstances.</li>
+  <li>Fixed DatePicker showing wrong days for previous month under some circumstances.</li>
+  <li>Fixed TabPanel not working correctly with plain set to true and tabPosition set to bottom.</li>
+  <li>Fixed Grid showing double border between rows when columns lines enabled.</li>
+  <li>Fixed TreeGrid not disabling text selection.</li>
+  <li>Fixed MenuBar throwing exception if moving mouse fast out under some circumstances.</li>
+  <li>Fixed ToolTip not hiding correctly if moving mouse fast out under some circumstances.</li>
+  <li>Fixed ToolTip not anchoring correctly under some circumstances.</li>
+  <li>Fixed ToolTip throwing exception if showDelay set to 0.</li>
+  <li>Fixed FireFox 3.6 gets detected as FireFox 2.</li>
+  <li>Fixed Resizable not using BoxComponent setPagePosition method if dynamic set to true.</li>
+  <li>Fixed Portal not removing x-repaint stylename after dragging.</li>
+  <li>[92584] ComboBox with paging not respecting reuse load config.</li>
+  <li>Fixed Tip closable config not working.</li>
+  <li>Fixed DateWrapper addMonths not working correctly.</li>
+  <li>Fixed AbstractStoreSelectionModel not updating lastSelected if model gets updated.</li>
+  <li>[95770] Fixed AccordionLayout setActiveItem not working correctly.</li>
+  <li>[96309] Fixed CheckBoxListView setChecked not working before rendering.</li>
+  <li>Fixed Radio throwing NullPointerException while clicking if no boxLabel set.</li>
+  <li>Fixed updating ToolTip text to null not removing old text.</li>
+  <li>[96549] Fixed ComboBox expanding also if readonly set to true under some circumstances.</li>
+  <li>Fixed CellSelectionModel setting listStore in wrong place.</li>
+  <li>Fixed RowEditor not firing CancelEdit event when editing is canceled.</li>
+  <li>Fixed El getStyleSize returning wrong size under some circumstances.</li>
+  <li>Fixed El repaint not working under all circumstances.</li>
+  <li>[96758] Fixed TimeField not containing all times if increment set to 1.</li>
+</ul>
+
+<h2><a name="Release_2.1.2">Release 2.1.2 (Released March 10th 2010)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Added auto scroll support to TreePanel and TreeGrid DND.</li>
+  <li>[89559] Added columnStyleName to ColumnConfig.</li>
+  <li>Added column separation lines to Grid and TreeGrid.</li>
+  <li>Added auto scroll support to Portal.</li>
+  <li>Added a way to change the RowEditor dirty and error tooltip title text.</li>
+  <li>Improved ListStore inserting performance if inserting into an empty, but sorted ListStore.</li>
+</ul>
+
+
+<h2>API Changes</h2>
+<ul>
+  <li>Added columnLines config to Grid and TreeGrid.</li>
+  <li>Made RowEditor save and cancel buttons accessible.</li>
+  <li>Added getScrollSupport method to TreePanelDropTarget / TreeGridDropTarget.</li>
+  <li>Added dragLeave to DragListener.</li>
+  <li>Added isEditing to RowEditor.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>[s1971] Title tooltip not working in ColumnFooter.</li>
+  <li>Browser context menu showing in some cases in IE 6 on right click.</li>
+  <li>[92782] Observable / BaseObservable fireEvent JavaDocs incorrect.</li>
+  <li>Firefox 3.6 not respecting -moz-outline: none, added outline: none.</li>
+  <li>Fixed BorderLayout throwing a NullPointerException in setContainer if called with null as argument.</li>
+  <li>Fixed TreePanel displaying joint icon incorrect in IE6.</li>
+  <li>Fixed RowEditor overwriting the record even if the BeforeEdit event is canceled.</li>
+  <li>Fixed ColorPalette throwing a NullPointerException under some circumstances.</li>
+  <li>Fixed ProgressBar not updating sizes correctly under all circumstances.</li>
+  <li>Fixed SplitBar not removing all listeners on release.</li>
+  <li>Fixed RowEditor aligning the tooltip incorrectly.</li>
+  <li>Fixed GridSelectionModel does not work correctly together with LiveGridView.</li>
+  <li>Fixed GridView tries to do actions on events before GridView is ready.</li>
+  <li>Fixed GridView assigning wrong classnames to rows under some circumstances.</li>
+  <li>Fixed GridView incorrectly deferring focus.</li>
+  <li>Fixed TreeGrid statefull expand not working correctly.</li>
+  <li>Fixed TreeGrid trying to sort the wrong store when loading state.</li>
+  <li>Fixed column aligning in ColumnHeader and ColumnFooter.</li>
+  <li>Fixed Radio doing click action two times if clicking on the label.</li>
+  <li>Fixed Store isFiltered(model, property) returning wrong result if filterBeginsWith is set.</li>
+  <li>Fixed ListStore throwing IndexOutOfBounds exception if inserting into a filtered ListStore under some circumstances.</li>
+  <li>Updated german translation file.</li>
+  <li>Fixed Shim class not shimming for example the HtmlEditor.</li>
+  <li>Fixed ContentPanel and TabItem showing warning in IE6 when setUrl is used with https.</li>
+  <li>Fixed layout issue of Popup if hiding and showing it again.</li>
+  <li>Fixed DatePicker not selecting correct date under all circumstances.</li>
+  <li>Fixed Button auto-sizing not working under call circumstances.</li>
+  <li>Fixed duplicate image reference in Slate theme.</li>
+  <li>Fixed scrollToTop not working in LiveGridView.</li>
+  <li>Fixed Component isVisible not working correctly if deep set to false</li>
+  <li>Fixed TabPanel not clearing reference on TabItem to itself when removing TabItem.</li>
+  <li>Fixed close context menu of TabPanel not removing reference to TabItem on hide.</li>
+  <li>Fixed Menu not clearing reference on Item to itself when removing an Item.</li>
+  <li>Fixed Menu not setting activeItem to null if removing the active item.</li>
+  <li>Fixed BufferView not showing all rows if an update occurred while the view was hidden.</li>
+  <li>Fixed GroupingView generating invalid ids under some circumstances.</li>
+  <li>Fixed CheckBox aligns boxlabel incorrect under some circumstances.</li>
+  <li>Fixed SliderField clear throwing NullPointerException.</li>
+  <li>ListView not receiving focus correctly with webkit ListView.</li>
+</ul>
+
+
+
+<h2><a name="Release_2.1.1">Release 2.1.1 (Released February 2nd 2010)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Added CustomFormExample to examples.</li>
+  <li>Added CheckGroupingGridExample.</li>
+  <li>Added selection model combo to check box grid plugins and check grouping grid examples.</li>
+  <li>Added FilterTreeGridExample.</li>
+  <li>Added keyboard support to IconButton.</li>
+  <li>Added support for cell style to AggregationRowConfig.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+	<li>Added RowExpanderEvent type.</li>
+	<li>Added expandRow and collapseRow to RowExpander.</li>
+	<li>Added getPlugins to Component.</li>
+	<li>Added getGroups to GroupingView.</li>
+	<li>Added expandOnFilter config to TreeGrid.</li>
+	<li>Added isDisableTextSelection to Component.</li>
+	<li>Added getTools and indexOf to IconButton.</li>
+	<li>Added getScroller to GridView.</li>
+	<li>Added adjustForHScroll to GridView.</li>
+	<li>LiveGridView protected isChached changed to isCached.</li>
+	<li>Added enableQuickTips config to ListView.</li>
+	<li>Added getQuickTip to ListView.</li>
+	<li>Changed ComboBox selectByValue visibility to protected.</li>
+	<li>Added get / set tabIndex to Component.</li>
+	<li>Added updateOriginalValue config to FieldBinding and FormBinding.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed CheckBoxSelectionModel not working with multi-selection under all circumstances.</li>
+  <li>Cannot put cursor into TextField embedded in Grid cell.</li>
+  <li>Grid disables text selection in cells which causes problems when inserting TextField. Text selection can now be enabled by using Grid.disableTextSelection(false).</li>
+  <li>Added SelectionMode.SIMPLE support to grid selection models.</li>
+  <li>TreeGrid filtering not working.</li>
+  <li>Removed extra padding for Gecko TextArea.</li>
+  <li>TreeStore onLoad not updating sortInfo based on load config</li>
+  <li>IE6 disabled fields label text blurred.</li>
+  <li>Sort state not restored if sort column initially hidden.</li>
+  <li>Buttons not showing focus in Safari and Chrome.</li>
+  <li>Improved performance of Grid and TreeGrid remove.</li>
+  <li>MultiField not showing input elements in some cases with IE.</li>
+  <li>TreePanel showing extra vertical space when last empty child expanded.</li>
+  <li>CheckBox not showing focus in Mac Safari.</li>
+  <li>WidgetComponent call to widget.removeFromParent throwing IllegalException when widget not a Component.</li>
+  <li>AutoHeightGridExample showing vertical scroll bar on first insert in webkit.</li>
+  <li>[89252]Issue with ToolBarLayout which is resized while not visible.</li>
+  <li>[89231] Fixed bug when selected model in a combo box's display property is updated.</li>
+  <li>[89230] PagingToolBar not updating page size before load request.</li>
+  <li>TriggerField not creating password input when password set to true.</li>
+  <li>Events DragFail null.</li>
+  <li>TreePanelDragSource, ListViewDragSource stopping focus of TreePanel on mouse down.</li>
+  <li>[90060] getSelectedItem returning null when last selected item is deselected with other selections (multi-select).</li>
+  <li>[89736] TreeGrid onDoubleClick should be calling toggle rather than implementing logic.</li>
+  <li>[87617] Calling reset on FileUploadField disables the browser button.</li>
+  <li>[89488] ListView fireing selection changed event twice with multi-select.</li>
+  <li>[89740] Reordering root nodes in TreePanel throwing exceptions.</li>
+  <li>[89715] Using the layout constructor (public Portlet(Layout layout)) does not add style name "x-portlet".</li>
+  <li>[87137] BorderLayoutData size of "1" not treated as percentage.</li>
+  <li>[89096] CheckBoxListView missing TD in markup.</li>
+  <li>[88629] ColumnFooter not public.</li>
+  <li>[88441] LiveGridView protected isChached changed to isCached.</li>
+  <li>[90119] TreePanelDragSource breaks keyboard navigation.</li>
+  <li>[88140] IE8: Debug window appear after a drag and drop out of the dropbox.</li>
+  <li>[88045] SplitButton showing Blue theme divider in Slate theme.</li>
+  <li>[87365] GridSelectionModel firing Select TWICE with SelectionMode= Multi.</li>
+  <li>[86732] WidgetComponent Bug when widget being wrapped belonged to a previous parent.</li>
+  <li>[86546] Type is grid css - ..x-grid3-invalid-cell</li>
+  <li>[86445] TabPanel key navigation - home and end keys catching when tab not focused.</li>
+  <li>[90199] Event.OnPaste javadocs stating DOM OMMOUSEWHEEL.</li>
+  <li>[s1913] MessageBox not using defaultTextHeightConfig. </li>
+  <li>[s1883] TreeGrid expanding nodes still making data request with autoLoad enabled.</li>
+  <li>[81712] Added FormPanel clearDirtyFields method.</li>
+  <li>[s1922] Added updateOriginalValue config to FieldBinding and FormBinding.</li>
+  <li>[s1874] Portal right column jumps during DND if browser scroll bar width &gt; 19 pixels.</li>
+  <li>[s1909] Fixed an issue in BeanModelGenerator when looking up the BeanModelFactory.</li>
+  <li>[90886] Fixed bug in BaseTreeMOdel using nested property 'gxt.parent'.</li>
+  <li>[90837] DomHelper overwrite contains misspelling in JSNI code.</li>
+  <li>[90638] Window drag proxy not updating header text if window header changed after first drag.</li>
+</ul>
+
+
+<h2><a name="Release_2.1">Release 2.1 (Released November 25 2009)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Added AdapterMenuItem to allow arbitrary widgets added to Menus to be configured as Items. Allows configs such as hideOnClick to be configured.</li>
+  <li>Much better code optimizations by the GWT compiler in a couple of classes.</li>
+  <li>ComboBox lazy rendering defaults to true now.</li>
+  <li>Grid can show a cell as invalid now.</li>
+  <li>Added LiveToolItem to display LiveGridView state.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Added isMasked to Component.</li>
+  <li>Changed Store contains(ModelData m) to contains(M m)</li>
+  <li>Deprecated default IconButton contructor.</li>
+  <li>Added setCancelOnInvalid/isCancelOnInvalid to Editor.</li>
+  <li>Added setShowInvalidCells/isShowInvalidCells to GridView.</li>
+  <li>Renamed DefaultModelComparer.DFFAULT to DefaultModelComparer.DEFAULT.</li>
+  <li>Added setCaching/isCaching to TreeGrid.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed not being able to drag multiple selections in TreePanel.</li>
+  <li>Fixed Detach event firing too early.</li>
+  <li>Fixed an issue in Slider when setting the initial value.</li>
+  <li>Fixed FormButtonBinding not listening to Detach of the FormPanel.</li>
+  <li>Fixed opacity issue when masking a Component in IE.</li>
+  <li>Fixed Button autoWidth not correctly working under some circumstances.</li>
+  <li>Fixed HideMode not working for all locales.</li>
+  <li>Fixed FieldSet checkbox not correctly checked in IE under some circumstances.</li>
+  <li>Fixed Menu auto hiding issues.</li>
+  <li>Fixed ColumnFooter updating the width of the wrong column.</li>
+  <li>Fixed NullPointerException in TreePanelDropTarget and TreeGridDropTarget.</li>
+  <li>Fixed CompositeElement indexOf always returning -1.</li>
+  <li>Fixed an issue in ComboBox when validating a value.</li>
+  <li>Fixed an issue with the empty text in TextField.</li>
+  <li>Fixed Draggable release not canceling the active drag, when there is one.</li>
+  <li>Fixed AccordionLayout sizing issue.</li>
+  <li>Fixed Store not using the ModelComparer under all circumstances.</li>
+  <li>Fixed CheckMenuItem not checking for the correct group.</li>
+  <li>Fixed a NullPointerException in BorderLayout.</li>
+  <li>Fixed ContentPanel and TabItem setUrl not working correctly.</li>
+  <li>Fixed BeanModelGenerator to not generate BeanModels if they are already a ModelData.</li>
+  <li>Fixed FormBinding also clearing values of not bound Fields on unbind.</li>
+  <li>Fixed Button stops events from bubbling.</li>
+  <li>Fixed TreeGrid firing ViewReady too early.</li>
+  <li>Fixed TreeGridView changing icon of a wrong node under some circumstances.</li>
+  <li>Fixed TreeStore not correctly removing Record when removing a model.</li>
+  <li>Fixed Insert not correctly constrained into the DropTarget.</li>
+  <li>Fixed sizing issues in ColumnHeader, ColumnFooter and GridView.</li>
+  <li>Fixed many issues in Editor.</li>
+  <li>Fixed Window setResizable/setDraggable working after rendering.</li>
+  <li>Fixed NullPointerException in Resizable.</li>
+  <li>Fixed locale issues in DateWrapper.</li>
+  <li>Fixed scroll issue in GridView caused by the focus element.</li>
+  <li>Fixed CellSelectionModel not showing selection under all circumstances.</li>
+  <li>Fixed parent - child relationships.</li>
+  <li>Fixed CheckBoxSelectionModel not checking header checkbox under all circumstances.</li>
+  <li>Fixed ComboBox not stopping mouseup event when clicking on the list.</li>
+  <li>Fixed Resizable not removing proxyEl from DOM after resizing.</li>
+  <li>Fixed sizing issue of the proxyEl in Resizable.</li>
+  <li>Fixed non used css causing issues with CheckBoxGroup.</li>
+  <li>Fixed Field not hiding errorIcon when hiding the Field.</li>
+  <li>Fixed TreePanel setCheckedSelection not working correctly.</li>
+  <li>Fixed NullPointerException in Item deactivate and activate.</li>
+  <li>Fixed NullPointerException in Chart when working with null values.</li>
+  <li>Fixed charts when max and min are 0 with DefaultScaleProvider.</li>
+  <li>Fixed maxValue and minValue calculation in Chart.</li>
+  <li>Fixed Grid not being correctly disabled.</li>
+  <li>Fixed GridSplitBar element never got removed.</li>
+  <li>Fixed ListViewSelectionModel to work correctly with DND.</li>
+  <li>Fixed an issue in TreeGridDropTarget and TreePanelDropTarget.</li>
+  <li>Fixed https detection not working under all circumstances.</li>
+</ul>
+
+<h2><a name="Release_2.0.4">Release 2.0.4 (Released October 19 2009)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Added setUseQueryCache/isUseQueryCache to ComboBox.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Fixed Exception during layout call under some circumstances.</li>
+  <li>Fixed Radio not working correctly under IE6 and IE7.</li>
+  <li>Fixed Button autoWidth not correctly working under all circumstances.</li>
+  <li>Fixed ComboBox not starting new query when pressing backspace or delete key.</li>
+  <li>Fixed ComboBox not attaching the PagingToolBar when lazyRender set to true.</li>
+</ul>
+
+<h2><a name="Release_2.0.3">Release 2.0.3 (Released October 19 2009)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+	<li>Added the possibility to use the Dispatcher on the server.</li>
+	<li>BorderLayout now fires Events.BeforeExpand, Events.Expand, Events.BeforeCollapse and Events.Collapse on expanding/collapsing a ContentPanel.</li>
+	<li>Added new borderbox detection scheme.</li>
+	<li>Added DragFail event to DragSource. It gets called when something is dropped on an invalid target.</li>
+	<li>Changed Util isImagePath to ignore case.</li>
+	<li>IconHelper createStyle now only parses each style name once and caches it for better performance.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+	<li>Added clear to Field.</li>
+	<li>Added isEmptyString to Util.</li>
+	<li>Changed getData and setData of MemoryProxy and PagingModelMemoryProxy.</li>
+	<li>Added setMinWidth/getMinWidth and setMaxWidth/getMaxWidth to ToolTipConfig.</li>
+	<li>Renamed getConvertor/setConvertor to getConverter/setConverter in FieldBinding.</li>
+	<li>Added getAutoExpand/setAutoExpand to TreePanel and TreeGrid.</li>
+	<li>Added collapseAll/expandAll to TreeGrid.</li>
+	<li>Added getModelProcessor/setModelProcessor to Grid/TreePanel.</li>
+	<li>Renamed setAjustForScroll to setAdjustForScroll in Portal.</li>
+	<li>Added isRunning to Layout.</li>
+	<li>Added isSilent to BaseModel and ChangeEventSupport.</li>
+	<li>Added setAutoSizeMode/getAutoSizeMode to Editor.</li>
+	<li>Added setAccept/getAccept to FileUploadField.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+	<li>Fixed browser events fire multiply times under some circumstances.</li>
+	<li>Fixed GridView calls onRowOut/onRowOver multiply times on the same row.</li>
+	<li>Fixed hiding a column in buffer grid throwing an exception in FF.</li>
+	<li>Fixed Field not hiding the error icon under some circumstances.</li>
+	<li>Fixed LabelField clearing the value when calling reset.</li>
+	<li>Fixed zIndex issue in Shim class.</li>
+	<li>Fixed FormPanel clear not clearing a ComboBox correctly.</li>
+	<li>Fixed ComboBox not setting emptyText under all circumstances.</li>
+	<li>Fixed exception in stateful BorderLayout.</li>
+	<li>Fixed El setHeight, setWidth and setSize not setting a width of 0.</li>
+	<li>Fixed ProgessBar reset not resetting the text.</li>
+	<li>Fixed attaching/detaching and event issues in WidgetComponent, AdapterField and Composite.</li>
+	<li>Fixed issue in LabelToolItem when label is null.</li>
+	<li>Fixed infinite loop in BorderLayout under some circumstances.</li>
+	<li>Fixed infinite loop in Editor under some circumstances.</li>
+	<li>Fixed setText/setLabel issues in various classes.</li>
+	<li>Fixed GridView not showing empty rows correctly.</li>
+	<li>Fixed node expand issues in TreePanel and TreeGrid.</li>
+	<li>Fixed Menu not sizing correctly under some circumstances.</li>
+	<li>Fixed issue in isValidParent in MenuLayout.</li>
+	<li>Fixed TaskBar not disabling/enabling and attaching/detaching items correctly.</li>
+	<li>Fixed GridView attaching widgets also if grid is not attached.</li>
+	<li>Fixed TreeStore passing null to the ModelKeyProvider.</li>
+	<li>Fixed Menu not showing disabled items as disabled under all circumstances.</li>
+	<li>Fixed ColumnHeader set an incorrect height to the header elements under some circumstances.</li>
+	<li>Fixed empty rows showing up in BufferView after hiding and showing the Grid in WebKit under some circumstances.</li>
+	<li>Fixed empty nodes showing up in TreePanel after hiding and showing the TreePanel in WebKit under some circumstances.</li>
+	<li>Fixed initial wrong width of a TextField.</li>
+	<li>Fixed Menu not showing correct image on hovering items.</li>
+	<li>Fixed not being able to select text in input elements within a menu.</li>
+	<li>Fixed TabPanel not firing BeforeSelect event on the TabItem.</li>
+	<li>Fixed Store applyFilters using a null property on a ModelData.</li>
+	<li>Fixed DatePicker showing the wrong year as selected under some circumstances.</li>
+	<li>Fixed ColumnHeader trying to set a sort icon on a non rendered column under some circumstances.</li>
+	<li>Fixed sizing and positioning issues in CollapsePanel.</li>
+	<li>Fixed NullPointerException in FastSet remove.</li>
+	<li>Fixed serialization warning for FastMap and FastSet under some circumstances.</li>
+	<li>Fixed TreePanelDropTarget and TreeGridDropTarget throwing exception under some circumstances.</li>
+	<li>Fixed GridView calculating wrong if a vertical scrollbar is needed under some circumstances.</li>
+	<li>Fixed ToolTip on the thumb of the Slider being to wide.</li>
+	<li>Fixed event issues in ColumnHeader.</li>
+	<li>Fixed target inside a Layout being null under some circumstances.</li>
+	<li>Fixed Editor getting to high zIndex.</li>
+	<li>Fixed GridView showing sort icon on the wrong column under some circumstances.</li>
+	<li>Fixed El setBorders(false) not removing the x-border css style name.</li>
+	<li>Fixed an issue in El disableTextSelection.</li>
+	<li>Fixed double clicking in a Grid selects all rows in WebKit.</li>
+	<li>Fixed Button not firing MenuHide event if menu hides from its own.</li>
+	<li>Fixed BufferView not cleaning and rendering rows correctly on adding or removing items from the store.</li>
+	<li>Fixed BeanModel not firing ChangeEvent when modifying nested properties.</li>
+	<li>Fixed NullPointerException in onFocus/onBlur in AdapterField.</li>
+	<li>Fixed Grid taking focus on modifying the underlying Store.</li>
+	<li>Fixed expandAll to work also with async TreeGrid/TreePanel.</li>
+	<li>Fixed hiding a Field label not working under all circumstances.</li>
+	<li>Fixed ColumnLayout not calculating for Margins correctly.</li>
+	<li>Fixed Button not clearing styles under all circumstances.</li>
+	<li>Fixed an issues in StoreFilterField after clearing the filters.</li>
+	<li>Fixed ModelPanel not resizing correctly.</li>
+	<li>Fixed setDotStyle in LineChart not working correctly.</li>
+	<li>Fixed memoryleak in TabPanel and ColumnHeader.</li>
+	<li>Fixed an exception in ColumnFooter under some circumstances.</li>
+	<li>Fixed ComboBox fires SelectionChange event to often under some circumstances.</li>
+	<li>Fixed sizing issue in Button.</li>
+	<li>Fixed sizing issues in TaskBar.</li>
+	<li>Fixed addSelectionChangedListener not working in ListField.</li>
+	<li>Fixed FileUploadField browse button not working under all circumstances.</li>
+	<li>Fixed ContentPanel expand not working prior to rendering.</li>
+	<li>Fixed an issue in TabItem setIcon.</li>
+	<li>Fixed sizing issue in Viewport under some circumstances.</li>
+	<li>Fixed an infinite loop in ListView when using a ModelProcessor under some circumstances.</li>
+	<li>Fixed positioning issues in BorderLayout and AbsolutLayout.</li>
+	<li>Fixed Exception in validate of AdapterField.</li>
+	<li>Fixed Field not firing Change event with fireChangeEventOnSetValue set to true under all circumstances.</li>
+	<li>Fixed Draggable disables text selection on input elements.</li>
+	<li>Fixed an issue in setStyleName in Component.</li>
+	<li>Fixed ColumnFooter not correctly handling center alignment.</li>
+	<li>Fixed Window closes after drag if autoHide is set to true.</li>
+	<li>Fixed LabelField always returning true for isDirty.</li>
+	<li>Fixed Grid reconfigure not hiding mask anymore if loadMask is set to true.</li>
+	<li>Fixed sizing issue in RowLayout and BorderLayout.</li>
+	<li>Fixed NullPointerException in Field getRawValue.</li>
+	<li>Fixed NullPointerException in ChangeEventSupport removeChangeListeners.</li>
+	<li>Fixed Exception in TextMetrics under some circumstances.</li>
+	<li>Fixed CheckBox/Radio loosing check state while removing it from the DOM in IE.</li>
+	<li>Fixed BorderLayout not disabling the SplitBar when a component gets hidden.</li>
+	<li>Fixed an issue in ComboBox onTypeAhead.</li>
+	<li>Fixed RowNumber not resetting scroll state on refresh.</li>
+    <li>Added null checks to BorderLayout hide and show methods.</li>
+	<li>Fixed HtmlEditor font familiy changing not working in IE8.</li>
+	<li>Fixed an issue in AbstractSelectionModel with multiselect.</li>
+	<li>Fixed FormLayout not correctly working when reusing components.</li>
+	<li>Fixed GridSelectionModel not working correctly with DnD and multiselection.</li>
+	<li>Fixed Move Fx not setting correct position on complete.</li>
+	<li>Fixed a memoryleak in GridView with Widgets when refreshing the view.</li>
+	<li>Fixed FileUploadField reset not working correctly.</li>
+	<li>Fixed focus issue in ListField/DualListField.</li>
+	<li>Fixed an Exception in TreeGrid unregister.</li>
+	<li>Fixed ComboBox setTypeAhead not working after rendering.</li>
+	<li>Fixed ComboBox with local data clearing all filters on the store instead of just the own one.</li>
+	<li>Fixed an Exception in GroupingView onRemove when grouping not enabled.</li>
+	<li>Fixed TextField not clearing empty value and empty style under all circumstances.</li>
+	<li>Fixed TaskButton setIcon not changing icon correctly.</li>
+</ul>
+
+<h2><a name="Release_2.0.2">Release 2.0.2 (Released September 3 2009)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+	<li>EventType is now serializable</li>
+	<li>RpcMap is now serializable</li>
+	<li>Added BeforeAdd, BeforeClear and BeforeRemove events to Store.</li>
+	<li>TreePanel and TreeGrid now use the ModelKeyProvider (if set) to determine the node id.</li>
+	<li>Added prerender selection support to Grid, TreePanel and ListView.</li>
+	<li>TreeGrid now shows loading indicator while loading a node.</li>
+	<li>Significant performance improvements around layouts and event management.</li>
+	<li>Performance improvements for TreePanel, TreeGrid and TreeStore.</li>
+	<li>Performance improvements for Draggable.</li>
+	<li>Added readOnlyFieldStyle to Field.</li>
+	<li>Added the possibility to change the joint icon in TreePanel and TreeGrid.</li>
+	<li>Added auto height grid example.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+	<li>Changed lastQuery of ComboBox from private to protected.</li>
+	<li>Added setLeaf to TreeGrid.</li>
+	<li>Added setInputStyleAttribute to Field.</li>
+	<li>Added getJointExpandedIcon/setJointExpandedIcon and getJointCollapsedIcon/setJointCollapsedIcon to TreeStyle.</li>
+	<li>Removed getLayoutData/setLayoutData from Component, use ComponentHelper.getLayoutData/setLayoutData from now on.</li>
+	<li>Added setMargins to El.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+	<li>Fixed NullPointerException in NestedModelUtil.isNestedProperty.</li>
+	<li>Fixed issue in FormPanel with standard form submit in IE.</li>
+	<li>Fixed issue while canceling a drag during calling startDrag.</li>
+	<li>Fixed Container.doAttachChildren was not calling for super.doAttachChildren.</li>
+	<li>Fixed issue in doForce of ComboBox that did not resetted the value correctly.</li>
+	<li>Fixed flickering of error icon of Field on initial show in IE.</li>
+	<li>Fixed getValue of HtmlEditor throwing NullPointerException if source edit mode is not enabled.</li>
+	<li>Fixed minimize data not correctly resetted in Desktop.</li>
+	<li>Fixed issue with icon in TabItem in IE6.</li>
+	<li>Fixed active TabItem not shown correctly in IE8.</li>
+	<li>Fixed wrong focus behaviour of Window under some circumstances.</li>
+	<li>Fixed button scroll issue in RowEditor.</li>
+	<li>Fixed missing border in Textfield in IE.</li>
+	<li>Fixed disappearing of CheckBox in IE.</li>
+	<li>Fixed boxLabel of CheckBox initially not correctly aligned.</li>
+	<li>Fixed an issue with rendering of Widget in GridView when refreshing a row.</li>
+	<li>Fixed TreePanel not updating checkboxes correctly if CheckNodes is set to something different than BOTH.</li>
+	<li>Fixed an issue with BoxComponent syncSize which ended in a wrong size.</li>
+	<li>Fixed adding an item to an empty TabPanel after rendering ended in a wrong size.</li>
+	<li>Fixed an issue in GridSelectionModel with multiselect turned on.</li>
+	<li>Fixed an issue in TreeGrid with directly adding items to it after rendering.</li>
+	<li>Fixed GroupingStore resets groupBy if remoteGroup is set to true.</li>
+	<li>Fixed an issue that could cause a wrong height of a TriggerField in IE.</li>
+	<li>Fixed Tip shows at a wrong position if page was scrolled under some circumstances.</li>
+	<li>Fixed ClassCastException in TreeGridCellRenderer if the returned type was not an instance of String.</li>
+	<li>Fixed exception in NestedModelUtil if used serverside.</li>
+	<li>Fixed iframe did not correctly resize in ContentPanel and TabItem if setUrl was used.</li>
+	<li>Fixed ColumnHeader not correctly clearing empty cells.</li>
+	<li>Fixed wrong z-index being set when masking objects during drag.</li>
+	<li>Fixed TreePanel came into infinite loop when caching was disabled.</li>
+	<li>Fixed AbstractStoreSelectionModel not using the comparer of the store.</li>
+	<li>Fixed an issue where Firefox showed scrollbars in a Field that was located in a Window.</li>
+	<li>Fixed wrong tabbing behaviour of FileUploadField.</li>
+	<li>Fixed Resizable setEnabled not correctly enable/disable the resizer.</li>
+	<li>Fixed Resizables in a maximized Window not working.</li>
+	<li>Fixed duplicate name issue in FileUploadField in IE.</li>
+	<li>Fixed BeanModelFactory not working correctly with inner classes.</li>
+	<li>Fixed issue in GridDropTarget/ListViewDropTarget that made dropped rows to disappear.</li>
+	<li>Fixed SplitBar incorrectly firing resize event after dragging.</li>
+	<li>Fixed fields could have the wrong width in IE under some circumstances.</li>
+	<li>Fixed spacing between components in a FormLayout being one px to much in IE8.</li>
+	<li>Fixed different height of a panel header with and without tool items.</li>
+	<li>Fixed sizing issue of the footer of DatePicker under some circumstances in IE.</li>
+	<li>Fixed issue in correctly getting the computed style in IE.</li>
+	<li>Fixed issue in RowEditor that was not hiding the error tooltip correctly.</li>
+	<li>Fixed wrong size of source edit mode of HtmlEditor under some circumstances.</li>
+	<li>Fixed sizing issue of Triggerfield, ComboBox, DateField, TwinTriggerfield and FileUploadField if rendered in a hidden area.</li>
+	<li>Fixed issue in MenuLayout when reusing components.</li>
+	<li>Fixed TreePanel and TreeGrid not expanding parents if you try to expand a deep nested child.</li>
+	<li>Fixed issue in Editor not hiding the editor correctly when field is invalid and editing is completed.</li>
+	<li>Fixed TabPanel scroll issue if TabItem text changed after adding it to a TabPanel.</li>
+	<li>Fixed spacing between TreePanel nodes being 1px in IE8.</li>
+	<li>Fixed issue in TreePanelSelectionModel with multiselection turned on.</li>
+	<li>Fixed issue in TreeGrid not correctly clearing the cache under some circumstances.</li>
+	<li>Fixed TreeStore applySort sorting the root items a couple of times.</li>
+	<li>Fixed DatePicker marking wrong date as selected.</li>
+	<li>Fixed Grid flickering when refreshing the GridView in Firefox.</li>
+	<li>Fixed widgets in the Grid were not correctly detached while clearing the store.</li>
+	<li>Fixed issue in ListView when adding items into an empty ListView.</li>
+	<li>Fixed Resizable not correctly restoring handles when enabling it in IE.</li>
+	<li>Fixed Draggable incorrectly constraining if a proxy was used.</li>
+	<li>Fixed ToolBarLayout showing initial hidden items when overflow is enabled.</li>
+	<li>Fixed ColumnFooter showing a footer for a hidden column.</li>
+	<li>Fixed sizing issues in DualListField and ListField.</li>
+	<li>Fixed issue when adding an already rendered component to an HtmlContainer.</li>
+	<li>Fixed issue in stateful expand in TreeGrid.</li>
+	<li>Fixed issue in changing the icon in any Component that implements IconSupport in IE6.</li>
+	<li>Fixed HtmlEditor showing too many separators when disabling a couple of features.</li>
+	<li>Fixed TreeStore not removing models correctly.</li>
+	<li>Fixed DatePicker not updating correctly when changing the min/max value.</li>
+	<li>Fixed ClassCastException in layouts when using wrong LayoutData.</li>
+	<li>Fixed RowLayout not calculating for margins correctly.</li>
+	<li>Fixed CollapsePanel showing null as heading if no heading was set.</li>
+	<li>Fixed layoutOnAttach in Container was not working under some circumstances.</li>
+	<li>Fixed Component onWindowResize got called several times with the same values.</li>
+	<li>Fixed wrapping of boxlabel for CheckBox and Radio.</li>
+	<li>Fixed setting size in BoxComponent prior to rendering gets not adjusted for border box issues.</li>
+	<li>Fixed setRotation of XLabels throw exception.</li>
+	<li>Fixed sizing issue in FieldSet.</li>
+	<li>Fixed reset not working correctly in ComboBox under some circumstances.</li>
+	<li>Fixed isSpecialKey of DomEvent not recognizing the backward key.</li>
+	<li>Fixed DNDManager missing first call to showFeedback of the DropTarget.</li>
+	<li>Fixed focus issue in Window.</li>
+	<li>Fixed ColumnFooter not rendering Widgets correctly.</li>
+	<li>Fixed sizing issue in ColumnFooter and ColumnHeader.</li>
+	<li>Fixed colspan issue in GridView/BufferedView.</li>
+	<li>Fixed NullPointerException in XmlReader if value was null.</li>
+	<li>Fixed Charts not correctly handling null values.</li>
+	<li>Fixed issue DataProvider not getting the label correctly.</li>
+	<li>Fixed issue in XmlPagingLoadResultReader/JsonPagingLoadResultReader not accounting for the offset correctly.</li>
+	<li>Fixed Desktop not marking TaskButton inactive when minimizing the corresponding Window.</li>
+	<li>Fixed Menu stopping all click events.</li>
+	<li>Fixed TreeGrid/TreePanel not refreshing the parent when removing all nodes from it under all circumstances.</li>
+	<li>Updated italien language file.</li>
+	<li>Fixed SliderField not disabling the Slider correctly.</li>
+	<li>Fixed SliderField not removing the listener from the old Slider when switching Sliders.</li>
+	<li>Fixed GXT overriding the state provider if one set.</li>
+	<li>Fixed setReadOnly and setEditable in TriggerField not working well together.</li>
+	<li>Fixed refresh issue in GroupingView if only one row is there.</li>
+	<li>Fixed dropdown does not get closed under all circumstances in ComboBox/DateField.</li>
+	<li>Fixed Component initState not checking if the component is stateful.</li>
+	<li>Fixed memory leak in Document.</li>
+	<li>Fixed Slider not showing over image on hovering the thumb.</li>
+	<li>Fixed handleMouseEvents not working corrects in Button.</li>
+	<li>Fixed Container.scrollIntoView throwing an exception under some circumstances.</li>
+	<li>Fixed sizing issue in Slider.</li>
+	<li>Fixed Slider thumb too big in IE.</li>
+	<li>Fixed BaseDot setXY setting wrong values.</li>
+	<li>Fixed NullPointer exception in ChartModel updateYScale if no DataProvider was specified.</li>
+	<li>Fixed layout cache was not cleared when changing the LayoutData.</li>
+	<li>Fixed FormLayout not cleaning up labels correctly after removing a Field.</li>
+	<li>Fixed setStyleName behaves differently before and after render.</li>
+	<li>Fixed cell positioning issue in the grid header under some circumstances in IE.</li>
+	<li>Fixed TabPanel header positioning issue in IE8</li>
+	<li>Fixed NullPointerException in GridSelectionModel.onEditorKey under some circumstances.</li>
+	<li>Fixed GroupingView setting an invalid id on the group element.</li>
+	<li>Fixed DNDManager.getTarget returning the wrong target under some circumstances.</li>
+	<li>Fixed DateField showing wrong invalid message under some circumstances.</li>
+	<li>Fixed Hiding a column in buffer grid throwing an exception.</li>
+</ul>
+
+<h2><a name="Release_2.0.1">Release 2.0.1 (Released July 22 2009)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+	<li>Updated polish translation file.</li>
+	<li>FastMap/FastSet are now serializable.</li>
+	<li>Added JsonPagingLoadResultReader/XmlPagingLoadResultReader</li>
+	<li>Added a custom field serializer for FastMap.</li>
+	<li>Significant performance enhancements in BeanModelLookup</li>
+	<li>Added ViewReady event to Grid</li>
+	<li>Modified GridDropTarget and ListViewDropTarget to handle drops from data from a TreeStore.</li>
+	<li>Added new DND example which allows dragging models between a tree, tree grid, grid, and list view.</li>
+	<li>Added support for GWT 1.7</li>
+	<li>TreePanel now shows loading indicator while loading a node.</li>
+	<li>Added BeforeSort event to Store.</li>
+	<li>Added support for GWT 2.0.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+	<li>getChildCount of TreeStore now returns the size of the root items if parent is null.</li>
+	<li>Added TreeStoreModel TreeModel type which is now returned with TreeStore getModelState.</li>
+	<li>Added treeStoreState config to TreePanelDragSource.</li>
+	<li>Renamed isMaximzed to isMaximized in Window.</li>
+	<li>Added removeSWF to SwfObject.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+	<li>Fixed GridEvent not returning correct column index when clicking in the header.</li>
+	<li>Fixed ListStore removing wrong event from the loader on sorting.</li>
+	<li>Fixed TreePanelDragSource/TreeGrigDragSource starting drag on scrolling.</li>
+	<li>Fixed issue in TreePanel with adding multiply items at once.</li>
+	<li>Fixed TreePanel not correctly rendering items while filtering.</li>
+	<li>Fixed an IndexOutOfBounds exception in EditorGrid/EditorTreeGrid after calling reconfigure.</li>
+	<li>Fixed MultiField not sizing children correctly.</li>
+	<li>Fixed issue in FormButtonBinding starting monitoring too early.</li>
+	<li>Fixed TreeStore firing the Add-Event when adding an empty list.</li>
+	<li>Fixed resetting a FileInputField not working in IE.</li>
+	<li>Fixed HtmlEditor getValue/getRawValue not working correctly if in source edit mode.</li>
+	<li>Fixed issue in Component and Composite with "__widgetID" got renamed to "__uiObjectID" in GWT 1.6.</li>
+	<li>Fixed setText of Button clearing icon.</li>
+	<li>Fixed warning in El.getXY() in Firefox.</li>
+	<li>Fixed TextArea being to wide in IE under some circumstances.</li>
+	<li>Fixed sorting issue in TreeGrid when sorting with the dropdown menu.</li>
+	<li>Fixed global var issue in ScriptTagProxy</li>
+	<li>Fixed TreeGrid throwing an exception if adding items to it before rendering the TreeGrid.</li>
+	<li>Fixed RowExpander not rendering the body correctly under some circumstances.</li>
+	<li>Fixed RowEditor starts editing on a non existing row.</li>
+	<li>Fixed expanding/collapsing a ContentPanel in Firefox made the ContentPanel to flicker.</li>
+	<li>Fixed Mail demo and RPC configuration.</li>
+	<li>Fixed SliderField render issues in IE.</li>
+	<li>Fixed getRecord returning null in RowEditor in the AfterEdit event under some circumstances.</li>
+	<li>Fixed TreePanel showing unneeded scrollbars in Firefox under Linux.</li>
+	<li>Fixed HtmlContainer not laying out its children correctly.</li>
+	<li>Fixed Window flickering on initial show.</li>
+	<li>Fixed some disabled items showing pointer as mouse cursor.</li>
+	<li>Fixed RowEditor being to wide under some circumstances.</li>
+	<li>Fixed Dispatcher throwing a ConcurrentModificationException when adding/removing a controller while dispatching an event.</li>
+	<li>Fixed BorderLayout not positioning the SplitBars correctly.</li>
+	<li>Fixed rendering of Widgets in a BufferView.</li>
+	<li>TreePanel not respecting CheckNode value when cascading.</li>
+	<li>Samples build no including webdesktop source.</li>
+	<li>Fixed changing LayoutData not clearing the layout cache.</li>
+	<li>Fixed flickering of error icon of a Field on initial show.</li>
+	<li>Fixed NullPointerException in TwinTriggerField.</li>
+	<li>Fixed NullPointerException in removeInputStyleName of Field if called before rendering.</li>
+	<li>Fixed issue in El.mask that causes flickering.</li>
+	<li>Fixed issue in ComboBox getValue if getting a value from a rendered, but not yet loaded ComboBox.</li>
+	<li>Fixed MemoryLeak in FlashComponent.</li>
+	<li>Fixed issue in MenuBar onDeactivate.</li>
+	<li>Fixed TreeGrid.setView to only accept instances of a TreeGridView.</li>
+	<li>Fixed ListStore accepts null values as models.</li>
+	<li>Fixed ListStore getRange could have null values in the returned list under some circumstances.</li>
+	<li>Fixed clearing a ListStore that was loaded with a MemoryProxy cleared the data of the MemoryProxy.</li>
+	<li>Fixed NestedModelUtil.convertIfNecessarythat tried to create of factory also if we already have a ModelData.</li>
+	<li>Fixed closing a TabItem programmatically not firing the BeforeClose and Close event.</li>
+	<li>Fixed showing a Window is not focusing it.</li>
+	<li>Slate theme TreePanel selected background color not correct.</li>
+	<li>Fixed Empty text not resizing when column widths adjusted after display.</li>
+	<li>Fixed NullPointerException thrown in GridView.ensureVisible under some circumstances.</li>
+</ul>
+
+<h2><a name="Release_2.0">Release 2.0 (Released July 6 2009)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+	<li>Updated French and Portuguese translation files.</li>
+	<li>Added Norwegian translation file</li>
+	<li>Added the ability to remove a tooltip from a component.</li>
+	<li>Added setChecked to CheckBoxListView to be able to check items.</li>
+	<li>Added missing styles for Gray and Slate theme.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+	<li>Added get/setAutoIdPrefix to GXT.</li>
+	<li>Added release to draggable.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+	<li>TabPanels closecontextmenu was not firing BeforeClose/Close events on closing a tab.</li>
+	<li>Removing a portal from a portlet was not removing the draggable correctly.</li>
+	<li>AnchorLayout was too height under some circumstances.</li>
+	<li>Fixed issue in FillLayout that lead to wrong positioning of elements.</li>
+	<li>TabItem was not able to change its icon.</li>
+	<li>Fixed LabelField being too wide in IE.</li>
+	<li>Fixed error icon staying on wrong position on fields under certain cases.</li>
+	<li>ImageOrganizer broke in FF, Safari, and Chrome.</li>
+	<li>Fixed ListViewDropTarget bug when dropping on self.</li>
+	<li>GridView not updating row stripes on dynamic adds and removes.</li>
+	<li>TreeGrid not sorting when no store sorter specified.</li>
+	<li>CheckBoxSelectionModel not changing state of header checkbox correctly on clearing the store or adding an item to it.</li>
+	<li>Fixed RowEditor positioning the buttons incorrectly.</li>
+	<li>Removed extra left and right padding from buttons for Safari.</li>
+	<li>Menu keyboard navigation not working on webkit.</li>
+</ul>
+
+<h2><a name="Release_2.0.RC2">Release 2.0 RC2 (Released July 1 2009)</a></h2>
+
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Adding sorting support to TreeGrid.</li>
+  <li>Fixed styles for Gray theme panels and toolbar.</li>
+  <li>Updated Slate theme for new button styles.</li>
+  <li>Updated Slate date picker styles.</li>
+</ul>
+<h2>API Changes</h2>
+<ul>
+  <li>TreeStore added getSortState.</li>
+  <li>TreeStore added sort(String field, SortDir sortDir).</li>
+  <li>GridView added sortingEnabled config (defaults to true).</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Grouped columns not rendering properly in IE under certain cases.</li>
+  <li>SummaryType predefined classes not handling null data.</li>
+  <li>Added null check to LineDataProvider.</li>
+  <li>CheckColumnConfig getCheckState not handling null model value.</li>
+  <li>Grid.reconfigure not updating aggregation rows.</li>
+  <li>Grid RowExpander text too big.</li>
+  <li>CheckChangeListener testing type CheckChange, not CheckChanged.</li>
+  <li>Background text selecting with TreeGrid in Chrome on double click.</li>
+  <li>TreeStore sorting not sorting root items.</li>
+  <li>TreeDropTarget not properly clearing append style on active node that becomes inactive.</li>
+  <li>StoreFilterField incorrectly cleared all filters on the store.</li>
+  <li>Fixed issue with replace all in Format htmlEncode and htmlDecode.</li>
+  <li>Container not clearing listeners when changing layouts.</li>
+  <li>CheckBox not displaying properly under certain conditions.</li>
+  <li>GroupingSummaryView throwing exception in web mode when setting summary width.</li>
+  <li>TreePanel setChecked not working pre-render.</li>
+  <li>ComboBox selecting wrong value after selecting a previous value.</li>
+  <li>ListView throwing an exception when add is fired from store before the component is renderered.</li>
+  <li>DomEvent throwing an exception when no target element.</li>
+  <li>Wrong insert location when inserting root item into TreeGrid with expanded nodes.</li>
+  <li>TreeGrid not updating joint and folder icon when inserting.</li>
+</ul>
+
+
+<h2><a name="Release_2.0.RC1">Release 2.0 RC1 (Released June 25 2009)</a></h2>
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+    <li>Grid now saves and restores column hidden, width, and sort state.</li>
+    <li>TreePanel and TreeGrid now save and restore expand states when state is enabled.</li>
+    <li>Added TreeGridDragSource and TreeGridDropTarget.</li>
+    <li>Added TreeGrid to TreeGrid DND example.</li>
+    <li>Added widget support to columns, previously on groups could have widgets. See ColumnConfig setWidget.</li>
+    <li>Added ModelKeyProvider class, and setKeyProvider getKeyProvider to Store.</li>
+    <li>BufferView (Grid and TreeGrid) now supports widgets.</li>
+    <li>Added WidgetTreeGridCellRenderer that allows adding widgets to the tree column in TreeGrid.</li>
+    <li>Added ComboBox to CheckBoxTreePanelExample to change check cascade type.</li>
+    <li>Added build time to Version.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+    <li>Component state now applied before component is rendered, not after.</li>
+    <li>Added setStateId and getStateId methods to Component.</li>
+	<li>setEnableState removed from Component.</li>
+	<li>Added setStateful and isStateful to Component.</li>
+	<li>Component stateful default changed to FALSE.</li>
+	<li>Added getKeyProvider and setKeyProvider to Store.</li>
+	<li>A column can be resizable when it is also fixed. Previously, isResizable checked the fixed value.</li>
+	<li>DragEvent.getTarget was overridding DomEvent getTarget and calling getRelatedEventTarget(). Removed the override.</li>
+	<li>Made getContextMenu and setContentMenu in Component public.</li>
+	<li>TreeStore public M getChild(M parent, int index) will return root node if parent is null.</li>
+	<li>Added setWidget and getWidget to ColumnConfig.</li>
+	<li>TreePanel.setAutoLoad(true) now works when not using a loader, previously only worked with a loader.</li>
+	<li>Added TreeStore.getChildren(M parent, boolean deep).</li>
+	<li>Added getters / setters for quickShowInterval in Tip.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+	<li>GridView only allowing Components to be added to cells, changed to Widget.</li>
+	<li>Component clearState() not clearing state if called pre-render.</li>
+	<li>QuickTip not displaying after first show if target element not changed.</li>
+	<li>Wrong sizes for column widths with force fit and auto fill.</li>
+	<li>Disappearing text with TreePanel during DND.</li>
+	<li>TreePanelDropTarget and TreeGridDropTarget not handling multiple items in drop.</li>
+	<li>Grid, TreePanel, and TreeGrid deselecting previous selections when clicking a selected row without shift or control.</li>
+	<li>Grid over effect (gray background) should not show on selected rows.</li>
+	<li>Grid column group not showing with groups with only one column.</li>
+	<li>TreePanel CheckCascade.CHILDREN cascade not cascading checks to leaf nodes.</li>
+	<li>TreePanel right click not selecting element before firing event.</li>
+	<li>TreePanel CheckCascade.CHILDREN not cascading to collapsed nodes.</li>
+	<li>PagingModelMemoryProxy not using reader if specified.</li>
+	<li>TreePanel and TreeGrid allowing drops on self and self's children.</li>
+	<li>Added missing background style when hovering over a valid drop target.</li>
+	<li>TreePanel not unregistering children of model being removed.</li>
+	<li>HtmlContainer now supports calling setUrl multiple times.</li>
+	<li>Fixed null pointer exception on TreePanel collapse.</li>
+	<li>Radio not firing change event when clicking label.</li>
+	<li>Tree right click not selecting item before content menu shows.</li>
+	<li>TreePanelSelectionModel not properly handling Add and Remove events.</li>
+</ul>
+
+<h2><a name="Release_2.0.M3">Release 2.0 M3 (released June 11, 2009)</a></h2>
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+    <li>New scalable buttons with many new configuration options (see explorer demo).</li>
+    <li>Added new HBoxLayout and VBoxLayout (see explorer demo).</li>
+    <li>New HtmlEditor component (see explorer demo).</li>
+    <li>New ColorPalette component.</li>
+    <li>New Slider component.</li>
+    <li>New context menu for tab items.</li>
+    <li>New PagingModelMemoryProxy data proxy.</li>
+    <li>New Async XML Tree example.</li>
+    <li>New local paging grid example using (PagingModelMemoryProxy).</li>
+    <li>Menu now closes on escape key.</li>
+    <li>Added swallow event to component.</li>
+    <li>Added HideMode support to component.</li>
+    <li>XmlReader now supports "type" from DataField.</li>
+    <li>Updated AsyncTreeExample to show example of maintaining tree state when reloading data.</li>
+    <li>Added RowNumber TreeTable example.</li>
+    <li>New methods added to TreeStore: getFirstSibling, getLastSibling, getFirstChild, getLastChild, getDepth.</li>
+    <li>Added filter support to TreeStore.</li>
+    <li>New TreePanel component which binds directly to TreeStore.</li>
+    <li>Extracted Grid header from GridView to new ColumnHeader components.</li>
+    <li>Adding column grouping to Grid header (See ColumnGroupingExample).</li>
+    <li>Added aggregation row support to Grid (See AggregationRowGrid).</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Added List getListeners(EventType eventType) Observable.</li>
+  <li>Market BeanModel bean member transient.</li>
+  <li>Added toggle group support to toggle button.</li>
+  <li>Added allowDepress config to toggle button.</li>
+  <li>Added boolean isValid(boolean silent) to FormPanel.</li>
+  <li>Added boolean isValid(boolean silent) to Field.</li>
+  <li>Added void markInvalid(String msg, boolean silent) to Field.</li>
+  <li>Added boolean validate(boolean silent) to Field.</li>
+  <li>Added void setFireChangeEventOnSetValue(boolean fireChangeEventOnSetValue) to Field.</li>
+  <li>void show(Element elem, String pos, int[] offsets) to Menu.</li>
+  <li>Added allowDropOnLeaf config to TreeDropTarget.</li>
+  <li>Added Component createObservable and getObservable.</li>
+  <li>Added applyGxtContextStyles and removeGxtContextStyles to GXT.</li>
+  <li>Added MIN and MAX to SummaryType.</li>
+</ul>
+
+<h2>Bug fixes</h2>
+<ul>
+  <li>Clicking toggle button not putting focus on button.</li>
+  <li>Focus moved back to button after menu hidden.</li>
+</ul>
+
+<h2><a name="Release_1.2.4">Release 1.2.4 (released April 27, 2009)</a></h2>
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Added mouse over style changes items in TabPanel.</li>
+  <li>ProgressBar can not have value returned back to 0.</li>
+  <li>Added PagingModelMemoryProxy and MemoryPagingGridExample.</li>
+  <li>Improved Chrome support.</li>
+  <li>Bindings now fire events: BeforeBind, Bind and UnBind</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Removed default constructor from BaseEvent and DomEvent.</li>
+  <li>Added factoryForEachBean to BeanModelReader.</li>
+  <li>Fixed typo in ColumnModel: isCellEditble renamed to isCellEditable.</li>
+  <li>Added isWebKit to GXT class.</li>
+  <li>Bindings now extends BaseObservable.</li>
+  <li>Added getModelState to TreeStore.</li>
+</ul>
+
+<h2>Bug fixes</h2>
+<ul>
+  <li>Wrong scroll bar width calculation with grids with hidden columns (live group summary in explorer demo).</li>
+  <li>Fixed bug in hasListeners method in Component.</li>
+  <li>ComboBox throwing index out of bounds exception.</li>
+  <li>SplitBar and Draggable not properly shimming iframes.</li>
+  <li>Layout getSideMargins broken for Chrome.</li>
+  <li>AnchorLayout calculating margin width wrong for Safari effecting trigger field widths.</li>
+  <li>EditorGrid BeforeEdit record not sent in event.</li>
+  <li>NPE in EditorGrid.</li>
+  <li>Clicking on the scrollbar selects an item in the ComboBox.</li>
+  <li>AbstractStoreSelectionModel and AbstractSelectionModel call onSelectChange too early.</li>
+  <li>TreeTable horizontal scroll works incorrectly.</li>
+  <li>TimeField has infinite loop with DST.</li>
+  <li>Info not adjusting for scroll.</li>
+  <li>El.center not adjusting for scroll.</li>
+  <li>MessageBox does not attach children.</li>
+  <li>Dispatcher forwardEvent throws NPE.</li>
+  <li>Focus issue with checkboxes.</li>
+  <li>ColumnLayout not monitoring resize.</li>
+  <li>MultiField fields disappear on Window resize.</li>
+  <li>Post-render setExpanded for FieldSet not working correctly.</li>
+  <li>ComboBox resetting focusValue.</li>
+  <li>Issue with Grid DND with self as source.</li>
+  <li>NPE in BaseModel.remove(String s).</li>
+  <li>SplitBar of BorderLayout bleeds through everything.</li>
+  <li>BorderLayout breaks on re-add.</li>
+  <li>PagingToolBar forget about params.</li>
+  <li>cancelEdit does not take preProcessValue into consideration in editors.</li>
+  <li>Mask zindex issue.</li>
+  <li>ComboBox list align issue in IE.</li>
+  <li>AbstractStoreSelectionModel being able to select models that are not in the store.</li>
+  <li>x-window-draggable gets only assigned if the Window is draggable.</li>
+  <li>Fixed TabPanel tabscrolling in Chrome and Safari.</li>
+  <li>KeyNav fixes for Chrome.</li>
+  <li>Field focus issue in Firefox on switching between windows on Windows.</li>
+  <li>Fixed rendering of TreeTableItemUI at a wrong position.</li>
+  <li>Fixed FX to allow more than one fx at a time.</li>
+  <li>Fixed adding a row in a sorted grid multiplies the rows.</li>
+  <li>AbstractStoreSelectionModel not updating selected on storeUpdate.</li>
+  <li>Fixed duplicate ID problem within TabPanel.</li>
+  <li>Fixed issue in DropTarget.</li>
+  <li>Portlet null in PortalEvent.</li>
+  <li>TriggerField onTriggerClick gets called while disabled.</li>
+  <li>Fixed issues in DomQuery.</li>
+  <li>Fixed draggable items don't work correct when binding them.</li>
+  <li>DNDManager picks the wrong DropTarget.</li>
+  <li>Tree DND losing data with multiple drag and drop operations.</li>
+  <li>BaseObservable throwing concurrent exception when adding listeners in code executing in an event handler.</li>
+  <li>Fixed class cast exception thrown by BorderLayout when reusing stateful components with auto generated ids.</li>
+  <li>build gxt-servlet does not include Style enumerations.</li>
+  <li>Tree clearing multiple selections when right clicking for context menu.</li>
+</ul>
+
+<h2><a name="Release_Current">Release 1.2.3 (released February 17, 2009)</a></h2>
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Shim improvements, shim only when needed.</li>
+  <li>Significant performance enhancements around layouts.</li>
+  <li>Added SimpleComboBoxFieldBinding.</li>
+  <li>ContentPanel nows masks itself when disabled.</li>
+  <li>EditorGrid now supports row selection model, including CheckBoxSelectionModel.</li>
+  <li>Grid adjusts width when vertical scrollbar is not needed.</li>
+  <li>After removing all from a store, adding multiple models was resulting in a add event being fired for each
+  model.</li>
+  <li>Added Hungarion translation.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Container getLayoutTarget visibility changed from protected to public.</li>
+  <li>Added deferredRender config to TabPanel and CardLayout.</li>
+  <li>Added getShortcuts() to Desktop.</li>
+</ul>
+
+<h2>Bug fixes</h2>
+<ul>
+  <li>PagingToolBar hidden within ComboBox.</li>
+  <li>Error in Catalan translation.</li>
+  <li>ToolTip not adjusting for scrolling on body element.</li>
+  <li>RadioGroup not setting value to be box label.</li>
+  <li>Multiple RadioGroups not working.</li>
+  <li>App reloads in IE when hitting enter key with selected row in grid.</li>
+  <li>DND firing DragStart twice.</li>
+  <li>Forms not working property when using AnchorData.</li>
+  <li>Hitting enter with Window causes app to reload.</li>
+  <li>Multiple resizes in one direction, change size in other direction.</li>
+  <li>ListStore remove, trying to remove mode from record collection, not the record.</li>
+  <li>FileUploadName collision issue.</li>
+  <li>ButtonBar using wrong style name.</li>
+  <li>Window modal panel not resizing on window resize.</li>
+  <li>Hide / show mixed in BorderLayout.</li>
+  <li>Added null check for ColumnData in ColumnLayout.</li>
+  <li>Keyboard nav not working Safari single select Grid.</li>
+  <li>DataViewBinder not updating when model instance not the same.</li>
+  <li>Resizeable size calculations off for IE.</li>
+  <li>GXT overwriting user styles on body element.</li>
+  <li>Store not clearing snapshot when filters removed.</li>
+  <li>Portal not setting padding properly.</li>
+  <li>Fixed remove method in DataList.</li>
+  <li>Added setValueAttribute to checkbox.</li>
+  <li>Shim null pointer in Layout.</li>
+  <li>Fixed TreeItemUI handling of mouse events.</li>
+  <li>Replaced hardcoded image path with GXT.BLANK_IMAGE_URL in Shortcut.</li>
+  <li>StartMenu setHeading can now be called after render.</li>
+  <li>Draggble starting drag before early, not respecting startDragDistance.</li>
+</ul>
+
+<h2><a name="Release_1.2.2">Release 1.2.2 (released January 28, 2009)</a></h2>
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Updated BorderLayoutExample.</li>
+  <li>Added CardLayoutExample.</li>
+  <li>Added Czech and Russian translations.</li>
+  <li>Added Composite component.</li>
+  <li>Added Catalan translation.</li>
+  <li>Updated Russian translation, added Ukrainian.</li>
+  <li>Added new styles to GXT (body element) (isSafari3,isChrome,isIE8,isGecko2,isWindows,isAir).</li>
+  <li>Added new Shim utility class.</li>
+</ul>
+<h2>API Changes</h2>
+<ul>
+  <li>Added hidden config to BorderLayoutData.</li>
+  <li>Added expand, collapse, hide, show methods to BorderLayout.</li>
+  <li>Added spacing config to Portal.</li>
+  <li>Added clearState() to Component.</li>
+  <li>Added clear() method to Bindings.</li>
+  <li>IconButton and ToolButton now fire new IconButtonEvent.</li>
+  <li>Added hideCollpaseTool config to BorderLayoutData.</li>
+  <li>Removed dateField_format and dateField_altFormats from MyMessages.</li>
+  <li>Added numberField_nagativeText to MyMessages.</li>
+  <li>Added revertInvalid config to Editor.</li>
+</ul>
+<h2>API Breaking Changes</h2>
+<ul>
+  <li>AbstractStoreSelectionModel incorrectly using SelectionEvent with
+  SelectionChange event type. Correct event type is SelectionChangedEvent. Any code using
+  SelectionEvent with SelectionChanged needs to be updated to SelectionChangedEvent (Grid,
+  ComboBox, ListView).</li>
+  <li>Removed selection field from SelectionEvent as it is not applicable.</li>
+</ul>
+<h2>Bug fixes</h2>
+<ul>
+  <li>LabelField not adjusting property when resized.</li>
+  <li>GroupingView throwing exception when resized with no rows.</li>
+  <li>Tree DND permanently disabled events on tree when drop over leaf.</li>
+  <li>FileUploadField does not have a default width.</li>
+  <li>ToggleToolItem and SplitToolItem not firing correct event type.</li>
+  <li>Draggable starts on right click. Draggable cancelling event bubbling.</li>
+  <li>AbstractStoreSelectionModel firing SelectionEevnt, not SelectionChangedEvent for
+  SelectionChanged event type.</li>
+  <li>ComboBox up / down scroll buttons closing drop down list.</li>
+  <li>ListView documenting but not firing Events.DoubleClick.</li>
+  <li>Border layout splitter off 3px (south and east only).</li>
+  <li>CheckBox setBoxLabel not working when called post render.</li>
+  <li>CheckBox label not using lableFor.</li>
+  <li>ListField not posted on a form submit.</li>
+  <li>GroupingView with at least one column not groupable problem.</li>
+  <li>FileUploadField do NOT support change listener.</li>
+  <li>TriggerField and Twin... do not work correctly as CellEditors in EditorGrid.</li>
+  <li>NumberField.setAllowNegative(false) does not invalidate - when pasted.</li>
+  <li>ComboBox issue setValue to hidden field.</li>
+  <li>BeforeDataChanged event on ListStore doesn't honor event.doit.</li>
+  <li>StartMenu Rendering 1px off on left side non ie.</li>
+  <li>visibility type in TreeItemUI.</li>
+  <li>TreeTable ignores CellRenderer on store.update.</li>
+  <li>CompositeElement repalceElement not implemented.</li>
+  <li>Store Update event not setting index.</li>
+  <li>GridView passing id, not name, to renderer.</li>
+  <li>ListStore fires add event also if nothing was added if StoreSorter is null.</li>
+</ul>
+
+<h2><a name="Release_1.2.1">Release 1.2.1 (released December 22, 2008)</a></h2>
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Added new ComponentManager which maintains a collection of all attached
+  components.</li>
+  <li>Refactored TimeField to use new Time model type. Values now match when between
+  times.</li>
+  <li>Added new TimeFieldBinder.</li>
+  <li>Added and updated da, pt, and pt_PT locales.</li>
+  <li>Added new basic dnd example.</li>
+  <li>RowNumberer now a ComponentPlugin and will update when store modified.</li>
+  <li>Added enable / disable support to DragSource and DropTarget.</li>
+  <li>Added add all and remove all to DualListField.</li>
+  <li>Added tooltips to all buttons in DualListField (including messages).</li>
+  <li>Navigation tree and tab panel now synced in explorer demo.</li>
+  <li>Added resizeFields config to MultiField.</li>
+  <li>Added icon support to FileUploadField.</li>
+</ul>
+<h2>API Changes</h2>
+<ul>
+  <li>Added BeforeQuery event to ComboBox.</li>
+  <li>Added setDateValue to TimeField.</li>
+  <li>Added valid config to Record. EditorGrid and FieldBinding will set valid state
+  of record based on Field.isValid().</li>
+  <li>Added FieldBinding getBinding(Field field) to Bindings.</li>
+  <li>Added getPortletColumn and getPortalIndex to Portal.</li>
+  <li>Breaking API Change - Removed public pressed field form ToogleToolItem.</li>
+  <li>BeanModel superclass changed to BaseModel from BaseModelData (BaseModel needs to
+  support change events).</li>
+  <li>DateTimePropertyEditor now supports parsing "strict" or "leniently". Lenient
+  behavior, the previous default, will wrap invalid dates. Stict is the new default.</li>
+  <li>Added ajustForScroll config to RowLayout.</li>
+  <li>Added editable support to DateField (setEditable, isEditable).</li>
+  <li>CheckMenuItem functions when item has a sub menu.</li>
+</ul>
+<h2>Bug Fixes</h2>
+<ul>
+  <li>TriggerField not rendering properly when no width set (default width added).</li>
+  <li>DatePicker over style not being removed.</li>
+  <li>SplitBar in BorderLayout above message box dialog.</li>
+  <li>Issue resizing grid columns in FF2.</li>
+  <li>FormLayout adjustWidthAnchor not accounting for padding properly.</li>
+  <li>Dragging a window hangs when initiating drag on non-active window.</li>
+  <li>EditorGrid issues with ComboBox values when changing cells in same column.</li>
+  <li>GridEvent value member not set on EditorGrid BeforeEdit.</li>
+  <li>Fixed DND to handle scroll offsets.</li>
+  <li>Column resizes sometimes resizes wrong column in Grid.</li>
+  <li>TreeBinder not honoring disabled animation when filtering.</li>
+  <li>Selection model not firing SelectionChange when clearing a store (as in paging).</li>
+  <li>TreeTableBinder not setting opposite leaf value with no loader form hasChildren.</li>
+  <li>ToggleToolItem not respecting call to toggle() before rendering.</li>
+  <li>Store not handling adds and removes when filtering is enabled.</li>
+  <li>Grid grabbing focus when tabbing out of field using data binding.</li>
+  <li>RowLayout overriding scroll value set on container.</li>
+  <li>HttpProxy not passing "query" with remote ComboBox.</li>
+  <li>Tree navigating to "filtered" tree items when using keyboard navigation.</li>
+  <li>CardLayout not calling container.layout() in setActiveItem().</li>
+  <li>Bindings removeFieldBinding using wrong key to remove.</li>
+  <li>Popup shadow z-index not updating correctly when showing popup.</li>
+  <li>Collapse Buttons on Content Panel multiply.</li>
+  <li>Tree multi-select not supporting shift key.</li>
+  <li>ComboBox not updating hidden field value on reset.</li>
+  <li>DND code not respecting component disable state.</li>
+  <li>DND insert bar not hiding on invalid drop.</li>
+  <li>ComboBox shows selected item in incorrect color after empty text is cleared.</li>
+  <li>Tree - Empty folder can show expand arrow</li>
+  <li>FormBinding autoBind() throwing exception when form contains LabelField.</li>
+  <li>GridDragSource always removing after drag, need to handle copy.</li>
+  <li>Error icon not displaying properly with FileUploadField.</li>
+</ul>
+<h2><a name="Release_1.2">Release 1.2 (released December 1, 2008)</a></h2>
+<h2>General Changes &amp; Enhancements</h2>
+<ul>
+  <li>Updated all demo code to use named constants rather than literal strings when
+  working with the Registry.</li>
+  <li>Added new ComponentComposite component.</li>
+  <li>Added ModelProcessor.</li>
+  <li>Added drag and drop framework.</li>
+  <li>Added new fields: ListField, HiddenField.</li>
+</ul>
+
+<h2>API Changes</h2>
+<ul>
+  <li>Deprecated ModelType id field.</li>
+  <li>Deprecated Popup event preview config option.</li>
+  <li>Added ModelProcessor config to ListView.</li>
+  <li>Deprecated ModelStringProvider config from ComboBox.</li>
+  <li>Added clear() and reset() to form panel.</li>
+  <li>Component is center region of border layout no longer required.</li>
+  <li>Removed ModelType id field.</li>
+  <li>Added ComboBox setValueField(String field).</li>
+  <li>AbstractStoreSelectionModel implements SelectionProvider interface.</li>
+  <li>Added escapeHtml function to XDOM.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+  <li>Desktop not removing window from list of windows when window is closed.</li>
+  <li>Safari margin issues with FitLayout, FillLayout, and RowLayout.</li>
+  <li>AbstractStoreSelectionModel not firing BeforeSelect with multi-selects.</li>
+  <li>Popup autoHide not working.</li>
+  <li>ListView default selected style changed, causing issue with ListView examples.</li>
+  <li>Container throws exception when inserting a child into the child's current
+  container.</li>
+  <li>BorderLayout split bar cannot be moved in certain scenerios.</li>
+  <li>TabPanel layout issues when removing tabs while tabs are scrolled.</li>
+  <li>ComboBox drop down height calculations reducing height by paging tool bar
+  causing scrolling when not needed.</li>
+  <li>Explorer not setting history token when tabs are selected directly.</li>
+  <li>Desktop demo not bringing window to front when clicking shortcut of already
+  opened window.</li>
+  <li>Change Field onFocus and onBlur to both use getInputEl() for when adding the
+  focus style.</li>
+  <li>Field not escaping text before showing as error.</li>
+</ul>
+
+
+<h2><a name="Release_1.1.4">Release 1.1.4 (released Novemeber 24, 2008)</a></h2>
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>Added information about max GXT event constant value to Events.</li>
+</ul>
+<h3>API Changes</h3>
+<ul>
+  <li>Container layoutOnAttach default changed to trye from false reverting change
+  made in 1.1.2</li>
+  <li>Added getLoadConfig to ListStore.</li>
+  <li>Added getPagingToolBar to ComboBox.</li>
+  <li>Deprecated Popup setItem(Component item).</li>
+  <li>Updated Info member visibility to allow subclassing.</li>
+  <li>Added insert method to Portal.</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Scroll issues with grid and editable grid with Safari.</li>
+  <li>Over style not being removed in FF when mousing out over the vertical scroll bar
+  for Grid and DataList.</li>
+  <li>Grid column header widths not correct when making columns small in all non ie
+  browsers (content is not clipping).</li>
+  <li>ComboBox not clearing value when user clears an existing value.</li>
+  <li>ComboBox returning previous value, when user changes an existing value to an
+  invalid value.</li>
+  <li>RowExpander replacing existing GridViewConfig.</li>
+  <li>ComboBox not clearing empty error message when value is reset to previous value
+  when force selection is enabled.</li>
+  <li>ComboBox not clearing previous value when force selection true and allow blank
+  true and user clears the value.</li>
+  <li>Layer removing iframe shims from DOM rather than hiding when being returned to
+  stack. This causes browser to make new request each time shim is displayed.</li>
+  <li>GridView ensureVisisble not accounting for horizontal scroll bar.</li>
+  <li>Window closing on escape when closable = false.</li>
+  <li>NumberField blocking Ctrl+[XXX] shortcuts in Firefox3.</li>
+  <li>Popup show(Component c) adding align widget c to the panel rather than just
+  aligning the popup to the component.</li>
+  <li>Grid SortChange event not firing after first sort change.</li>
+  <li>HttpProxy not checking response status code.</li>
+  <li>TabItem not detaching children when detached causing a memory leak.</li>
+  <li>ListStore remote sort throwing null pointer.</li>
+</ul>
+
+<h2><a name="Release_1.1.3">Release 1.1.3 (released November 11, 2008)</a></h2>
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>1.1.3 compiled with GWT 1.5.3.</li>
+</ul>
+<h3>API Changes</h3>
+<ul>
+  <li>DateField formatValue default changed to false.</li>
+  <li>Fixed mispelling in FormLayout labelSeperator to labelSeparator.</li>
+  <li>Fixed mispelling in NumberPropertyEditor, stripGroupSeperator to
+  stripGroupSeparator.</li>
+  <li>Added labelSeparator, padding, hideLabels config to FormPanel.</li>
+  <li>Deprecated MessageBox.hide() which now delegates to new MessageBox.close().</li>
+  <li>Container layoutOnAttach default changed to false from true to fix execution
+  order issues with layouts.</li>
+  <li>Calling layout() before a container is rendered will change the layoutOnAttach
+  field to true (allows layout to be called at anytime).</li>
+  <li>Deprecated ContentPanel insertBorder config as behavior was not implemented.</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Safari not handling window resizing. FitLayout not filling avaiable space on
+  resize.</li>
+  <li>ScrollContainer initial scrollTop values misconfigured.</li>
+  <li>ComboBox force selection not working.</li>
+  <li>ComboBox throws exception when using lazy loading with a paging toolbar.</li>
+  <li>CellSelectionModel not clearing selection when store removeAll called.</li>
+  <li>CheckBox.isValid() throwing exception when called before field is rendered.</li>
+  <li>Calling grid.reconfigure while using a CellSelectionModel throws pre-render
+  exception.</li>
+  <li>Layout issue when resizing a tab panel while it is scrolled.</li>
+  <li>Resizing a column to be smaller while the grid is horitonally scrolled causes
+  data to be misaligned.</li>
+  <li>Exception thrown in StoreBinder binder() if store is null.</li>
+  <li>AdatperField not overriding isValide which calls getRawValue causing exception.</li>
+  <li>BorderLayout not applying save state to all regions.</li>
+  <li>CenterLayout throwing exception of container has no children.</li>
+  <li>ToolIcon sprite images not up to date with Ext JS images.</li>
+  <li>Style not being applied to first column in grid and does not handle c.css being
+  null.</li>
+  <li>DateField not firing change event, when trigger clicked without focus in text
+  field in.</li>
+  <li>ListView onAdd trying to add elements if called before render.</li>
+</ul>
+
+<h2><a name="Release_1.1.2">Release 1.1.2 (released October 29, 2008)</a></h2>
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>Added support to stripe rows to Table.</li>
+  <li>Several enhancements made to NumberField.</li>
+</ul>
+
+<h3>API Changes</h3>
+<ul>
+  <li>MessageBox close action is changed from HIDE to CLOSE. Callbacks should listen
+  for the Close event.</li>
+  <li>Added formatValue get / set to DateField. User entered value is formatted using
+  property editor format when field validates value.</li>
+  <li>FieldSet super class changed from Container to LayoutContainer.</li>
+  <li>Added support for empty text to GridView.</li>
+  <li>Added new resizeWidget config to AdapterField.</li>
+  <li>Added stripRows config to Table.</li>
+  <li>Added get / set originalValue to Field.</li>
+  <li>RadioGroup fires change events when child radio is selected.</li>
+  <li>Format substitute(String text, Map&lt;String,String@gt; params) changed to
+  substitute(String text, Map&lt;String,Object@gt; params).</li>
+  <li>Changed NumberField to use GWT NumberConstants decimal separator, rather than
+  hardcoded ".".</li>
+  <li>Added parent field to ChangeEvent. This allows soure field to be the model
+  firing the event which is needed as events bubble to parent models.</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Grid focus issues with horizontal scrolling.</li>
+  <li>ComboBox incorrectly executing query when raw value = "".</li>
+  <li>FieldSet checkbox checked when rendered collapsed.</li>
+  <li>Tooltips not hidden when buttons are clicked.</li>
+  <li>Mask width = 0 with IE auto height.</li>
+  <li>BaseModelData.toString() doesn't handle circular reference, removed override.</li>
+  <li>Fixed memory link with MessageBox caused by ModealPanel.</li>
+  <li>Wrapped widget with AdapterMenuItem not getting attached (no events).</li>
+  <li>When maximizing window, bottom component is floating in some cases.</li>
+  <li>CheckBox and Radio not setting value attribute on input element.</li>
+  <li>Component not handling context menu being cancelled with BeforeShow.</li>
+  <li>Component ensureDebugId not prepending DEBUG_ID_PREFIX.</li>
+  <li>Fixed several issues with ScrollContainer.</li>
+  <li>FieldSet not resizing child body element.</li>
+  <li>ComboBox returning null when value has been set directly and has no match in
+  initialized drop down list.</li>
+  <li>AbsoluteLayout applying layout data to first child, not all.</li>
+  <li>GridView incorrectly applying custom style from ColumnConfig to header.</li>
+  <li>ListView not removing elements when removed after being rendered.</li>
+  <li>Grid not updating binding on selection model when setting new view.</li>
+  <li>Field error icon not re-aligning when field is resized.</li>
+  <li>Horizontal scrollbar not showing when rending grid with no data.</li>
+  <li>AdapterField not wrapped widget when resized. Added new resizeWiget config.</li>
+  <li>Grid not striping rows when set to true.</li>
+  <li>GridView not updating when column model fires WidthChange and HeaderChange
+  events.</li>
+  <li>GridView producing invalid HTML.</li>
+  <li>Radio not firing Change event in FF.</li>
+  <li>TreeSelectionModel allowing multi-selections with single select selection model.</li>
+  <li>Application events not being fired, such as selection events, when a components
+  context menu is visible.</li>
+  <li>DateField incorrectly firing change event when date is selected using menu
+  (change event fires on blur).</li>
+  <li>Chinese translation file corrupted.</li>
+  <li>Double clicks within Menus are hiding the menu (auto hide).</li>
+  <li>Tree deselecting current selection even if beforeselect on new item is
+  cancelled.</li>
+  <li>Tree loading icon not overriding custom icon style.</li>
+  <li>Editing is immediately stopped when editing the last row in IE.</li>
+  <li>Grid min column size not being honored.</li>
+  <li>TreeStore adding same model multiple times when monitoring changes due to
+  TreeModel change event bubbling.</li>
+  <li>GridView throwing null pointers when grid.setEnableColumnResize(false) is
+  called.</li>
+  <li>MessageBox issues with MessageBoxEvent with Close and BeforeClose events.</li>
+  <li>ClassCastException in DataViewBinder when sorting.</li>
+  <li>GroupingView not honoring enableNoGroups.</li>
+  <li>GroupingView not using messages for context menu text.</li>
+  <li>CellSelectionModel not removing selection when selected model is removed.</li>
+  <li>ComboBox not seleting item from drop down when pressing tab key.</li>
+  <li>MessageBox setClosable(true) not being honored.</li>
+  <li>Selection models always ordering ranges based on item order, not way range was
+  selected.</li>
+  <li>AbstractSelectionModel selecting duplicates when both shift and control keys
+  selected.</li>
+  <li>Container not disabling it's children when disabled.</li>
+  <li>DatePicker truncating year when displaying long month name after showing a short
+  name.</li>
+  <li>Grid.reconfigure not properly handling previous selections.</li>
+  <li>TablPanel issues with right scroll button and scroll position.</li>
+  <li>TabPanel not remvoing scroll buttons when removing items.</li>
+  <li>Editor and Field not clearing error tooltip from previous editing action.</li>
+  <li>Editor grid not properly clearing current selection when inserting new row.</li>
+  <li>DateField using hard-coded messages for min and max validation.</li>
+  <li>GridView throwing exception when clicking on header with menu disabled.</li>
+</ul>
+
+<h2><a name="Release_1.1.1">Release 1.1.1 (released October 6, 2008)</a></h2>
+
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>Button visually shows when it has focus for both default and gray.</li>
+  <li>Windows can be constrained to a container element when maximized.</li>
+  <li>Windows in desktop do not cover task bar when maximized.</li>
+  <li>Added ability for Portlets to be pinned.</li>
+  <li>New version information part of build, see GXT.getVersion().</li>
+  <li>New Document component which allows listening for events for the document
+  element.</li>
+</ul>
+
+<h3>API Changes</h3>
+<ul>
+  <li>NumberField maxValue and minValue changed to Number, from double.</li>
+  <li>Added getDateValue to TimeField.</li>
+  <li>Added getDesktop() to Desktop.</li>
+  <li>ComboBox getValue will return any set value prior when called prioer to the drop
+  down list being initialized.</li>
+  <li>Added add and remove window to Desktop which now must be called to add windows
+  to the desktop. Previously, any window that was opened was added to the desktop which was
+  problematic as not all windows should be added to the task bar.</li>
+  <li>Added cell and row selector depth configuration to both TableView and GridView.</li>
+  <li>Added Grid.reconfigure(ListStore store, ColumnModel cm).</li>
+  <li>Added Tree.getAllItemCount().</li>
+  <li>Component overrides onEnsureDebugId and calls setId.</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Exception thrown when removing item from Table.</li>
+  <li>DataList not removing checked item from checked list when removing an item.</li>
+  <li>Desktop incorrectly adding message boxes to task bar.</li>
+  <li>GroupSummaryView throwing exception when grid first rendered without grouping.</li>
+  <li>Incorrect indentation with TreeItems when joint is not visble (such as leafs).</li>
+  <li>Grouped row incorrectly rendering with empty string being returned by renderer.</li>
+  <li>Fx example page has layout issues and missing icon in content panel.</li>
+  <li>Button not always clearing mouse over style (opening a modal panel).</li>
+  <li>Window examples source code bad url.</li>
+  <li>TreeTableView throwing NumberFormatException getCellIndex.</li>
+  <li>NullPointer in certain cases when opening window in desktop.</li>
+  <li>ColumnLayout treating width of 1 as 1px, not 100%.</li>
+  <li>HttpProxy not clearing previous url paramters with multiple requests.</li>
+  <li>Safari issue with Grid shifting up on selections.</li>
+  <li>LabelField not overriding validate() which is throwing null pointer when called.</li>
+  <li>DataList move selected down with multiple selections not working.</li>
+  <li>TreeTable row and cell events not firing. rowIndex = the clicked items node
+  depth.</li>
+  <li>Table not clearing sorted column when rendered sorted.</li>
+  <li>TwinTriggerField setTriggerStyle not being applied to trigger.</li>
+  <li>Context menu hides immediately after showing with Safari and Chrome.</li>
+  <li>Button not gaining focus when clicked.</li>
+  <li>ToolBar not setting ToolItem toolBar member when added.</li>
+  <li>ToolTip not hiding when source component hidden or detached.</li>
+  <li>When opening a modal window, from code executing from a click in a parent
+  window, the modal window is displayed behind the parent.</li>
+  <li>Field label not being removed when removing fields in a container with a
+  FormLayout.</li>
+  <li>TreeTable RowDoubleClick and CellDoubleClick not firing.</li>
+  <li>TreeTable not using renderer value for first column.</li>
+  <li>NumberField not replacing decimal seperator before validating.</li>
+  <li>ComboBox not showing scroll bars in IE when content exceeds drop down list.</li>
+  <li>Fixed memory leak with Window caused by Shadow.</li>
+  <li>Table rendering null values as "null".</li>
+</ul>
+
+<h2><a name="Release_1.1">Release Notes 1.1 (released September 18, 2008)</a></h2>
+
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>Slate theme removed from Themes module</li>
+  <li>Added HeaderContextMenu event to Table</li>
+  <li>SimpleComboBox</li>
+  <li>Record behavior has been updated and works slightly different than 1.0</li>
+  <li>Added enter key support to Button</li>
+  <li>Added spacing config to multi field</li>
+  <li>Grays text on disabled menu items</li>
+  <li>BeanModel now delegate equals and hashCode to their wrapped bean</li>
+  <li>Using GWT 1.5.2</li>
+  <li>Added FieldSet checkbox collapse</li>
+  <li>Slate theme was donated to Ext JS and is now bundled</li>
+</ul>
+
+<h3>API Changes</h3>
+<ul>
+  <li>ComponentPlugin interface and component support</li>
+  <li>Added setDirty method to Record</li>
+  <li>WindowManager register method no longer public</li>
+  <li>Added orientation to MultiField</li>
+  <li>Added AUTOX and AUTOY to Sroll enumeration</li>
+  <li>Added getDatePicker() to DateField</li>
+  <li>Container iterator() now parameterized</li>
+  <li>AdapterField no loger overrides isValid</li>
+  <li>Added required functionality to RadioGroup</li>
+  <li>Added setOffset and setTotalCount to PagingLoadResult</li>
+  <li>Added addInputStyleName and removeInputStyleName to Field</li>
+  <li>KeyNav default value for cancelBubble changed to false</li>
+  <li>Added getResizable to Window</li>
+  <li>Added ResizeListener</li>
+  <li>Added locked functionality to AbstractSelectionModel</li>
+  <li>AbsoluteLayout fully implemented</li>
+  <li>AbsoluteData x and y changed to left and top</li>
+  <li>setButtonAlign and getButtonAlign deprecated in ToolBar</li>
+  <li>Field markInvalid marked deprecated.</li>
+  <li>Removed MessageBox maxWidth</li>
+  <li>Add TabItem setAutoLoad</li>
+  <li>Add Field.setHideLabel(boolean hide)</li>
+  <li>Added DataView setContainerTagName</li>
+  <li>BaseModelData no longer overrides equals and hashCode</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Model element not set on Record update events</li>
+  <li>Send to back not working</li>
+  <li>El center not taking scroll offsets into account</li>
+  <li>DOM event not passed in Table ColumnClick event</li>
+  <li>TextMetrics not returning correct width</li>
+  <li>ComboBox down key support</li>
+  <li>Modal window opening another modal window not masking first window</li>
+  <li>All data in ToolTipConfig not being applied to ToolTip</li>
+  <li>Error in polish properties file</li>
+  <li>ToolTip dismissDelay execption when set to 0</li>
+  <li>TableView not listening for TableColumnModel HiddenChange</li>
+  <li>ConcurrentMod exceptio when calling Store rejectChanges</li>
+  <li>ComboBox not scrolling into view</li>
+  <li>NumberField not accepting numeric key pad key presses</li>
+  <li>FlowLayout clearing margins</li>
+  <li>Emptyt text style not clearing on setValue of ComboBox</li>
+  <li>ComboBox tab not selecting value from list in FF</li>
+  <li>ComboBox losing focus after selecting item in list</li>
+  <li>ListStore remove not setting index in event</li>
+  <li>DatePicker today tooltip showing null</li>
+  <li>TooTip exception when target component not rendered</li>
+  <li>TextToolItem not overriding getToolTip</li>
+  <li>Container iterator() now parameterized</li>
+  <li>PagingToolBar exception when load event received before render</li>
+  <li>TimeField clearing time of configured min value</li>
+  <li>AccordionLayout active on top not working</li>
+  <li>Window not closing on escape key</li>
+  <li>Info bottom frame to tall in IE</li>
+  <li>MultiField validation issues with validation child fields</li>
+  <li>WindowManager and Window not setting active window</li>
+  <li>Field name not being set if called pre-render</li>
+  <li>DatePicker / DateField not clearing time for min max values</li>
+  <li>Popup not adding itself to ignore list of base event preview</li>
+  <li>DataListSelectionModel null pointer on click not over item</li>
+  <li>Radio fires change event on click, not on blur</li>
+  <li>AbsoluteLayout not setting children position: absolute</li>
+  <li>NumberField key handling issues</li>
+  <li>AccordionLayout bug when layout called with all collapsed panels</li>
+  <li>MultiField not overriding reset</li>
+  <li>Field cancelling bubbling on key events</li>
+  <li>DatePicker startDay error</li>
+  <li>Resizable not firing ResizeStart</li>
+  <li>NumberField validator executing before base rules</li>
+  <li>expand all / collapse bug in Tree</li>
+  <li>TableHeader sort fails pre-rener</li>
+  <li>Window not respecting setShadow(false)</li>
+  <li>Validator not being executed with NumberField</li>
+  <li>Escape key not closing window</li>
+  <li>ComboBox up / down arrows not scrolling into view</li>
+  <li>ContentPanel hideCollapseTool now working</li>
+  <li>HttpProxy always using POST</li>
+  <li>DataList throwing exception when clicking icon</li>
+  <li>ModelPanel not convering entire document when document height &gt; body height</li>
+</ul>
+
+<h2><a name="Release_1.0">Release Notes 1.0 Final</a></h2>
+
+<h3>API Changes</h3>
+<ul>
+  <li>RadioGroup setValue(Object) changed to setValue(Radio radio)</li>
+  <li>RadioGroup getValue() now returns the seleced Radio</li>
+  <li>CheckBoxGroup setValue(Object) changed to setValue(CheckBox)</li>
+  <li>CheckBoxGroup getValue returns CheckBox, added getValues()</li>
+  <li>TextField add getCursorPos, setCursorPos, getSelectedText, getSelectionLength,
+  setSelectionRange</li>
+  <li>Added setTextStyle to DataListItem</li>
+  <li>BaseModelStringProvider made generic</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+  <li>FadeOut not clearing filter style</li>
+  <li>MessageBox.addCallback not working if called after dialog is rendered</li>
+  <li>TreeBinder bug with expanding tree item with no loader</li>
+  <li>DataListBinder not clearing loading mask</li>
+  <li>TreeListBinder not clearing loading mask</li>
+  <li>ListStore onLoad not registering new models, not removing existing items</li>
+  <li>TreeBinder calling addStyleName rather than setTextStyle</li>
+  <li>XmlReader not using newModelInstance() method</li>
+  <li>Popup autoHide not working. hiding then showing not working with animate = false</li>
+  <li>Null pointer FormPanel onRemove</li>
+  <li>DataListBinder not using style provider</li>
+  <li>FadeIn not setting opacity to 0 when starting effect</li>
+</ul>
+
+
+<h2><a name="Release_RC2">Release Notes 1.0 RC2</a></h2>
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>Added TriggerClick event to TriggerField</li>
+  <li>CheckBox Change event fires on click, from on blur</li>
+  <li>GWT jars no longer bundled in explorer.war and mail.war</li>
+  <li>No longer required to "size" a table for it to render properly</li>
+  <li>ToolTip support added to DataListItem and DataViewItem</li>
+  <li>TreeStore, ListStore onLoadException now throw a runtime exception</li>
+  <li>LayoutData can only be specified when adding components to LayoutContainer, not
+  directly</li>
+</ul>
+
+<h3>API Changes</h3>
+<ul>
+  <li>El removed methods (use new methods on GWT Element): getElementAttribute,
+  getIntElementAttribute, getBooleanElementAttribute</li>
+  <li>Added clear() method to PagingToolBar</li>
+  <li>Add getProxy() to BaseLoader</li>
+  <li>All layout data instances extend LayoutData</li>
+  <li>setData(Object) and getData() are deprecated, use set and get data with keys</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Sort not applied when inserting into ListStore with a sorter</li>
+  <li>Table binder not sorting containers items when sorting</li>
+  <li>DatePicker not selecting values</li>
+  <li>AbstractSelectionModel bug when selecting pre-render</li>
+  <li>MessageBox listeners throwing null pointer</li>
+  <li>CenterLayout not centering verticall. Fix to TableLayout</li>
+  <li>Missing cursor in FF2 windows with text fields</li>
+  <li>Tree not rendering with expanded nodes properly</li>
+  <li>Layer not removing shim when hiding</li>
+  <li>Cell and row clicks not firing for table and tree table</li>
+  <li>MessageBox not honoring modal config</li>
+  <li>Safari layout issues, El getMargins returning junk values</li>
+  <li>ComboBox list location invalid when body is scrolled</li>
+  <li>TreeStore remove not removing children of removed model</li>
+  <li>StoreBinder setSelection not working with empty list</li>
+  <li>AbstractSelectioModel firing SelectionChange when selection not modified</li>
+  <li>TreeBinder issue with setting leaf on TreeItem</li>
+  <li>ToolBar and PagingToolBar height correction</li>
+  <li>Horizontal RowLayout changed to use absolute positioning for proper margin
+  handling</li>
+  <li>TreeTable checkable issue, removed setCheckable, isCheckable as it is inherited
+  from Tree</li>
+  <li>Layer shim setting src attribute after inserted into DOM, https issue for IE</li>
+  <li>Mixed content warning in IE https</li>
+</ul>
+
+<h2><a name="Release_RC1">Release Notes 1.0 RC1</a></h2>
+
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>BeforeClose event added to TabItem</li>
+  <li>Added AdapterField</li>
+  <li>New classes: LayoutData, FillData, FlowData</li>
+  <li>North and South region in BorderLayout can be floated</li>
+  <li>Added sort method to DataList</li>
+</ul>
+
+<h3>API Changes</h3>
+<ul>
+  <li>StateManager changed to singleton</li>
+  <li>Registry get changed to use generics</li>
+  <li>Popup getIgnoreList returns a CompositeElement, was a List</li>
+  <li>SelectionChange event now always includes the selected items in the new
+  selection field in ContainerEvent</li>
+  <li>Added setReadOnly method to FormPanel</li>
+  <li>Removed initialWidth and initialHeight from TextArea</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+  <li>FormLayout was overriding field width when specified</li>
+  <li>Table not rendering properly when first loaded by binder (no scroll bars)</li>
+  <li>Text align not working in table columns</li>
+  <li>Table vertical lines not working</li>
+  <li>Header text does not display when collapsing north or south region in
+  BorderLayout</li>
+  <li>RowLayout not monitoring resize</li>
+  <li>Menu not hiding MenuItems properly. Menu width not adjusting to changes to Menu</li>
+  <li>LayoutContainer setting layout data after inserting component</li>
+  <li>Missing Slate styles for DataList</li>
+  <li>getNestedValue in BaseModelData error</li>
+  <li>DataView not fire DataViewEvent event type</li>
+  <li>setText and setIconStyle not working after render for DataListItem</li>
+  <li>Rendering a ContentPanel collapsed results in the panel first being expanded</li>
+  <li>TreeBinder onAdd null pointer for RootTreeItem</li>
+  <li>NumberPropertyEditor not handling all number types</li>
+  <li>Restore size in Window broken</li>
+  <li>DateField and ComboBox allow dropdown and menu to show when read-only</li>
+  <li>FormPanel getFields class cast exception</li>
+</ul>
+
+<h2><a name="Release_1.0-beta5">Release Notes 1.0 Beta 5</a></h2>
+
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>Generic support added to TreeModel and BaseTreeModel</li>
+  <li>Added auto height support to TabPanel. New TabPanel "plain" style. TabItems can
+  be disabled.</li>
+  <li>Auto height support added to Table. No vertical scroll bar when not needed.</li>
+</ul>
+<h3>API Changes</h3>
+<ul>
+  <li>TreeBinder.removeAll removed. Use Store API</li>
+  <li>KeyNav cancelBubble default changed from true to false</li>
+  <li>TwinTriggerField twinTriggerStyle field changed to getters / setters</li>
+  <li>AppEvent(int type, String token) constructor removed as ambiguous with
+  AppEvent(int type, Data data)</li>
+  <li>getProperties() added to ModelData</li>
+  <li>public fields encapsulated in Draggable</li>
+  <li>SelectionModel refactoring</li>
+  <li>CellRenderer render method changed to "public String render(T item, String
+  property, Object value);"</li>
+  <li>RowLayout and FillLayout changes, see javadocs for updated</li>
+  <li>MessageBox public fields encapsulated. Removed callback param from prompt, use
+  addCallback</li>
+  <li>Moved PagingToolBar messages into inner class</li>
+  <li>New addChildren param added to 4 add and 4 insert methods in TreeStore</li>
+  <li>Spacing config removed from FlowLayout, apply margins to components instead</li>
+  <li>SelectionListener and SelectionChangedListener changed to abstract classes. You
+  must pass a type when creating new instances. "new
+  SelectionListener&lt;ComponentEvent&gt;"</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Null pointer in Tree.removeAll</li>
+  <li>ContextMenu broken with Firefox / Mac</li>
+  <li>Null pointer when remove field from FormPanel before it is rendered</li>
+  <li>Table columns not clipping content when resizing</li>
+  <li>Select on focus not working on ComboBox</li>
+  <li>Tab index not working on checks and radios</li>
+  <li>TreeTableBinder update and findItem broken</li>
+  <li>Table setColumnContextMenu not working</li>
+  <li>Add secure URL to shim in Layer</li>
+  <li>Field labelStyle not working</li>
+  <li>Collapse panel not showing heading for NORTH and SOUTH</li>
+  <li>ContentPanel / AccordionLayout hide collapse tool not working</li>
+  <li>StatusBar clear() not clearing content.</li>
+  <li>RowLayout bug when having 1+ child components</li>
+  <li>LabelField shows the the label separator</li>
+  <li>NumberField default minValue was not negative</li>
+  <li>Field onKeyDown not being called</li>
+  <li>Modal panel not showing after closing and opening a window</li>
+</ul>
+
+<h2><a name="Release_1.0-beta4">Release Notes 1.0 Beta 4</a></h2>
+
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>GXT code compiled against GWT RC1</li>
+  <li>Sorting support added to TreeStore, see javadocs for more information</li>
+  <li>New ColumnLayout</li>
+  <li>New CheckProvider, CheckChangedListener, CheckChangedEvent</li>
+  <li>DataListBinder and TreeBinder now implement CheckProvider</li>
+  <li>New CardPanel</li>
+  <li>New TableListener and TableListenerAdapter</li>
+  <li>ComboBox is a SelectionProvider</li>
+</ul>
+<h3>API Changes</h3>
+<ul>
+  <li>Layout layout() method changed from public to protected</li>
+  <li>TextToolItem and ToogleToolItem now fire ToolBarEvents, rather than ButtonEvent</li>
+  <li>getLimit() added to PagingLoader interface</li>
+  <li>SelectionProvider addSelectionListener and removeSelectionListener renamed to
+  addSelectionChangedListener and removeSelectionChangedListener.</li>
+  <li>Destroy functionality removed as deemed unneccesary with GWT development</li>
+  <li>Window close() method removed as destroying components is removed</li>
+  <li>getSelectedRecord removed from ComboBox as getValue returns the model instance</li>
+  <li>Validator made generic</li>
+  <li>Item renamed to MenuItem, MenuItem renamed to Item, TextMenuItem removed (use
+  MenuItem)</li>
+  <li>Dialog buttonPressedAction removed and replaced with setHideOnButtonClick</li>
+  <li>removeAll and update made protected in StoreBinder. Calls should be made on
+  Store</li>
+  <li>Buttons and button bar moved to new button package</li>
+  <li>HistoryEvent removed</li>
+  <li>FillLayout and RowLayout changes</li>
+  <li>Default margins removed from BorderLayoutData. Default is now 0 margins</li>
+  <li>All typed listeners are now classes, all adapters removed</li>
+  <li>getPadding / setPadding moved from FormPanel to FormLayout</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Minimize button not added to Window</li>
+  <li>Hide / Show Column bugs with Table</li>
+  <li>ButtonBar alignment and remove bug</li>
+  <li>TreeStore not working with sorter</li>
+  <li>onModelChange implemented for TreeStore(Add, Update, Remove) and
+  ListStore(Update)</li>
+  <li>Class cast exception in TableHeader with TreeTable</li>
+  <li>BeforeCheckChange and CheckChange bugs with Tree</li>
+  <li>CheckChange not firing on DataList</li>
+  <li>Error icon not showing after being displayed</li>
+  <li>ComboBox not clearing selection when collapsing list</li>
+  <li>Tab key not handled when list is open in ComboBox without a selection</li>
+  <li>update in binders was not updating model referece store on child comonent
+  (setData)</li>
+  <li>BorderLayout setting container's position to absolute, should be relative if not
+  previously marked aboslute</li>
+  <li>Window opens to previous location and size if hidden to opened</li>
+  <li>Hide / Show bug in Table / TreeTable in FF</li>
+  <li>IE bug with ComboBox. Validation applied when trigger was clicked (focus / blur)</li>
+  <li>Force selection not implemented in ComboBox</li>
+  <li>Style provider not used in TreeBinder</li>
+  <li>DataList moveSelectedUp and moveSelectedDown causing items to be removed</li>
+  <li>Radio duplicating change events</li>
+</ul>
+<h2><a name="Release_1.0-beta3">Release Notes 1.0 Beta 3</a></h2>
+<h3>General Changes &amp; Enhancements</h3>
+<ul>
+  <li>All Eclipse Public License (EPL) based code removed from project, including the
+  Viewer package. All removed functionality is still available with the updated data and
+  store packages.</li>
+  <li>Observable changed to interface, BaseObservable provides default
+  implementatation. Both classes moved to event package.</li>
+  <li>Store is abstract with ListStore and TreeStore subclasses.</li>
+  <li>4-way margins added to layouts.</li>
+  <li>getHeader() added to TabPanel. ToolTips can now be set and the header can be
+  hidden.</li>
+  <li>Fx package refactored to use GWT 1.5 Animation class. Effects are now interface
+  driven.</li>
+  <li>LoadConfig marker interface removed, config can be any type.</li>
+  <li>Added read-only behavior to RadioGroup / Radio and CheckBoxGroup / CheckBox.</li>
+  <li>Added MultiField which RadioGroup and CheckBoxGroup now extends. MultiField has
+  Validator support.</li>
+  <li>Added CloseAction enum to Window, default action is CLOSE. Click close button in
+  window header now uses close action to determine behavior.</li>
+  <li>Added LabelField which can be used to display static text.</li>
+  <li>All component messages moved into public inner class with getters / setters.</li>
+  <li>BaseModelData supports nested properties with get and set.</li>
+  <li>Form Field API now fully generic.</li>
+  <li>NumberField allow negative and decimal seperator implemented.</li>
+  <li>GXT.defaultTheme replaced with GXT.setDefaultTheme(Theme theme, boolean force).</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Significent changes with containers. AbststractContainer renamed to Container.
+  Container renamed to LayoutContainer.</li>
+  <li>Added initial width, initial height, and prevent scroll bar options to TextArea</li>
+  <li>Fixed null pointer in BaseModel constructor using a map</li>
+  <li>Name not being set in setName after render for Field</li>
+  <li>Removed clear hover styles in TreeTable, clear hover style on deselect</li>
+  <li>Fields lables removed when field removed from panel</li>
+  <li>Error calculating height with NORTH / SOUTH percentage based sizes in
+  BorderLayout</li>
+  <li>Context menu now positioned absolutely</li>
+  <li>Menu now adjusts width based on content in FF</li>
+  <li>item field null in container remove event</li>
+  <li>LayoutContainer remove parameter changed to widget</li>
+  <li>Rendered TreeItems can be added to parent TreeItems</li>
+  <li>Can't change the icon style of tab after being rendered</li>
+  <li>Form fields not actually disabled when disable is called</li>
+  <li>disable / enable not working on CheckBoxGroup and RadioGroup</li>
+  <li>Initial render of error icon in was too far right in ie</li>
+  <li>MessageBox updateText() was not updated the message</li>
+  <li>CloseAction now used in close button in window header</li>
+  <li>ToolTip was not sinking mouse events on target component</li>
+  <li>cell horizontal / vertical alignment values are ignored</li>
+  <li>HttpProxy bug when createing url paramters</li>
+  <li>TreeItem not being added to correct container after parent is rendered</li>
+  <li>deselectAll bug with TreeSelectionModel</li>
+</ul>
+<h2><a name="Release_1.0-beta2">Release Notes 1.0 Beta 2</a></h2>
+<h3>General Changes</h3>
+<ul>
+  <li><b>Public fields</b> - Public fields have been removed and replaced with getters
+  and setters. This was the <a href="http://extjs.com/forum/showthread.php?t=33443">communities
+  preference</a>.</li>
+  <li><b>SelectionModel</b> - The selection model code was refactored for Table, Tree,
+  and List. <i>SelectionModel</i> is a new interface that all selection models implement.</li>
+  <li><b>SelectionService</b> - Allows selection providers (all viewers) to register
+  with service. Any listeners are notified of any selections by a registered provider.</li>
+  <li><b>Menu</b> - Menu and all menu items are fully implemented, including sub menu
+  support.</li>
+  <li><b>Themes</b> - There is a new themes module that includes the Slate theme. It
+  is only necessary to add ext-all.css to your host page html. Other stylesheets are added
+  dynamically.</li>
+  <li><b>State</b> - Restore and save state added to component. Map support added to
+  StateManager (serialize and deserialize a map from a cookie).</li>
+  <li><b>HtmlContainer</b> - New container that can be built from static markup, a
+  remote url, an existing element, or element id. Child components can then be inserted
+  into the container using CSS selectors to control the insert location (panel.add(button,
+  "td:first-child";). This allows easy use of complex HTML layouts designed outside of GWT.</li>
+  <li><b>Events</b> - New fine-grained event hierarchy. For example: BaseEvent /
+  DomEvent / ComponentEvent / TreeEvent. Listener interface is now generic.</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+  <li>AccordionLayout typo from AccordianLayout</li>
+  <li>TabItem content not visible after closing then re-opening a tab</li>
+  <li>Beta 1 was complied with 1.6 bytecode</li>
+  <li>Wrong "inherits" entry in setup.txt (com.extjs.gxt.ui.GXT)</li>
+  <li>TableLayout verticalalign should be valign</li>
+  <li>Tree Click events are fired twice</li>
+  <li>NPE from Table.setSelectionModel</li>
+  <li>Error trying to set style attribute (opacity)</li>
+  <li>Corrupted tab scrolling/navigation in Explorer</li>
+  <li>focus() on textfield does not work</li>
+  <li>CenterLayout was centering content in centered component</li>
+  <li>DatePicker Locale (constants.months changed to constants.standaloneMonths)</li>
+  <li>DatePicker right border of selected box hidden in IE</li>
+  <li>Fixed onBlur validation in NumberField</li>
+  <li>Vertical lines fix in table</li>
+  <li>Fields do not validate on blur</li>
+  <li>DateField dropdown not updated based on text field changes</li>
+  <li>Exception in paging table viewer</li>
+  <li>ComboBox Store cannot be changed</li>
+  <li>TabPanel bug when closing last open tab</li>
+  <li>ComboBox not scrolling into view with key nav</li>
+  <li>MultiTreeSelection throwing null pointer</li>
+  <li>Checkable DataList not working</li>
+</ul>
+</body>
+</html>

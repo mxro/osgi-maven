@@ -1,0 +1,40 @@
+<module>
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name="com.google.gwt.i18n.I18N"/>
+    <inherits name="com.google.gwt.http.HTTP"/>
+    <inherits name="com.google.gwt.xml.XML"/>
+    <inherits name="com.google.gwt.json.JSON"/>
+    <inherits name='com.google.gwt.user.User'/>
+    
+    <replace-with class="com.extjs.gxt.ui.client.widget.impl.PngImageImplIE6">
+        <when-type-is class="com.extjs.gxt.ui.client.widget.impl.PngImageImpl"/>
+        <when-property-is name="user.agent" value="ie6" />
+    </replace-with>
+    
+    <replace-with class="com.extjs.gxt.ui.client.core.impl.ComputedStyleImplIE">
+        <when-type-assignable class="com.extjs.gxt.ui.client.core.impl.ComputedStyleImpl"/>
+		<any>
+        	<when-property-is name="user.agent" value="ie6" />
+			<when-property-is name="user.agent" value="ie8" />
+		</any>
+    </replace-with>
+    
+    <!-- skip automatically fallback for ie9 -->
+    <replace-with class="com.extjs.gxt.ui.client.core.impl.ComputedStyleImpl">
+        <when-type-assignable class="com.extjs.gxt.ui.client.core.impl.ComputedStyleImpl"/>
+		<when-property-is name="user.agent" value="ie9" />
+    </replace-with>
+        
+    <generate-with class="com.extjs.gxt.ui.rebind.core.TemplatesGenerator">
+        <when-type-assignable class="com.extjs.gxt.ui.client.core.Templates"/>
+    </generate-with>
+    
+    <generate-with class="com.extjs.gxt.ui.rebind.core.TemplatesGenerator">
+        <when-type-assignable class="com.extjs.gxt.ui.client.core.Markup"/>
+    </generate-with>
+    
+    <generate-with class="com.extjs.gxt.ui.rebind.core.BeanModelGenerator">
+        <when-type-assignable class="com.extjs.gxt.ui.client.data.BeanModelLookup"/>
+    </generate-with>
+    
+</module>
