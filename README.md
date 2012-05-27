@@ -119,6 +119,18 @@ This repository provides a simple wrapper to enable running Kryo (1.03) in OSGi/
 </dependency>
 ```
 
+### MysqlConnectorJ
+
+OSGi bundle for [Mysql Connector/J 5.1.18](http://dev.mysql.com/downloads/connector/j/):
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.mysqlconnectorj51</groupId>
+	<artifactId>thrdMysqlConnectorJ51</artifactId>
+	<version>0.0.4</version>
+</dependency>
+```
+
 ### Java Mail API
 
 OSGi-ready bundle for the [Java Mail API](http://javamail.kenai.com/nonav/javadocs/javax/mail/package-summary.html).
