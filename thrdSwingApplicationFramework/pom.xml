@@ -1,12 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
+
+	<properties>
+		<module.group>de.mxro.thrd.swingapplicationframework</module.group>    <!-- Maven groupId -->
+		<module.name>thrdSwingApplicationFramework</module.name>             <!-- Maven artifactId -->
+		<module.version>2.0.2-SNAPSHOT</module.version> <!-- Maven artifact version -->
+		<module.importedPackages>com.sun.*;resolution:=optional,
+			sun.*;resolution:=optional,
+			*
+		</module.importedPackages>
+		<module.exportedPackages>org.jdesktop.application,
+			org.jdesktop.beansbinding,
+			org.jdesktop.swingworker
+		</module.exportedPackages>
+		<module.serviceDefinitions>
+		</module.serviceDefinitions>
+
+		<module.embeddedDependencies>*
+		</module.embeddedDependencies>
+		<!-- <module.unpackDependencyGroups>org.swinglabs,org.jdesktop,com.sun 
+			</module.unpackDependencyGroups> -->
+	</properties>
+
+	<!-- The artifacts dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>org.jdesktop</groupId>
+			<artifactId>beansbinding</artifactId>
+			<version>1.2.1</version>
+
+			<optional>false</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>swing-worker</artifactId>
+			<version>1.1</version>
+
+			<optional>false</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.sun</groupId>
+			<artifactId>javaws</artifactId>
+			<version>1.1</version>
+
+		</dependency>
+		
+	</dependencies>
+
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.mxro.thrd.swingactionmanager</groupId>
-	<artifactId>thrdSwingActionManager</artifactId>
-	<version>0.0.5RC</version>
+	<groupId>${module.group}</groupId>
+	<artifactId>${module.name}</artifactId>
+	<version>${module.version}</version>
+	<name>${module.name}</name>
 	<packaging>bundle</packaging>
 
 	<build>
+
 		<!-- Resources -->
 		<resources>
 			<!-- This entry makes sure that resources, which lie in the same package 
@@ -43,6 +92,10 @@
 					<include>**</include>
 				</includes>
 			</resource>
+
+			<!-- <resource> <directory>${basedir}/target/dependency</directory> </resource> -->
+
+
 		</resources>
 		<!-- Resources End -->
 
@@ -51,22 +104,21 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.1.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<unpackBundle>true</unpackBundle>
 					<instructions>
-						<Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-						<Bundle-Version>${pom.version}</Bundle-Version>
-						<!-- <Embed-Dependency>*;scope=compile|runtime;inline=false </Embed-Dependency> 
-							<Embed-Directory>target/dependency</Embed-Directory> -->
-						<Import-Package>javax*,
-						org.w3c*,
-						org.xml*,
-						 !*</Import-Package>
-						<Export-Package>org.bushe.lang.reflect,
-							org.bushe.swing,
-							org.bushe.swing.action,
-							org.bushe.swing.exception</Export-Package>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Import-Package>${module.importedPackages}</Import-Package>
+						<Export-Package>${module.exportedPackages}</Export-Package>
+						<Service-Component>${module.serviceDefinitions}
+						</Service-Component>
+						<Embed-Dependency>${module.embeddedDependencies}
+						</Embed-Dependency>
+						<Embed-Directory>target/dependency</Embed-Directory>
+						<Embed-Transitive>${module.embedTransitive}</Embed-Transitive>
+						<_exportcontents>${module.exportedContents}</_exportcontents>
 					</instructions>
 				</configuration>
 			</plugin>
@@ -76,9 +128,17 @@
 
 				<executions>
 					<!-- This additional execution can extract all the JARs of the dependencies -->
-					<!-- <execution> <id>unpack-dependencies</id> <phase>generate-resources</phase> 
-						<goals> <goal>unpack-dependencies</goal> </goals> <configuration> <includeGroupIds>org.w3c.tidy</includeGroupIds> 
-						</configuration> </execution> -->
+					<execution>
+						<id>unpack-dependencies</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeGroupIds>${module.unpackDependencyGroups}
+							</includeGroupIds>
+						</configuration>
+					</execution>
 
 					<execution>
 						<id>copy-dependencies</id>
@@ -88,6 +148,21 @@
 						</goals>
 						<configuration>
 							<outputDirectory>${basedir}</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+					<!-- for eclipse pde -->
+					<execution>
+						<id>copy-dependencies2</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<!-- <includeArtifactIds>${module.embeddedDependencies}</includeArtifactIds> -->
+							<outputDirectory>${basedir}/target/dependency</outputDirectory>
 							<overWriteReleases>false</overWriteReleases>
 							<overWriteSnapshots>false</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
@@ -144,6 +219,9 @@
 		</plugins>
 	</build>
 
+
+
+	<!-- Definition of whereto the artifact can be deployed -->
 	<!-- DISTRIBUTION MANAGEMENT -->
 	<distributionManagement>
 		<repository>
@@ -175,5 +253,13 @@
 		</snapshotRepository>
 	</distributionManagement>
 -->
+
+	<!-- Additional third party repositories -->
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>http://download.java.net/maven/2</url>
+		</repository>
+	</repositories>
 
 </project>
