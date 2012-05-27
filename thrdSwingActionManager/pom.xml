@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.mxro.thrd.swingactionmanager</groupId>
 	<artifactId>thrdSwingActionManager</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.4</version>
 	<packaging>bundle</packaging>
 
 	<build>
