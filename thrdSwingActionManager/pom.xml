@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.mxro.thrd.swingactionmanager</groupId>
+	<artifactId>thrdSwingActionManager</artifactId>
+	<version>0.0.5RC</version>
+	<packaging>bundle</packaging>
+
+	<build>
+		<!-- Resources -->
+		<resources>
+			<!-- This entry makes sure that resources, which lie in the same package 
+				as Java classes, are copied into the target. Often external libraries require 
+				resources, which are loaded using Class.getResource or Class.getResourceAsStream 
+				and which are in a subpackage of the class. For instance, the NetBeans template 
+				for the Swing Application Framework does so. -->
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<!-- This entry makes sure component definitions for OSGi declarative 
+				services are copied into the destination -->
+			<resource>
+				<targetPath>OSGI-INF</targetPath>
+				<filtering>false</filtering>
+				<directory>OSGI-INF</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+			<!-- I really do not know why know a manual entry for src/main/resources 
+				is necessary? It should be included following the Maven convention. -->
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+		</resources>
+		<!-- Resources End -->
+
+		<plugins>
+			<!-- The Maven bundle plugin generates Meta-data required for OSGi -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<unpackBundle>true</unpackBundle>
+					<instructions>
+						<Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${pom.version}</Bundle-Version>
+						<!-- <Embed-Dependency>*;scope=compile|runtime;inline=false </Embed-Dependency> 
+							<Embed-Directory>target/dependency</Embed-Directory> -->
+						<Import-Package>javax*,
+						org.w3c*,
+						org.xml*,
+						 !*</Import-Package>
+						<Export-Package>org.bushe.lang.reflect,
+							org.bushe.swing,
+							org.bushe.swing.action,
+							org.bushe.swing.exception</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+
+				<executions>
+					<!-- This additional execution can extract all the JARs of the dependencies -->
+					<!-- <execution> <id>unpack-dependencies</id> <phase>generate-resources</phase> 
+						<goals> <goal>unpack-dependencies</goal> </goals> <configuration> <includeGroupIds>org.w3c.tidy</includeGroupIds> 
+						</configuration> </execution> -->
+
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Cleanup necessary because of PDE tweaks -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${basedir}</directory>
+							<includes>
+								<include>*.jar</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+			<!-- Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF 
+				created by the maven bundle plugin -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<delete file="${basedir}/META-INF/MANIFEST.MF" />
+								<copy file="target/classes/META-INF/MANIFEST.MF" tofile="${basedir}/META-INF/MANIFEST.MF" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<!-- DISTRIBUTION MANAGEMENT -->
+	<distributionManagement>
+		<repository>
+			<id>dropbox-releases</id>
+			<name>Releases to dropbox</name>
+			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>dropbox-snapshots</id>
+			<name>Snapshots to dropbox</name>
+			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+<!-- 
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Internal Releases</name>
+			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
+			</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
+			</url>
+		</snapshotRepository>
+	</distributionManagement>
+-->
+
+</project>
