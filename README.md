@@ -171,7 +171,7 @@ OSGi-ready bundle for the [Java Mail API](http://javamail.kenai.com/nonav/javado
 </dependency>
 ```
 
-###
+### JDBM2
 
 [jdbm2](http://code.google.com/p/jdbm2/) is a branch of the 100% Java key-value store [JDBM](http://jdbm.sourceforge.net/).
 
@@ -247,7 +247,37 @@ This repository contains two versions of the GWT client libraries: 2.2.0 and 2
 </dependency>
 ```
 
+### JTidy
 
+[JTidy](http://jtidy.sourceforge.net/) is a simple Java library to clean malformed HTML.
+
+This OSGi bundle wraps JTidy version 8.0.
+
+```xml
+<dependency>
+	<artifactId>thrdJTidy</artifactId>
+	<name>thrdJTidy</name>
+	<version>8.0.1</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdJTidy)
+
+### jenabean
+
+[jenabean](http://code.google.com/p/jenabean/) is a Java library, which allows to convert Java objects into RDF.
+
+The maven artifact in this repository allows to deploy jenabean to an OSGi container. 
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.jenabean</groupId>
+	<artifactId>thrdJenaBean</artifactId>
+	<version>0.0.3</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdJenaBean)
 
 ### Ext GWT (GXT)
 
@@ -262,6 +292,90 @@ Please note that this library is provided under the **GPLv3 license**. If you us
 	<version>0.0.2</version>
 </dependency>
 ```
+
+### Swing Application Framework
+
+The [Swing Application Framework](http://java.net/projects/appframework/) provides an extensible platform to build Swing applications.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.swingapplicationframework</groupId>
+	<artifactId>thrdSwingApplicationFramework</artifactId>
+	<version>2.0.2</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdSwingApplicationFramework)
+
+### Netbeans Wizard
+
+[The Netbeans Wizard API](http://www.javaworld.com/javaworld/jw-04-2008/jw-04-opensourcejava-wizard-api.html) provides a convienient way to define wizards in Java Swing.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.netbeanswizard</groupId>
+	<artifactId>thrdNetbeansWizard</artifactId>
+	<version>0.0.2RC</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdNetbeansWizard)
+
+### Swing Action Manager
+
+[Swing Action Manager](http://java.net/projects/sam) provides an event-bus for Java Swing applications.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.swingactionmanager</groupId>
+	<artifactId>thrdSwingActionManager</artifactId>
+	<version>0.0.4</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdSwingActionManager)
+
+### SHEF
+
+The [SHEF](http://shef.sourceforge.net/) library provides a rich text editor for Swing GUIs.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.shef</groupId>
+	<artifactId>thrdShef</artifactId>
+	<version>0.0.4</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdShef)
+
+### Novaworx Syntax
+
+The (Novaworx Syntax Library)[http://freecode.com/projects/xmlgui/releases/158875] allows to highlight text in Swing UIs.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.novaworxsyntax</groupId>
+	<artifactId>thrdNovaworxSyntax</artifactId>
+	<version>0.0.3RC</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdNovaworxSyntax)
+
+### Apache Commons XML APIs
+
+The [Apache Commons XML APIs](http://mvnrepository.com/artifact/xml-apis/xml-apis) bundle a number of useful classes to work with XML.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.xmlapis</groupId>
+	<artifactId>thrdXmlApis</artifactId>
+	<version>0.0.2</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdXmlApis)
 
 ### Apache VFS
 
