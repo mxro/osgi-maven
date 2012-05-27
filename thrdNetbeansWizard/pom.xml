@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.netbeanswizard</groupId>
 	<artifactId>thrdNetbeansWizard</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3RC</version>
 	<name>${project.artifactId}</name>
 
 	<properties>
