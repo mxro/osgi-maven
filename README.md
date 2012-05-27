@@ -119,7 +119,21 @@ This repository provides a simple wrapper to enable running Kryo (1.03) in OSGi/
 </dependency>
 ```
 
-### MysqlConnectorJ
+### XStream
+
+OSGi bundle for [XStream](http://xstream.codehaus.org/) version 1.3.1.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.xstream</groupId>
+	<artifactId>thrdXStream</artifactId>
+	<version>0.0.4</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdXStream)
+
+### Mysql Connector/J
 
 OSGi bundle for [Mysql Connector/J 5.1.18](http://dev.mysql.com/downloads/connector/j/):
 
@@ -130,6 +144,20 @@ OSGi bundle for [Mysql Connector/J 5.1.18](http://dev.mysql.com/downloads/connec
 	<version>0.0.4</version>
 </dependency>
 ```
+
+### Restlet
+
+OSGi bundle for [Restlet](http://www.restlet.org/) (+'Simple' embedded web server):
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.restletextsimple</groupId>
+	<artifactId>thrdRestletExtSimple</artifactId>
+	<version>0.0.4</version>
+</dependency>
+```
+
+[Sources](https://github.com/mxro/osgi-maven/tree/master/thrdRestletExtSimple)
 
 ### Java Mail API
 
