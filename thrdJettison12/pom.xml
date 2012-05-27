@@ -7,7 +7,7 @@
 		<module.group>de.mxro.thrd.jettison12</module.group>    <!-- Maven groupId -->
 		<module.name>
 			thrdJettison12</module.name>             <!-- Maven artifactId -->
-		<module.version>0.0.2</module.version> <!-- Maven artifact version -->
+		<module.version>0.0.3RC</module.version> <!-- Maven artifact version -->
 		<module.importedPackages>
 			*
 
