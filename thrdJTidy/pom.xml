@@ -4,7 +4,7 @@
 	<groupId>de.mxro.thrd.jtidy</groupId>
 	<artifactId>thrdJTidy</artifactId>
 	<name>thrdJTidy</name>
-	<version>8.0.1-SNAPSHOT</version>
+	<version>8.0.1</version>
 	<packaging>bundle</packaging>
 
 	<dependencies>
@@ -171,10 +171,22 @@
 	</build>
 
 
+	<!-- DISTRIBUTION MANAGEMENT -->
+	<distributionManagement>
+		<repository>
+			<id>dropbox-releases</id>
+			<name>Releases to dropbox</name>
+			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+		</repository>
 
+		<snapshotRepository>
+			<id>dropbox-snapshots</id>
+			<name>Snapshots to dropbox</name>
+			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
-
-
+<!-- 
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
@@ -189,4 +201,6 @@
 			</url>
 		</snapshotRepository>
 	</distributionManagement>
+-->
+
 </project>
