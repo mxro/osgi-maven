@@ -7,7 +7,7 @@
 		<module.group>de.mxro.thrd.restletextsimple</module.group>    <!-- Maven groupId -->
 		<module.name>
 			thrdRestletExtSimple</module.name>             <!-- Maven artifactId -->
-		<module.version>0.0.4-SNAPSHOT</module.version> <!-- Maven artifact version -->
+		<module.version>0.0.4</module.version> <!-- Maven artifact version -->
 		<module.importedPackages>!target.dependency,
 			!com.google.gwt.core.ext,
 			!com.google.gwt.core.ext.linker,
