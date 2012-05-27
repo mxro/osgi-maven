@@ -4,7 +4,7 @@
 
 <groupId>de.mxro.thrd.novaworxsyntax</groupId>
 	<artifactId>thrdNovaworxSyntax</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3RC</version>
 	<name>${project.artifactId}</name>
 
 	<properties>
