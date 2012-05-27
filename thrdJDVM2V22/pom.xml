@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.jdbm2V22</groupId>
 	<artifactId>thrdJDVM2V22</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<description>
 		A dependency to the JDBM2 key-value store, version 2.2.
 	</description>
