@@ -1,9 +1,13 @@
 osgi-maven
 ==========
 
-Various libraries prepared as OSGI ready maven bundles.
+This project contains various libraries prepared as OSGI ready maven bundles. 
 
-All maven artifacts are in the following repository.
+Please read the following blog post for more informations:
+
+
+
+All maven artifacts are in the following repository:
 
 ```xml
 <repositories>
@@ -14,8 +18,7 @@ All maven artifacts are in the following repository.
 </repositories>
 ```
 
-This repository may contain maven pom definitions to link to other maven projects and/or parts of the source code of the referenced libraries.  
-**Use all poms and sources under the license of the referenced original project.** For instance, since Netty is released
+This repository may contain maven pom definitions to link to other maven projects and/or parts of the source code of the referenced libraries. **Use all poms and sources under the license of the referenced original project.** For instance, since Netty is released
 under the Apache License 2.0, you should also use the [pom provided in this repository](https://github.com/mxro/osgi-maven/blob/master/thrdNetty3/pom.xml) 
 and all sources within the [thrdNetty3](https://github.com/mxro/osgi-maven/tree/master/thrdNetty3) folder under ther Apache License 2.0.
 
@@ -32,14 +35,25 @@ Hence, to create a MANIFEST.MF file for the projects, simply run maven with the 
 project director:
 
 ```
-mvn install
+mvn clean install
 ```
 
-### Create eclipse PDE projects
+### Create Eclipse PDE Projects
 
-Since OSGi is an important 
+Since OSGi is an important cornerstone of the eclipse IDE, eclipse provides some of the very best tooling to work
+with OSGi modules. All projects in this repository allow you to generate an eclipse PDE project from the downloaded sources.
 
-## Netty
+Just download the project, you would like to include and run maven with the goals listed below:
+
+```
+eclipse:clean clean package eclipse:eclipse -Declipse.pde -Declipse.useProjectReferences=false install -DskipTests 
+```
+
+## Libraries
+
+Currently, the following libraries are provided in this repository:
+
+### Netty
 
 OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
 
@@ -51,7 +65,7 @@ OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
 </dependency>
 ```
 
-## async-http-client
+### async-http-client
 
 OSGi bunlde for [async-http-client](https://github.com/sonatype/async-http-client) library. 
 This bundle depends on the [Netty](#netty) bundle.
@@ -64,7 +78,7 @@ This bundle depends on the [Netty](#netty) bundle.
 </dependency>
 ```
 
-## BabuDB
+### BabuDB
 
 [BabuDB](http://code.google.com/p/babudb/) is a not often mentioned but seriously great key-value store (read NOSQL!) written in 100% Java.
 
@@ -79,7 +93,7 @@ This artifact compiles BabuDB and all its dependencies together in one artifact 
 ```
 
 
-## Apache VFS
+### Apache VFS
 
 OSGi bundle for [Apache Commons VFS](http://commons.apache.org/vfs/):
 
