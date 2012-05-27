@@ -68,18 +68,6 @@ To avoid namespace collisions with other Hamcrest bundles (eclipse has one by de
 </dependency>
 ```
 
-### Jetty
-
-OSGi bundle for Jetty 6.1.26.
-
-```xml
-<dependency>
-	<groupId>de.mxro.thrd.jetty6</groupId>
-	<artifactId>thrdJetty6</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
-</dependency>
-```
-
 ### Netty
 
 OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
@@ -94,7 +82,7 @@ OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
 
 ### async-http-client
 
-OSGi bunlde for [async-http-client](https://github.com/sonatype/async-http-client) library. 
+OSGi bundle for [async-http-client](https://github.com/sonatype/async-http-client) library. 
 This bundle depends on the [Netty](#netty) bundle.
 
 ```xml
@@ -102,6 +90,32 @@ This bundle depends on the [Netty](#netty) bundle.
     <groupId>de.mxro.thrd.asynchttpclient17</groupId>
     <artifactId>thrdAsyncHttpClient17</artifactId>
     <version>0.0.3</version>
+</dependency>
+```
+
+### Jetty
+
+OSGi bundle for [Jetty 6.1.26](http://jetty.codehaus.org/jetty/).
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.jetty6</groupId>
+	<artifactId>thrdJetty6</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+</dependency>
+```
+
+### Kryo
+
+[Kryo](http://code.google.com/p/kryo/) is a powerful object serialization library for Java.
+
+This repository provides a simple wrapper to enable running Kryo (1.03) in OSGi/eclipse PDE apps:
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.kryo</groupId>
+	<artifactId>thrdKryo</artifactId>
+	<version>0.0.2</version>
 </dependency>
 ```
 
