@@ -104,6 +104,19 @@ This artifact compiles BabuDB and all its dependencies together in one artifact 
 </dependency>
 ```
 
+### Ext GWT (GXT)
+
+[Ext GWT](http://www.sencha.com/store/gxt/) is a rich-client library to enhance Googles Web Toolkit.
+
+Please note that this library is provided under the **GPLv3 license**. If you use this library (or the wrapper provided here) you will need to make your source code available under the terms of the GPL.
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.gwtgxt</groupId>
+	<artifactId>thrdGwtGxt</artifactId>
+	<version>0.0.2</version>
+</dependency>
+```
 
 ### Apache VFS
 
