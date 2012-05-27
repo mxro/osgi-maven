@@ -6,7 +6,6 @@ This project contains various libraries prepared as OSGI ready maven bundles.
 Please read the following blog post for more informations:
 
 
-
 All maven artifacts are in the following repository:
 
 ```xml
@@ -106,6 +105,19 @@ OSGi-ready bundle for the [Java Mail API](http://javamail.kenai.com/nonav/javado
 </dependency>
 ```
 
+###
+
+[jdbm2](http://code.google.com/p/jdbm2/) is a branch of the 100% Java key-value store [JDBM](http://jdbm.sourceforge.net/).
+
+This repository contains a variant of this library with non-colliding package names and an OSGi configured pom. 
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.jdbm2V22</groupId>
+	<artifactId>thrdJDVM2V22</artifactId>
+	<version>0.0.2</version>
+</dependency>
+```
 
 ### BabuDB
 
