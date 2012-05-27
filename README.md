@@ -53,6 +53,22 @@ eclipse:clean clean package eclipse:eclipse -Declipse.pde -Declipse.useProjectRe
 
 Currently, the following libraries are provided in this repository:
 
+### Hamcrest
+
+[Hamcrest](http://code.google.com/p/hamcrest/) is a powerful little library to define conditions in Java using an expressive API.
+
+The wrapper included in this repository only contains a subset of the Hamcrest library. In particular, only those parts, which can be compiled using the GWT compiler.
+
+To avoid namespace collisions with other Hamcrest bundles (eclipse has one by default as part of the platform), all classes have been moved into a unique namespace.
+
+```xml
+<dependency>
+    <groupId>de.mxro.thrd.hamcrestgwt</groupId>
+    <artifactId>thrdHamcrestGWT</artifactId>
+    <version>0.0.4</version>
+</dependency>
+```
+
 ### Netty
 
 OSGi bundle for [Netty 3.2.6](http://www.jboss.org/netty).
@@ -77,6 +93,19 @@ This bundle depends on the [Netty](#netty) bundle.
     <version>0.0.3</version>
 </dependency>
 ```
+
+### Java Mail API
+
+OSGi-ready bundle for the [Java Mail API](http://javamail.kenai.com/nonav/javadocs/javax/mail/package-summary.html).
+
+```xml
+<dependency>
+    <groupId>de.mxro.thrd.javaxmail14</groupId>
+     <artifactId>thrdJavaxMail14</artifactId>
+     <version>0.0.2</version>
+</dependency>
+```
+
 
 ### BabuDB
 
@@ -127,6 +156,8 @@ This repository contains two versions of the GWT client libraries: 2.2.0 and 2
     <version>0.0.4</version>
 </dependency>
 ```
+
+
 
 ### Ext GWT (GXT)
 
