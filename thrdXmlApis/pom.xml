@@ -3,8 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.mxro.thrd.xmlapis</groupId>
 	<artifactId>thrdXmlApis</artifactId>
+	<version>0.0.2</version>
 	<name>thrdXmlApis</name>
-	<version>0.0.2-SNAPSHOT</version>
+
 	<packaging>bundle</packaging>
 
 
