@@ -4,7 +4,7 @@
 	<properties>
 		<module.group>de.mxro.thrd.swingapplicationframework</module.group>    <!-- Maven groupId -->
 		<module.name>thrdSwingApplicationFramework</module.name>             <!-- Maven artifactId -->
-		<module.version>2.0.2-SNAPSHOT</module.version> <!-- Maven artifact version -->
+		<module.version>2.0.3RC</module.version> <!-- Maven artifact version -->
 		<module.importedPackages>com.sun.*;resolution:=optional,
 			sun.*;resolution:=optional,
 			*
