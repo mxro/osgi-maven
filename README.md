@@ -384,3 +384,16 @@ OSGi bundle for [Apache Commons VFS](http://commons.apache.org/vfs/):
    <version>0.0.2</version>
 </dependency>
 ```
+
+### gwt-exporter
+
+OSGi bundle for [gwt-exporter](http://code.google.com/p/gwt-exporter/) library.
+```xml
+<dependency>
+    <groupId>de.mxro.thrd.gwtexporter24</groupId>
+    <artifactId>thrdGwtExporter24</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
+[Source](https://github.com/mxro/osgi-maven/tree/master/thrdGwtExporter24)
