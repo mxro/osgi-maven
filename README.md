@@ -392,7 +392,7 @@ OSGi bundle for [gwt-exporter](http://code.google.com/p/gwt-exporter/) library.
 <dependency>
     <groupId>de.mxro.thrd.gwtexporter24</groupId>
     <artifactId>thrdGwtExporter24</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
