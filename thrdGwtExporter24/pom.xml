@@ -60,6 +60,9 @@
 		<!-- exported packages from embedded dependencies -->
 		<module.exportedPackages>
 			org.timepedia.exporter*,
+			!org.timepedia.exporter.rebind,
+			!org.timepedia.exporter.client,
+			!org.timepedia.exporter.doclet,
 			!*
 		</module.exportedPackages>
 		<module.embeddedDependencies>!*
