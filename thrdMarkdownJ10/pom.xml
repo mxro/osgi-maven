@@ -4,14 +4,14 @@
 
 	<groupId>de.mxro.thrd.markdownj10</groupId>
 	<artifactId>thrdMarkdownJ10</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<description>
 		Sources of MarkdownJ V1.0. Downloaded on 6.4.2012
 	</description>
 	<name>${project.artifactId}</name>
 
 	<properties>
-
+		<module.gwtVersion>2.4.0</module.gwtVersion>
 		<module.importedPackages>
 			*
 			
@@ -49,6 +49,39 @@
 				</configuration>
 				<version>2.3.2</version>
 			</plugin>
+			
+			
+			<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+			<!-- For GWT -->
+			<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+			<!--  does not compile, since it uses Java RegExp -->
+			<!-- <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.2.0</version>
+				<configuration>
+
+					<draftCompile>${module.draftCompile}</draftCompile>
+					<logLevel>INFO</logLevel>
+					
+					<validateOnly>true</validateOnly>
+					<gwtVersion>${module.gwtVersion}</gwtVersion>
+
+
+					<webappDirectory>${basedir}/src/main/webapp</webappDirectory>
+
+				</configuration>
+				<executions>
+					<execution>
+						<id>gwtcompile</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
+			
 			<!-- FOR BUNDLE MANAGEMENT -->
 			<!-- The Maven bundle plugin generates Meta-data required for OSGi -->
 
