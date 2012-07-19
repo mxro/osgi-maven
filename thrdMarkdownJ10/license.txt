@@ -1,0 +1,11 @@
+License
+
+http://www.opensource.org/licenses/bsd-license.php
+
+Authors
+
+Pete Bevin
+John Mutchek (jmutchek@users.sourceforge.net)
+Alex Coles (alex@alexcolesportfolio.com)
+
+see http://markdownj.org/
