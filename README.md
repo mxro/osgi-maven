@@ -277,7 +277,7 @@ The maven artifact in this repository allows deploying jenabean to an OSGi conta
 
 ### Ext GWT (GXT)
 
-[Ext GWT](http://www.sencha.com/store/gxt/) is a rich-client library to enhance Google’s Web Toolkit.
+[Ext GWT](http://www.sencha.com/store/gxt/) is a rich-client library to enhance Googleâ€™s Web Toolkit.
 
 Please note that this library is provided under the **GPLv3 license**. If you use this library (or the wrapper provided here) you will need to make your source code available under the terms of the GPL.
 
@@ -388,6 +388,7 @@ OSGi bundle for [Apache Commons VFS](http://commons.apache.org/vfs/):
 ### gwt-exporter
 
 OSGi bundle for [gwt-exporter](http://code.google.com/p/gwt-exporter/) library.
+
 ```xml
 <dependency>
     <groupId>de.mxro.thrd.gwtexporter24</groupId>
@@ -397,3 +398,15 @@ OSGi bundle for [gwt-exporter](http://code.google.com/p/gwt-exporter/) library.
 ```
 
 [Source](https://github.com/mxro/osgi-maven/tree/master/thrdGwtExporter24)
+
+### MarkdownJ
+
+OSGi bundle for [MarkdownJ](http://markdownj.org/).
+
+```xml
+<dependency>
+	<groupId>de.mxro.thrd.markdownj10</groupId>
+	<artifactId>thrdMarkdownJ10</artifactId>
+	<version>0.0.2</version>
+</dependency>
+```

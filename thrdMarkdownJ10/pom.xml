@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.markdownj10</groupId>
 	<artifactId>thrdMarkdownJ10</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<description>
 		Sources of MarkdownJ V1.0. Downloaded on 6.4.2012
 	</description>
@@ -210,19 +210,17 @@
 	<!-- DISTRIBUTION MANAGEMENT -->
 	<distributionManagement>
 		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
+			<id>dropbox-releases</id>
+			<name>Releases to dropbox</name>
+			<url>file:///C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</url>
 		</repository>
+
 		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
+			<id>dropbox-snapshots</id>
+			<name>Snapshots to dropbox</name>
+			<url>file://C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-
 
 
 
