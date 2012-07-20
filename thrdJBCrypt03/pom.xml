@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.jbcrypt03</groupId>
 	<artifactId>thrdJBCrypt03</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>A osgi wrapper for jbCrypt 0.3.,
 	</description>
@@ -221,32 +221,15 @@
 		<repository>
 			<id>dropbox-releases</id>
 			<name>Releases to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+			<url>file:///C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>dropbox-snapshots</id>
 			<name>Snapshots to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+			<url>file:///C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-
-<!-- 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
-		</snapshotRepository>
-	</distributionManagement>
--->
 
 
 
