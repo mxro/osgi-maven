@@ -11,6 +11,8 @@
 	<properties>
 		<gwtversion>2.4.0</gwtversion>
 		<module.importedPackages>
+			!org.timepedia.exporter.rebind,
+			!org.timepedia.exporter.doclet,
 			!com.sun*,
 			!com.gargoylesoftware.htmlunit,
 			!com.gargoylesoftware.htmlunit.html,
