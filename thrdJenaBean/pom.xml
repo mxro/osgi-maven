@@ -35,9 +35,11 @@
 		</module.exportedContents>
 		<!-- exported packages from embedded dependencies -->
 		<module.exportedPackages>
+			com.hp.hpl.jena*,
 			com.hp.hpl.jena.rdf.model,
 			com.hp.hpl.jena.shared,
 			com.hp.hpl.jena.ontology,
+			thewebsemantic*,
 			thewebsemantic,
 			thewebsemantic.vocabulary,
 			!org.slf4j.helpers,
@@ -45,7 +47,7 @@
 			!org.slf4j,
 			!org.slf4j.spi,
 			!target.dependency,
-			*
+			!*
 		</module.exportedPackages>
 		<module.embeddedDependencies>*
 		</module.embeddedDependencies>
