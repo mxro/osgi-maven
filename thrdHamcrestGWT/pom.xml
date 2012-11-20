@@ -12,7 +12,7 @@
 <!-- one.end -->
 		<module.group>de.mxro.thrd.hamcrestgwt</module.group>    <!-- Maven groupId -->
 		<module.name>thrdHamcrestGWT</module.name>               <!-- Maven artifactId -->
-		<module.version>0.0.7-SNAPSHOT</module.version>          <!-- Maven artifact version -->
+		<module.version>0.0.8-SNAPSHOT</module.version>          <!-- Maven artifact version -->
 		<module.gwtVersion>2.2.0</module.gwtVersion>
 		<module.draftCompile>true</module.draftCompile>
 		<module.importedPackages>!target.dependency,*
