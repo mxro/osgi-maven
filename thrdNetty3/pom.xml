@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.netty3</groupId>
 	<artifactId>thrdNetty3</artifactId>
-	<version>0.0.3RC</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>A dependency to the Java NIO framework Netty
 		(http://netty.io/)

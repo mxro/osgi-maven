@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.asynchttpclient17</groupId>
 	<artifactId>thrdAsyncHttpClient17</artifactId>
-	<version>0.0.4RC</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<description>Sources from the async http client project prepared as
 		osgi bundle.
 	</description>

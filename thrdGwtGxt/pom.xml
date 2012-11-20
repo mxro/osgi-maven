@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.gwtgxt</groupId>
 	<artifactId>thrdGwtGxt</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	
 	<properties>
 		<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->

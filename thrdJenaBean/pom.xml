@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.jenabean</groupId>
 	<artifactId>thrdJenaBean</artifactId>
-	<version>0.0.4RC</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 
 	<properties>

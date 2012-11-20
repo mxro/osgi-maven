@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.mysqlconnectorj51</groupId>
 	<artifactId>thrdMysqlConnectorJ51</artifactId>
-	<version>0.0.5RC</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>A dependency to the Mysql connector J version 5.1.x
 	</description>

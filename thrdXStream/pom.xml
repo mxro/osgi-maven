@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.xstream</groupId>
 	<artifactId>thrdXStream</artifactId>
-	<version>0.0.5RC</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 
 	<properties>

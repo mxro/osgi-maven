@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.babudb05</groupId>
 	<artifactId>thrdBabuDb05</artifactId>
-	<version>0.0.3RC</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<description>
 		Project and source code for Babu DB 0.5.5.
 	</description>

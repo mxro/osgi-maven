@@ -4,7 +4,7 @@
 
 	<groupId>de.mxro.thrd.apachevfs</groupId>
 	<artifactId>thrdApacheVFS</artifactId>
-	<version>0.0.3RC</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<description>Eclipse project for Apache VFS.
 		Requires the SVN snapshot from the Apache site being downloaded and uploaded
 		to a local repository.
