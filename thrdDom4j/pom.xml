@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 	<properties>
+		<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
+<!-- MAVEN-LOCAL-DEPLOYMENT -->
+		<!-- path for home: C:\Users\Max\Dropbox\Public\onedb\mvn-releases -->
+		<jarDest>C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</jarDest>
+		<!-- path for home: /C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots -->
+		<jarSnap>C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</jarSnap>
+		<!-- END -->
+<!-- one.end -->
 		<module.group>de.mxro.thrd.dom4j</module.group>    <!--  Maven groupId -->
 		<module.name>thrdDom4j</module.name>             <!--  Maven artifactId -->
 		<module.version>0.0.3RC</module.version> <!--  Maven artifact version -->
@@ -227,34 +235,19 @@
 
 
 
-	<distributionManagement>
+<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
+<distributionManagement>
 		<repository>
 			<id>dropbox-releases</id>
 			<name>Releases to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+			<url>file:///${jarDest}</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>dropbox-snapshots</id>
 			<name>Snapshots to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+			<url>file://${jarSnap}</url>
 		</snapshotRepository>
 	</distributionManagement>
-
-<!-- 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
-		</snapshotRepository>
-	</distributionManagement>
--->
+<!-- one.end -->
 </project>
