@@ -14,6 +14,16 @@
 
 	<properties>
 
+<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
+<!-- MAVEN-LOCAL-DEPLOYMENT -->
+		<!-- path for home: C:\Users\Max\Dropbox\Public\onedb\mvn-releases -->
+		<jarDest>C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</jarDest>
+		<!-- path for home: /C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots -->
+		<jarSnap>C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</jarSnap>
+		<!-- END -->
+<!-- one.end -->
+
+
 		<module.importedPackages>
 			!org.apache.commons.vfs.provider.url,
 			!org.apache.commons.vfs.provider.ram,
@@ -313,39 +323,21 @@
 
 	</build>
 
-	<!-- DISTRIBUTION MANAGEMENT -->
-	<distributionManagement>
+<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
+<distributionManagement>
 		<repository>
 			<id>dropbox-releases</id>
 			<name>Releases to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+			<url>file:///${jarDest}</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>dropbox-snapshots</id>
 			<name>Snapshots to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+			<url>file://${jarSnap}</url>
 		</snapshotRepository>
 	</distributionManagement>
-
-<!-- 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
-		</snapshotRepository>
-	</distributionManagement>
--->
-
-	<!-- ADDITIONAL REPOSITORIES -->
+<!-- one.end -->
 
 
 </project>
