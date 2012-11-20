@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 	<properties>
+		<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
+<!-- MAVEN-LOCAL-DEPLOYMENT -->
+		<!-- path for home: C:\Users\Max\Dropbox\Public\onedb\mvn-releases -->
+		<jarDest>C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</jarDest>
+		<!-- path for home: /C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots -->
+		<jarSnap>C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</jarSnap>
+		<!-- END -->
+<!-- one.end -->
+	
 		<gwtVersion>2.4.0</gwtVersion>
 		<module.group>de.mxro.thrd.gwtuser24</module.group>    <!-- Maven groupId -->
 		<module.name>thrdGWTUser24</module.name>             <!-- Maven artifactId -->
@@ -243,20 +252,23 @@
 	</build>
 
 
+
+
+<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
 <distributionManagement>
 		<repository>
 			<id>dropbox-releases</id>
 			<name>Releases to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+			<url>file:///${jarDest}</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>dropbox-snapshots</id>
 			<name>Snapshots to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+			<url>file://${jarSnap}</url>
 		</snapshotRepository>
 	</distributionManagement>
-
+<!-- one.end -->
 <!-- 
 	<distributionManagement>
 		<repository>
