@@ -3,8 +3,9 @@ osgi-maven
 
 This project contains various libraries prepared as OSGI ready maven bundles. 
 
-Please read the following blog post for more information:
+Many of these are used for the [Appjangle platform](http://appjangle.com) but can be used independently of this platform!
 
+Any news and announcements regarding the bundles should be announced on the [Missing Link Blog](http://maxrohde.com).
 
 All maven artifacts are in the following repository:
 
