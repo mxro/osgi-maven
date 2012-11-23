@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.h2</groupId>
 	<artifactId>thrdH2</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>${project.artifactId}</name>
 	<description>An osgi wrapper for H2 embedded database
 	</description>
