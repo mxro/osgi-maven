@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.htmlunit29</groupId>
 	<artifactId>thrdHtmlUnit29</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<description>Binary dependency to htmlunit.</description>
 
 		<modelVersion>4.0.0</modelVersion>
