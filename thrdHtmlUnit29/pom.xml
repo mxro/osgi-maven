@@ -27,7 +27,9 @@
 		</module.importedPackages>
 
 		<!-- exported packages from embedded dependencies -->
-		<module.exportedPackages>com.gargoylesoftware.htmlunit*,!*
+		<module.exportedPackages>
+		org.apache.commons.lang,
+		com.gargoylesoftware.htmlunit*,!*
 		</module.exportedPackages>
 		<module.embeddedDependencies>*
 		</module.embeddedDependencies>
