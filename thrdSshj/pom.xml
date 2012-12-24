@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.sshj</groupId>
 	<artifactId>thrdSshj</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>An osgi wrapper for sshj https://github.com/shikhar/sshj
 	</description>
