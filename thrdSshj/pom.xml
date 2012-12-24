@@ -5,8 +5,7 @@
 	<artifactId>thrdSshj</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
-	<description>An osgi wrapper for Apache Http
-		Client.http://hc.apache.org/httpcomponents-client-ga/index.html
+	<description>An osgi wrapper for sshj https://github.com/shikhar/sshj
 	</description>
 	<properties>
 		<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
@@ -18,6 +17,8 @@
 		<!-- END -->
 		<!-- one.end -->
 		<module.importedPackages>
+			!com.jcraft.jzlib,
+!org.bouncycastle.jce.provider,
 			*
 		</module.importedPackages>
 		<module.exportedContents>
