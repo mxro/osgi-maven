@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.apachehttpclient4</groupId>
 	<artifactId>thrdApacheHttpClient</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>An osgi wrapper for Apache Http
 		Client.http://hc.apache.org/httpcomponents-client-ga/index.html
@@ -18,7 +18,8 @@
 		<!-- END -->
 		<!-- one.end -->
 		<module.importedPackages>
-
+			!org.apache.log,
+			!org.apache.avalon.framework.logger,
 			*
 		</module.importedPackages>
 		<module.exportedContents>
