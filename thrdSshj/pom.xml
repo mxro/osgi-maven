@@ -3,7 +3,7 @@
 <project>
 	<groupId>de.mxro.thrd.sshj</groupId>
 	<artifactId>thrdSshj</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>${project.artifactId}</name>
 	<description>An osgi wrapper for sshj https://github.com/shikhar/sshj
 	</description>
@@ -19,9 +19,9 @@
 		<module.importedPackages>
 			!com.jcraft.jzlib,
 			!org.bouncycastle.jce.provider,
-			org.bouncycastle.crypto.prng,
-			org.bouncycastle.openssl,
-			org.slf4j.impl,
+			!org.bouncycastle.crypto.prng,
+			!org.bouncycastle.openssl,
+			!org.slf4j.impl,
 			*
 		</module.importedPackages>
 		<module.exportedContents>
