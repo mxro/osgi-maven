@@ -18,7 +18,10 @@
 		<!-- one.end -->
 		<module.importedPackages>
 			!com.jcraft.jzlib,
-!org.bouncycastle.jce.provider,
+			!org.bouncycastle.jce.provider,
+			org.bouncycastle.crypto.prng,
+			org.bouncycastle.openssl,
+			org.slf4j.impl,
 			*
 		</module.importedPackages>
 		<module.exportedContents>
