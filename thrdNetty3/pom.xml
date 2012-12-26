@@ -9,14 +9,14 @@
 		(http://netty.io/)
 	</description>
 	<properties>
-<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
-<!-- MAVEN-LOCAL-DEPLOYMENT -->
+		<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
+		<!-- MAVEN-LOCAL-DEPLOYMENT -->
 		<!-- path for home: C:\Users\Max\Dropbox\Public\onedb\mvn-releases -->
 		<jarDest>C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</jarDest>
 		<!-- path for home: /C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots -->
 		<jarSnap>C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</jarSnap>
 		<!-- END -->
-<!-- one.end -->
+		<!-- one.end -->
 		<module.importedPackages>
 			!com.google.protobuf,
 			!org.jboss.logging,
@@ -42,21 +42,18 @@
 	<dependencies>
 
 
-		<!--   <dependency>
-			<groupId>org.jboss.netty</groupId>
-			
-			<artifactId>netty</artifactId>
-			 <version>3.2.6.Final</version> -
-			
-		</dependency> -->
-		
-		
 		<dependency>
-		<groupId>io.netty</groupId>
-    <artifactId>netty</artifactId>
-    <version>3.6.0.Final</version>
+			<groupId>org.jboss.netty</groupId>
+
+			<artifactId>netty</artifactId>
+			<version>3.2.6.Final</version>
+			
 		</dependency>
-		
+
+
+		<!-- <dependency> <groupId>io.netty</groupId> <artifactId>netty</artifactId> 
+			<version>3.6.0.Final</version> </dependency> -->
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -254,8 +251,8 @@
 	</build>
 
 	<!-- DISTRIBUTION MANAGEMENT -->
-<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
-<distributionManagement>
+	<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
+	<distributionManagement>
 		<repository>
 			<id>dropbox-releases</id>
 			<name>Releases to dropbox</name>
@@ -268,7 +265,7 @@
 			<url>file://${jarSnap}</url>
 		</snapshotRepository>
 	</distributionManagement>
-<!-- one.end -->
+	<!-- one.end -->
 
 
 
