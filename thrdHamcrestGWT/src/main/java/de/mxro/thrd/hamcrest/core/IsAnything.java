@@ -7,7 +7,6 @@ import de.mxro.thrd.hamcrest.Description;
 import de.mxro.thrd.hamcrest.Factory;
 import de.mxro.thrd.hamcrest.Matcher;
 
-
 /**
  * A matcher that always returns <code>true</code>.
  */
@@ -16,24 +15,24 @@ public class IsAnything<T> extends BaseMatcher<T> {
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private final String message;
+    private static final long serialVersionUID = 1L;
+    public String message;
 
     public IsAnything() {
         this("ANYTHING");
     }
 
-    public IsAnything(String message) {
+    public IsAnything(final String message) {
         this.message = message;
     }
 
     @Override
-	public boolean matches(Object o) {
+    public boolean matches(final Object o) {
         return true;
     }
 
     @Override
-	public void describeTo(Description description) {
+    public void describeTo(final Description description) {
         description.appendText(message);
     }
 
@@ -47,11 +46,12 @@ public class IsAnything<T> extends BaseMatcher<T> {
 
     /**
      * This matcher always evaluates to true.
-     *
-     * @param description A meaningful string used when describing itself.
+     * 
+     * @param description
+     *            A meaningful string used when describing itself.
      */
     @Factory
-    public static <T> Matcher<T> anything(String description) {
+    public static <T> Matcher<T> anything(final String description) {
         return new IsAnything<T>(description);
     }
 }
