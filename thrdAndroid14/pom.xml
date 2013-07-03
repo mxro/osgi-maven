@@ -12,7 +12,7 @@
 	
 		<module.group>de.mxro.thrd.android14</module.group>    <!-- Maven groupId -->
 		<module.name>thrdAndroid14</module.name>             <!-- Maven artifactId -->
-		<module.version>0.0.1-SNAPSHOT</module.version> <!-- Maven artifact version -->
+		<module.version>0.0.1</module.version> <!-- Maven artifact version -->
 		<module.importedPackages>!*
 		</module.importedPackages>
 		<module.exportedContents>
