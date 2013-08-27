@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-	<groupId>de.mxro.thrd.gwtuser24</groupId>
-	<artifactId>thrdGWTUser24</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<groupId>de.mxro.thrd.gwtuser251</groupId>
+	<artifactId>thrdGWTUser251</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 
 
