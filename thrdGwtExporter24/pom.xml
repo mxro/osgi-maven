@@ -84,27 +84,6 @@
 
 	<!-- DEPENDENCIES -->
 	<dependencies>
-
-
-
-		<!-- <dependency> <groupId>org.timepedia.exporter</groupId> <artifactId>gwtexporter</artifactId> 
-			<version>2.4.0-M1</version> <scope>provided</scope> <exclusions> <exclusion> 
-			<groupId>com.sun</groupId> <artifactId>tools</artifactId> </exclusion> </exclusions> 
-			</dependency> -->
-
-		<!-- <dependency>
-			<groupId>de.mxro.thrd.gwtuser24</groupId>
-			<artifactId>thrdGWTUser24</artifactId>
-			<version>[0.0.1,)</version>
-			<scope>compile</scope>
-		</dependency> -->
-
-		<!-- <dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency> -->
 		
 		 <dependency>
 			<groupId>com.google.gwt</groupId>
