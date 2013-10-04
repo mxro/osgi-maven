@@ -4,7 +4,7 @@
 <project>
 	<groupId>de.mxro.thrd.gwtexporter250</groupId>
 	<artifactId>thrdGwtExporter250</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>A dependency to gwt-exporter to create JS libraries from
 		GWT libraries.
@@ -20,6 +20,7 @@
 <!-- one.end -->
 		<gwtversion>2.5.1</gwtversion>
 		<module.importedPackages>
+		
 			!org.timepedia.exporter.rebind,
 			!org.timepedia.exporter.doclet,
 			!com.sun*,
