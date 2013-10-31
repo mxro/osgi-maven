@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<groupId>de.mxro.thrd.jbcrypt03</groupId>
 	<artifactId>thrdJBCrypt03</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>A osgi wrapper for jbCrypt 0.3.,
 	</description>
