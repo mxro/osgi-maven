@@ -1,80 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Template: Source + in workspace dependencies 4.12.2010 -->
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<groupId>de.mxro.thrd.gwtgxt</groupId>
 	<artifactId>thrdGwtGxt</artifactId>
 	<version>0.0.4-SNAPSHOT</version>
-	
+
 	<properties>
-		<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
-<!-- MAVEN-LOCAL-DEPLOYMENT -->
-		<!-- path for home: C:\Users\Max\Dropbox\Public\onedb\mvn-releases -->
-		<jarDest>C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</jarDest>
-		<!-- path for home: /C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots -->
-		<jarSnap>C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</jarSnap>
-		<!-- END -->
-<!-- one.end -->
+
 		<gwtVersion>2.2.0</gwtVersion>
 		<module.draftCompile>true</module.draftCompile>
 		<module.importedPackages>!com.google.gwt.dev*,
-		!com.gargoylesoftware*
-		!com.google.gwt.util.tools,
-        !org.apache.tapestry.util.text,
-        !com.extjs.gxt.samples.resources.client.images,
-        !com.extjs.gxt.samples.resources.client.icons,
-        !com.extjs.gxt.samples.resources.client.model,
-        !com.google.gwt.core.ext.typeinfo,
-        !com.google.gwt.core.ext,
-        !com.extjs.gxt.ui.rebind.core,
-		*
+			!com.gargoylesoftware*
+			!com.google.gwt.util.tools,
+			!org.apache.tapestry.util.text,
+			!com.extjs.gxt.samples.resources.client.images,
+			!com.extjs.gxt.samples.resources.client.icons,
+			!com.extjs.gxt.samples.resources.client.model,
+			!com.google.gwt.core.ext.typeinfo,
+			!com.google.gwt.core.ext,
+			!com.extjs.gxt.ui.rebind.core,
+			*
 		</module.importedPackages>
 		<module.exportedPackages>
-		!com.extjs.gxt.ui.public,
-		!com.extjs.gxt.ui.rebind.core,
-		com.extjs.gxt*
+			!com.extjs.gxt.ui.public,
+			!com.extjs.gxt.ui.rebind.core,
+			com.extjs.gxt*
 		</module.exportedPackages>
 		<module.serviceDefinitions>
 		</module.serviceDefinitions>
 	</properties>
 
-	<!--  Dependent Modules -->
+	<!-- Dependent Modules -->
 	<dependencies>
-	
-	
-   
-	 <!-- <dependency>
-			<groupId>de.linnk.nx.core</groupId>
-			<artifactId>nxCore</artifactId>             
-			<version>[0.0.5,)</version>
-		</dependency>-->
-		
-		
-		
-		<!--<dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.4</version>
-            <scope>test</scope>
-        </dependency>-->
-		
-		<!-- only for gwt maven plugin!!! -->
+
 		<dependency>
-		<groupId>de.mxro.thrd.gwtuser</groupId>
-		<artifactId>thrdGWTUser</artifactId>
-		<version>[0.0.2,)</version>
-		 <scope>provided</scope>
+			<groupId>de.mxro.thrd.gwtuser24</groupId>
+			<artifactId>thrdGWTUser24</artifactId>
+			<version>[0.0.1,)</version>
+			<scope>provided</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 
-	<!-- XXXXXXXXXXXXXX    Maven declarations XXXXXXXXXXXXXXXXXX -->
+	<!-- XXXXXXXXXXXXXX Maven declarations XXXXXXXXXXXXXXXXXX -->
 
 	<modelVersion>4.0.0</modelVersion>
 	<name>${project.artifactId}</name>
 	<packaging>bundle</packaging>
 	<build>
-		
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -85,9 +61,9 @@
 				</configuration>
 			</plugin>
 
-			
+
 			<!-- FOR BUNDLE MANAGEMENT -->
-			<!--  The Maven bundle plugin generates Meta-data required for OSGi  -->
+			<!-- The Maven bundle plugin generates Meta-data required for OSGi -->
 
 			<plugin>
 				<groupId>org.apache.felix</groupId>
@@ -108,53 +84,18 @@
 			</plugin>
 
 
-<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-			<!--  For GWT -->
-			<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>gwt-maven-plugin</artifactId>
-				
-				<version>2.1.1-SNAPSHOT</version>
-				<configuration>
-					
-					<draftCompile>${module.draftCompile}</draftCompile>
-					<logLevel>INFO</logLevel>
-					<!-- -->
-					<validateOnly>true</validateOnly>
-					<gwtVersion>${gwtVersion}</gwtVersion>
-					
-					
-					 <webappDirectory>${basedir}/src/main/webapp</webappDirectory>
-
-				</configuration>
-				<executions>
-					<execution>
-						<id>gwtcompile</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-		    <!-- FOR MAVEN ECLIPSE PLUGIN -->
-			<!--
-				Dependency Plugin used to copy the dependency JARs into the root
-				project folder. There the Maven eclipse plugin will add them to the
-				classpath of PDE projects.
-			-->
+			<!-- FOR MAVEN ECLIPSE PLUGIN -->
+			<!-- Dependency Plugin used to copy the dependency JARs into the root 
+				project folder. There the Maven eclipse plugin will add them to the classpath 
+				of PDE projects. -->
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
-					
+
 				</executions>
 			</plugin>
 
-			<!--
-				Cleanup necessary because of PDE tweaks, clear the project directory
-			-->
+			<!-- Cleanup necessary because of PDE tweaks, clear the project directory -->
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.3</version>
@@ -171,10 +112,8 @@
 				</configuration>
 			</plugin>
 
-			<!--
-				Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF
-				created by the maven bundle plugin
-			-->
+			<!-- Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF 
+				created by the maven bundle plugin -->
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
@@ -194,11 +133,11 @@
 			</plugin>
 
 		</plugins>
-		
+
 		<!-- RESOURCES -->
 		<resources>
 			<!-- Required to be valid GWT Library (requires *.java files in jar) -->
-		
+
 			<resource>
 				<directory>src/main/java</directory>
 				<includes>
@@ -206,15 +145,12 @@
 					<include>**/*.gwt.xml</include>
 				</includes>
 			</resource>
-		
-			<!--
-				This entry makes sure that resources, which lie in the same package
-				as Java classes, are copied into the target. Often external
-				libraries require resources, which are loaded using
-				Class.getResource or Class.getResourceAsStream and which are in a
-				subpackage of the class. For instance, the NetBeans template for the
-				Swing Application Framework does so.
-			-->
+
+			<!-- This entry makes sure that resources, which lie in the same package 
+				as Java classes, are copied into the target. Often external libraries require 
+				resources, which are loaded using Class.getResource or Class.getResourceAsStream 
+				and which are in a subpackage of the class. For instance, the NetBeans template 
+				for the Swing Application Framework does so. -->
 			<resource>
 				<filtering>false</filtering>
 				<directory>src/main/java</directory>
@@ -225,10 +161,8 @@
 					<exclude>**/*.java</exclude>
 				</excludes>
 			</resource>
-			<!--
-				This entry makes sure component definitions for OSGi declarative
-				services are copied into the destination
-			-->
+			<!-- This entry makes sure component definitions for OSGi declarative 
+				services are copied into the destination -->
 			<resource>
 				<targetPath>OSGI-INF</targetPath>
 				<filtering>false</filtering>
@@ -237,10 +171,8 @@
 					<include>**</include>
 				</includes>
 			</resource>
-			<!--
-				I really do not know why know a manual entry for src/main/resources
-				is necessary? It should be included following the Maven convention.
-			-->
+			<!-- I really do not know why know a manual entry for src/main/resources 
+				is necessary? It should be included following the Maven convention. -->
 			<resource>
 				<filtering>false</filtering>
 				<directory>src/main/resources</directory>
@@ -248,43 +180,9 @@
 					<include>**</include>
 				</includes>
 			</resource>
-			
+
 		</resources>
 	</build>
-
-	
-<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
-<distributionManagement>
-		<repository>
-			<id>dropbox-releases</id>
-			<name>Releases to dropbox</name>
-			<url>file:///${jarDest}</url>
-		</repository>
-
-		<snapshotRepository>
-			<id>dropbox-snapshots</id>
-			<name>Snapshots to dropbox</name>
-			<url>file://${jarSnap}</url>
-		</snapshotRepository>
-	</distributionManagement>
-<!-- one.end -->
-
-<!-- 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
-		</snapshotRepository>
-	</distributionManagement>
--->
 
 
 </project>

@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<groupId>de.mxro.thrd.gwtuser251</groupId>
 	<artifactId>thrdGWTUser251</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOTS</version>
 	<name>${project.artifactId}</name>
 
 
