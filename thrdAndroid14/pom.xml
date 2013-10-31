@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
-	<properties>
-		<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
-<!-- MAVEN-LOCAL-DEPLOYMENT -->
-		<!-- path for home: C:\Users\Max\Dropbox\Public\onedb\mvn-releases -->
-		<jarDest>C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</jarDest>
-		<!-- path for home: /C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots -->
-		<jarSnap>C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</jarSnap>
-		<!-- END -->
-<!-- one.end -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
-		<module.group>de.mxro.thrd.android14</module.group>    <!-- Maven groupId -->
-		<module.name>thrdAndroid14</module.name>             <!-- Maven artifactId -->
-		<module.version>0.0.2-SNAPSHOT</module.version> <!-- Maven artifact version -->
+	<groupId>de.mxro.thrd.android14</groupId>
+	<artifactId>thrdAndroid14</artifactId>
+	<version>0.0.2</version>
+	
+	<properties>
+		
+	
+		
 		<module.importedPackages>!*
 		</module.importedPackages>
 		<module.exportedContents>
@@ -47,10 +44,8 @@
 	</dependencies>
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>${module.group}</groupId>
-	<artifactId>${module.name}</artifactId>
-	<version>${module.version}</version>
-	<name>${module.name}</name>
+	
+	<name>${project.artifactId}</name>
 	<packaging>bundle</packaging>
 	<build>
 		<!-- Resources -->
@@ -109,7 +104,7 @@
 						</Embed-Dependency>
 						<Embed-Transitive>${module.embedTransitive}</Embed-Transitive>
 						<Embed-Directory>target/dependency</Embed-Directory>
-						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6
+						<Bundle-RequiredExecutionEnvironment>JavaSE-1.7
 						</Bundle-RequiredExecutionEnvironment>
 						<!-- <_exportcontents>${module.exportedContents}</_exportcontents> -->
 					</instructions>
@@ -123,7 +118,7 @@
 					<!-- This additional execution can extract all the JARs of the dependencies -->
 
 
-					<execution>
+					<!--  <execution>
 						<id>copy-dependencies</id>
 						<phase>process-sources</phase>
 						<goals>
@@ -143,13 +138,13 @@
 							<goal>copy-dependencies</goal>
 						</goals>
 						<configuration>
-							<!-- <includeArtifactIds>${module.embeddedDependencies}</includeArtifactIds> -->
+							<
 							<outputDirectory>${basedir}/target/dependency</outputDirectory>
 							<overWriteReleases>false</overWriteReleases>
 							<overWriteSnapshots>false</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
 						</configuration>
-					</execution>
+					</execution>-->
 				</executions>
 			</plugin>
 
@@ -173,8 +168,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 
@@ -202,40 +197,30 @@
 				<configuration> <archive> <manifestFile>META-INF/MANIFEST.MF</manifestFile> 
 				</archive> </configuration> </plugin> -->
 		</plugins>
+		
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+			</extension>
+			
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+			</extension>
+		</extensions>
 	</build>
 
 
-
-
-<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
-<distributionManagement>
-		<repository>
-			<id>dropbox-releases</id>
-			<name>Releases to dropbox</name>
-			<url>file:///${jarDest}</url>
-		</repository>
-
-		<snapshotRepository>
-			<id>dropbox-snapshots</id>
-			<name>Snapshots to dropbox</name>
-			<url>file://${jarSnap}</url>
-		</snapshotRepository>
-	</distributionManagement>
-<!-- one.end -->
-<!-- 
 	<distributionManagement>
 		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
+			<id>appjangle-releases</id>
+			<url>${repos.appjangle-releases}</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
+			<id>appjangle-snapshots</id>
+			<url>${repos.appjangle-snapshots}</url>
 		</snapshotRepository>
 	</distributionManagement>
--->
+
 </project>
