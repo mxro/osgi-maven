@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<groupId>de.mxro.thrd.htmlunit29</groupId>
 	<artifactId>thrdHtmlUnit29</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<description>Binary dependency to htmlunit.</description>
 
 	<modelVersion>4.0.0</modelVersion>
