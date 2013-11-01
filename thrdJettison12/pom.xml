@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ======= Template: Binary Dependency Only V1.0 ======= -->
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<groupId>de.mxro.thrd.jettison12</groupId>
+	<artifactId>thrdJettison12</artifactId>
+	<version>0.0.4-SNAPSHOT</version>
+	<name>${project.artifactId}</name>
 
 	<properties>
-		<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
-<!-- MAVEN-LOCAL-DEPLOYMENT -->
-		<!-- path for home: C:\Users\Max\Dropbox\Public\onedb\mvn-releases -->
-		<jarDest>C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</jarDest>
-		<!-- path for home: /C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots -->
-		<jarSnap>C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</jarSnap>
-		<!-- END -->
-<!-- one.end -->
-	
-		<module.group>de.mxro.thrd.jettison12</module.group>    <!-- Maven groupId -->
-		<module.name>
-			thrdJettison12</module.name>             <!-- Maven artifactId -->
-		<module.version>0.0.4-SNAPSHOT</module.version> <!-- Maven artifact version -->
+
+
 		<module.importedPackages>
 			*
 
@@ -45,10 +40,7 @@
 	</dependencies>
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>${module.group}</groupId>
-	<artifactId>${module.name}</artifactId>
-	<version>${module.version}</version>
-	<name>${module.name}</name>
+
 	<packaging>bundle</packaging>
 
 	<build>
@@ -107,33 +99,7 @@
 				<executions>
 					<!-- This additional execution can extract all the JARs of the dependencies -->
 
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
-							<overWriteSnapshots>false</overWriteSnapshots>
-							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
-					<execution>
-						<id>copy-dependencies2</id>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<!-- <includeArtifactIds>${module.embeddedDependencies}</includeArtifactIds> -->
-							<outputDirectory>${basedir}/target/dependency</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
-							<overWriteSnapshots>false</overWriteSnapshots>
-							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
+
 				</executions>
 			</plugin>
 
@@ -209,27 +175,32 @@
 
 		</resources>
 
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>2.5</version>
+			</extension>
 
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.5</version>
+			</extension>
+		</extensions>
 	</build>
 
-	<!-- ************************* -->
-	<!-- DISTRIBUTION MANAGEMENT -->
-	<!-- ************************* -->
-	<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
-<distributionManagement>
+	<distributionManagement>
 		<repository>
-			<id>dropbox-releases</id>
-			<name>Releases to dropbox</name>
-			<url>file:///${jarDest}</url>
+			<id>appjangle-releases</id>
+			<url>${repos.appjangle-releases}</url>
 		</repository>
-
 		<snapshotRepository>
-			<id>dropbox-snapshots</id>
-			<name>Snapshots to dropbox</name>
-			<url>file://${jarSnap}</url>
+			<id>appjangle-snapshots</id>
+			<url>${repos.appjangle-snapshots}</url>
 		</snapshotRepository>
 	</distributionManagement>
-<!-- one.end -->
+
 	<!-- ************************* -->
 	<!-- ADDITIONAL REPOSITORIES -->
 	<!-- ************************* -->
