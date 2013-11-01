@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<properties>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
-		<module.group>de.mxro.thrd.dom4j</module.group>    <!--  Maven groupId -->
-		<module.name>thrdDom4j</module.name>             <!--  Maven artifactId -->
-		<module.version>0.0.5-SNAPSHOT</module.version> <!--  Maven artifact version -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.mxro.thrd.dom4j</groupId>
+	<artifactId>thrdDom4j</artifactId>
+	<version>0.0.5-SNAPSHOT</version>
+	<name>project.artifactId</name>
+	
+	<properties>
+
 		<module.importedPackages>!electric.xml,
-		!org.jaxen.saxpath,
-		 org.jdom;resolution:=optional,
- org.jdom.input;resolution:=optional,
-  !org.saxpath,
- !org.saxpath.helpers,
-  !org.xmlpull.v1,
- *;resolution:=optional
+			!org.jaxen.saxpath,
+			org.jdom;resolution:=optional,
+			org.jdom.input;resolution:=optional,
+			!org.saxpath,
+			!org.saxpath.helpers,
+			!org.xmlpull.v1,
+			*;resolution:=optional
 		</module.importedPackages>
 		<module.exportedContents>
 		</module.exportedContents>
@@ -25,52 +29,45 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module.serviceDefinitions>
 		</module.serviceDefinitions>
 	</properties>
-	
-		<dependencies>
+
+	<dependencies>
 		<dependency>
-    <groupId>dom4j</groupId>
-    <artifactId>dom4j</artifactId>
-    <version>1.6.1</version>
-</dependency>
-<dependency>
-    <groupId>jaxen</groupId>
-    <artifactId>jaxen</artifactId>
-    <version>1.0-FCS</version>
-</dependency>
-<dependency>
-    <groupId>pull-parser</groupId>
-    <artifactId>pull-parser</artifactId>
-    <version>2.1.10</version>
-</dependency>
-<dependency>
-    <groupId>msv</groupId>
-    <artifactId>relaxngDatatype</artifactId>
-    <version>20050913</version>
-</dependency>
-<dependency>
-    <groupId>msv</groupId>
-    <artifactId>xsdlib</artifactId>
-    <version>20050913</version>
-</dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.0-FCS</version>
+		</dependency>
+		<dependency>
+			<groupId>pull-parser</groupId>
+			<artifactId>pull-parser</artifactId>
+			<version>2.1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>msv</groupId>
+			<artifactId>relaxngDatatype</artifactId>
+			<version>20050913</version>
+		</dependency>
+		<dependency>
+			<groupId>msv</groupId>
+			<artifactId>xsdlib</artifactId>
+			<version>20050913</version>
+		</dependency>
 	</dependencies>
+
 	
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>${module.group}</groupId>
-	<artifactId>${module.name}</artifactId>
-	<version>${module.version}</version>
-	<name>${module.name}</name>
 	<packaging>bundle</packaging>
 	<build>
 		<!-- Resources -->
 		<resources>
-			<!--
-				This entry makes sure that resources, which lie in the same package
-				as Java classes, are copied into the target. Often external
-				libraries require resources, which are loaded using
-				Class.getResource or Class.getResourceAsStream and which are in a
-				subpackage of the class. For instance, the NetBeans template for the
-				Swing Application Framework does so.
-			-->
+			<!-- This entry makes sure that resources, which lie in the same package 
+				as Java classes, are copied into the target. Often external libraries require 
+				resources, which are loaded using Class.getResource or Class.getResourceAsStream 
+				and which are in a subpackage of the class. For instance, the NetBeans template 
+				for the Swing Application Framework does so. -->
 			<resource>
 				<filtering>false</filtering>
 				<directory>src/main/java</directory>
@@ -81,10 +78,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 					<exclude>**/*.java</exclude>
 				</excludes>
 			</resource>
-			<!--
-				This entry makes sure component definitions for OSGi declarative
-				services are copied into the destination
-			-->
+			<!-- This entry makes sure component definitions for OSGi declarative 
+				services are copied into the destination -->
 			<resource>
 				<targetPath>OSGI-INF</targetPath>
 				<filtering>false</filtering>
@@ -93,10 +88,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 					<include>**</include>
 				</includes>
 			</resource>
-			<!--
-				I really do not know why know a manual entry for src/main/resources
-				is necessary? It should be included following the Maven convention.
-			-->
+			<!-- I really do not know why know a manual entry for src/main/resources 
+				is necessary? It should be included following the Maven convention. -->
 			<resource>
 				<filtering>false</filtering>
 				<directory>src/main/resources</directory>
@@ -108,7 +101,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<!-- Resources End -->
 
 		<plugins>
-			<!--  The Maven bundle plugin generates Meta-data required for OSGi  -->
+			<!-- The Maven bundle plugin generates Meta-data required for OSGi -->
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
@@ -126,7 +119,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 						<Embed-Transitive>${module.embedTransitive}</Embed-Transitive>
 						<Embed-Directory>target/dependency</Embed-Directory>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
-						<!-- <_exportcontents>${module.exportedContents}</_exportcontents>-->
+						<!-- <_exportcontents>${module.exportedContents}</_exportcontents> -->
 					</instructions>
 				</configuration>
 			</plugin>
@@ -135,18 +128,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<artifactId>maven-dependency-plugin</artifactId>
 
 				<executions>
-					<!--
-						This additional execution can extract all the JARs of the
-						dependencies
-					-->
-					
+					<!-- This additional execution can extract all the JARs of the dependencies -->
 
-					
-					
+
+
+
 				</executions>
 			</plugin>
 
-			<!--  Cleanup necessary because of PDE tweaks -->
+			<!-- Cleanup necessary because of PDE tweaks -->
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.3</version>
@@ -171,10 +161,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				</configuration>
 			</plugin>
 
-<!--
-				Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF
-				created by the maven bundle plugin
-			-->
+			<!-- Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF 
+				created by the maven bundle plugin -->
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
@@ -193,9 +181,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				</executions>
 			</plugin>
 
-			
+
 		</plugins>
-		
+
 		<extensions>
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
@@ -212,7 +200,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	</build>
 
 
-<distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>appjangle-releases</id>
 			<url>${repos.appjangle-releases}</url>

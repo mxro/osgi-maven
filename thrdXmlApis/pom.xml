@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.mxro.thrd.xmlapis</groupId>
 	<artifactId>thrdXmlApis</artifactId>
@@ -9,18 +10,17 @@
 	<packaging>bundle</packaging>
 
 
-<properties>
+	<properties>
 
 		<module.importedPackages>!*
-			
+
 		</module.importedPackages>
 		<module.exportedContents>
 		</module.exportedContents>
-		<!--
-			exported packages from embedded dependencies
-		-->
-		<module.exportedPackages>javax.xml*,org.apache*,org.w3c*,org.xml.sax*, !*
-			
+		<!-- exported packages from embedded dependencies -->
+		<module.exportedPackages>javax.xml*,org.apache*,org.w3c*,org.xml.sax*,
+			!*
+
 		</module.exportedPackages>
 		<module.embeddedDependencies>*
 		</module.embeddedDependencies>
@@ -30,7 +30,7 @@
 	</properties>
 
 	<dependencies>
-		
+
 
 		<dependency>
 			<groupId>xml-apis</groupId>
@@ -137,42 +137,36 @@
 				<configuration> <archive> <manifestFile>META-INF/MANIFEST.MF</manifestFile> 
 				</archive> </configuration> </plugin> -->
 		</plugins>
+
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>2.5</version>
+			</extension>
+
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.5</version>
+			</extension>
+		</extensions>
 	</build>
 
-
-
-
-
-
-	<!-- DISTRIBUTION MANAGEMENT -->
 	<distributionManagement>
 		<repository>
-			<id>dropbox-releases</id>
-			<name>Releases to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+			<id>appjangle-releases</id>
+			<url>${repos.appjangle-releases}</url>
 		</repository>
-
 		<snapshotRepository>
-			<id>dropbox-snapshots</id>
-			<name>Snapshots to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+			<id>appjangle-snapshots</id>
+			<url>${repos.appjangle-snapshots}</url>
 		</snapshotRepository>
 	</distributionManagement>
 
-<!-- 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
-		</snapshotRepository>
-	</distributionManagement>
--->
+
+
+
+
+
 </project>

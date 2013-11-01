@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Only Dependency 27.11.2011 -->
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<groupId>de.mxro.thrd.xstream</groupId>
 	<artifactId>thrdXStream</artifactId>
@@ -8,14 +9,7 @@
 	<name>${project.artifactId}</name>
 
 	<properties>
-<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-local-deployment-dirs -->
-<!-- MAVEN-LOCAL-DEPLOYMENT -->
-		<!-- path for home: C:\Users\Max\Dropbox\Public\onedb\mvn-releases -->
-		<jarDest>C:\Users\mroh004\Dropbox\Public\onedb\mvn-releases</jarDest>
-		<!-- path for home: /C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots -->
-		<jarSnap>C:\Users\mroh004\Dropbox\Public\onedb\mvn-snapshots</jarSnap>
-		<!-- END -->
-<!-- one.end -->
+
 		<module.importedPackages>
 			<!-- !javax.xml.namespace, !javax.xml.parsers, !javax.xml.stream, !javax.xml.stream.events, 
 				!javax.xml.stream.util, !javax.xml.transform, !javax.xml.transform.sax, !javax.xml.transform.stream, 
@@ -53,7 +47,7 @@
 			!org.dom4j.io,
 			com.thoughtworks.xstream*,
 			!*
-			
+
 		</module.exportedPackages>
 		<module.embeddedDependencies>*
 		</module.embeddedDependencies>
@@ -64,7 +58,6 @@
 
 	<!-- DEPENDENCIES -->
 	<dependencies>
-
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
@@ -77,7 +70,6 @@
 			<artifactId>thrdDom4j</artifactId>
 			<version>[0.0.1,)</version>
 		</dependency>
-
 
 	</dependencies>
 
@@ -131,7 +123,7 @@
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
-					
+
 				</executions>
 			</plugin>
 
@@ -223,27 +215,35 @@
 
 		</resources>
 
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>2.5</version>
+			</extension>
 
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.5</version>
+			</extension>
+		</extensions>
 	</build>
 
 	<!-- DISTRIBUTION MANAGEMENT -->
-	
-<!-- one.download https://u1.linnk.it/qc8sbw/usr/apps/textsync/docs/maven-open-distribution-management -->
-<distributionManagement>
-		<repository>
-			<id>dropbox-releases</id>
-			<name>Releases to dropbox</name>
-			<url>file:///${jarDest}</url>
-		</repository>
 
+
+
+	<distributionManagement>
+		<repository>
+			<id>appjangle-releases</id>
+			<url>${repos.appjangle-releases}</url>
+		</repository>
 		<snapshotRepository>
-			<id>dropbox-snapshots</id>
-			<name>Snapshots to dropbox</name>
-			<url>file://${jarSnap}</url>
+			<id>appjangle-snapshots</id>
+			<url>${repos.appjangle-snapshots}</url>
 		</snapshotRepository>
 	</distributionManagement>
-<!-- one.end -->
-
 
 
 </project>

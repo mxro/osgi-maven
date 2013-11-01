@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<groupId>de.mxro.thrd.shef</groupId>
 	<artifactId>thrdShef</artifactId>
 	<version>0.0.5RC</version>
@@ -12,8 +12,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			*
 		</module.importedPackages>
 		<module.exportedPackages>
-		net.atlanticbb*,
-		resources.images
+			net.atlanticbb*,
+			resources.images
 		</module.exportedPackages>
 		<module.serviceDefinitions>
 		</module.serviceDefinitions>
@@ -21,12 +21,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 	<!-- Dependent Modules -->
 	<dependencies>
-		 <dependency>
+		<dependency>
 			<groupId>de.mxro.thrd.jtidy</groupId>
 			<artifactId>thrdJTidy</artifactId>
 			<version>[8.0.0,)</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>de.mxro.thrd.swingactionmanager</groupId>
 			<artifactId>thrdSwingActionManager</artifactId>
@@ -38,7 +38,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<artifactId>thrdNovaworxSyntax</artifactId>
 			<version>[0.0.1,)</version>
 		</dependency>
-		
+
 	</dependencies>
 
 
@@ -83,7 +83,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			</plugin>
 
 
-			
+
 
 			<!-- FOR MAVEN ECLIPSE PLUGIN -->
 			<!-- Dependency Plugin used to copy the dependency JARs into the root 
@@ -92,7 +92,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
-					
+
 				</executions>
 			</plugin>
 
@@ -183,46 +183,33 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			</resource>
 
 		</resources>
+
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>2.5</version>
+			</extension>
+
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.5</version>
+			</extension>
+		</extensions>
 	</build>
 
 	<!-- DISTRIBUTION MANAGEMENT -->
 	<distributionManagement>
 		<repository>
-			<id>dropbox-releases</id>
-			<name>Releases to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
-		</repository>
-
-		<snapshotRepository>
-			<id>dropbox-snapshots</id>
-			<name>Snapshots to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-<!-- 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
+			<id>appjangle-releases</id>
+			<url>${repos.appjangle-releases}</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
+			<id>appjangle-snapshots</id>
+			<url>${repos.appjangle-snapshots}</url>
 		</snapshotRepository>
 	</distributionManagement>
--->
-
-<repositories>
-    <repository>
-        <id>onedb Releases</id>
-        <url>http://dl.dropbox.com/u/957046/onedb/mvn-releases</url>
-    </repository>
-</repositories>
 
 
 </project>
