@@ -18,7 +18,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			!com.google*,
 			!javax*,
 			!org.w3c*,
-			*;version="${module.version}"
+			!de.mxro.thrd.hamcrest.internal*,
+			de.mxro.thrd.hamcrest*;version=${project.version}
 		</module.exportedPackages>
 	</properties>
 
@@ -65,7 +66,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>2.2.0</version>
+				<version>2.4.0</version>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
