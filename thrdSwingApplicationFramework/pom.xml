@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<groupId>de.mxro.thrd.swingapplicationframework</groupId>
+	<artifactId>thrdSwingApplicationFramework</artifactId>
+	<version>2.0.3RC</version>
+	<name>${project.artifactId}</name>
 
 	<properties>
-		<module.group>de.mxro.thrd.swingapplicationframework</module.group>    <!-- Maven groupId -->
-		<module.name>thrdSwingApplicationFramework</module.name>             <!-- Maven artifactId -->
-		<module.version>2.0.3RC</module.version> <!-- Maven artifact version -->
+		
 		<module.importedPackages>com.sun.*;resolution:=optional,
 			sun.*;resolution:=optional,
 			*
@@ -48,10 +52,7 @@
 	</dependencies>
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>${module.group}</groupId>
-	<artifactId>${module.name}</artifactId>
-	<version>${module.version}</version>
-	<name>${module.name}</name>
+	
 	<packaging>bundle</packaging>
 
 	<build>
