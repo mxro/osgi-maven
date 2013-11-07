@@ -46,7 +46,6 @@
 			<groupId>com.sun</groupId>
 			<artifactId>javaws</artifactId>
 			<version>1.1</version>
-
 		</dependency>
 
 	</dependencies>
@@ -199,7 +198,12 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-
+<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>http://download.java.net/maven/2</url>
+		</repository>
+	</repositories>
 
 
 </project>
