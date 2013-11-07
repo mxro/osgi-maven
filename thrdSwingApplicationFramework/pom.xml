@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<groupId>de.mxro.thrd.swingapplicationframework</groupId>
 	<artifactId>thrdSwingApplicationFramework</artifactId>
@@ -8,7 +8,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<name>${project.artifactId}</name>
 
 	<properties>
-		
+
 		<module.importedPackages>com.sun.*;resolution:=optional,
 			sun.*;resolution:=optional,
 			*
@@ -48,11 +48,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<version>1.1</version>
 
 		</dependency>
-		
+
 	</dependencies>
 
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<packaging>bundle</packaging>
 
 	<build>
@@ -105,7 +105,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>2.1.0</version>
+				<version>2.4.0</version>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
@@ -124,53 +124,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				</configuration>
 			</plugin>
 
-			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
 
-				<executions>
-					<!-- This additional execution can extract all the JARs of the dependencies -->
-					<execution>
-						<id>unpack-dependencies</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>unpack-dependencies</goal>
-						</goals>
-						<configuration>
-							<includeGroupIds>${module.unpackDependencyGroups}
-							</includeGroupIds>
-						</configuration>
-					</execution>
-
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
-							<overWriteSnapshots>false</overWriteSnapshots>
-							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
-					<!-- for eclipse pde -->
-					<execution>
-						<id>copy-dependencies2</id>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<!-- <includeArtifactIds>${module.embeddedDependencies}</includeArtifactIds> -->
-							<outputDirectory>${basedir}/target/dependency</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
-							<overWriteSnapshots>false</overWriteSnapshots>
-							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 
 			<!-- Cleanup necessary because of PDE tweaks -->
 			<plugin>
@@ -218,49 +172,34 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			</plugin>
 
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>2.5</version>
+			</extension>
+
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.5</version>
+			</extension>
+		</extensions>
+
 	</build>
 
-
-
-	<!-- Definition of whereto the artifact can be deployed -->
-	<!-- DISTRIBUTION MANAGEMENT -->
 	<distributionManagement>
 		<repository>
-			<id>dropbox-releases</id>
-			<name>Releases to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-releases</url>
+			<id>appjangle-releases</id>
+			<url>${repos.appjangle-releases}</url>
 		</repository>
-
 		<snapshotRepository>
-			<id>dropbox-snapshots</id>
-			<name>Snapshots to dropbox</name>
-			<url>file:///C:\Users\Max\Dropbox\Public\onedb\mvn-snapshots</url>
+			<id>appjangle-snapshots</id>
+			<url>${repos.appjangle-snapshots}</url>
 		</snapshotRepository>
 	</distributionManagement>
 
-<!-- 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Internal Releases</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/releases
-			</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Internal Snapshots</name>
-			<url>http://internal1.nxweb.de:8080/nexus/content/repositories/snapshots
-			</url>
-		</snapshotRepository>
-	</distributionManagement>
--->
 
-	<!-- Additional third party repositories -->
-	<repositories>
-		<repository>
-			<id>java.net</id>
-			<url>http://download.java.net/maven/2</url>
-		</repository>
-	</repositories>
+
 
 </project>
