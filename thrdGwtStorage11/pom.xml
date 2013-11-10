@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Only Dependency 27.11.2010 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<groupId>de.mxro.thrd.gwtstorage11</groupId>
+	<artifactId>thrdGwtStorage11</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+	<name>${project.artifactId}</name>
+	<description>A dependency to gwt storage library.
+	</description>
+	<properties>
+		
+		<gwtversion>2.5.1</gwtversion>
+		<module.importedPackages>
+		
+			!org.timepedia.exporter.rebind,
+			!org.timepedia.exporter.doclet,
+			!com.sun*,
+			!com.gargoylesoftware.htmlunit,
+			!com.gargoylesoftware.htmlunit.html,
+			!com.gargoylesoftware.htmlunit.javascript,
+			!com.gargoylesoftware.htmlunit.javascript.host,
+			!com.google.gwt.core.ext,
+			!com.google.gwt.core.ext.linker,
+			!com.google.gwt.core.ext.linker.impl,
+			!com.google.gwt.core.ext.typeinfo,
+			!com.google.gwt.core.linker,
+			!com.google.gwt.dev,
+			!com.google.gwt.dev.asm,
+			!com.google.gwt.dev.asm.commons,
+			!com.google.gwt.dev.asm.signature,
+			!com.google.gwt.dev.cfg,
+			!com.google.gwt.dev.generator,
+			!com.google.gwt.dev.generator.ast,
+			!com.google.gwt.dev.javac,
+			!com.google.gwt.dev.javac.rebind,
+			!com.google.gwt.dev.javac.typemodel,
+			!com.google.gwt.dev.jjs,
+			!com.google.gwt.dev.jjs.ast,
+			!com.google.gwt.dev.resource,
+			!com.google.gwt.dev.shell,
+			!com.google.gwt.dev.shell.jetty,
+			!com.google.gwt.dev.util,
+			!com.google.gwt.dev.util.arg,
+			!com.google.gwt.dev.util.collect,
+			!com.google.gwt.dev.util.log,
+			!com.google.gwt.dev.util.log.speedtracer,
+			!com.google.gwt.lang,
+			!com.google.gwt.thirdparty.guava.common.base,
+			!com.google.gwt.thirdparty.guava.common.collect,
+			!com.google.gwt.thirdparty.guava.common.primitives,
+			!com.google.gwt.thirdparty.streamhtmlparser,
+			!com.google.gwt.util.tools,
+			!com.google.gwt.util.tools.shared,
+			!com.thoughtworks.selenium,
+			!net.sourceforge.htmlunit.corejs.javascript,
+			!org.apache.tapestry.util.text,
+			!org.json,
+			!sun.misc,
+			*
+		</module.importedPackages>
+		<module.exportedContents>
+		</module.exportedContents>
+		<!-- exported packages from embedded dependencies -->
+		<module.exportedPackages>
+			org.timepedia.exporter*,
+			!org.timepedia.exporter.rebind,
+			!org.timepedia.exporter.client,
+			!org.timepedia.exporter.doclet,
+			!*
+		</module.exportedPackages>
+		<module.embeddedDependencies>!*
+		</module.embeddedDependencies>
+		<module.embedTransitive>false</module.embedTransitive>
+		<module.serviceDefinitions>
+		</module.serviceDefinitions>
+	</properties>
+
+	<!-- DEPENDENCIES -->
+	<dependencies>
+		
+		 <dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwtversion}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-dev</artifactId>
+			<version>${gwtversion}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sun</groupId>
+			<artifactId>tools</artifactId>
+			<version>1.6</version>
+			<scope>system</scope>
+			<optional>true</optional>
+			<systemPath>${java.home}/../lib/tools.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<packaging>bundle</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<additionalClasspathElements>
+						<additionalClasspathElement>${basedir}/src/main/java
+						</additionalClasspathElement>
+						<additionalClasspathElement>${basedir}/src/test/java
+						</additionalClasspathElement>
+					</additionalClasspathElements>
+					<!-- <useManifestOnlyJar>false</useManifestOnlyJar> -->
+					<!-- <forkMode>always</forkMode> -->
+					<useSystemClassLoader>false</useSystemClassLoader>
+					<systemPropertyVariables>
+						<gwt.args>-runStyle HtmlUnit:FF3,IE6</gwt.args>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+				<version>2.3.2</version>
+			</plugin>
+			<!-- FOR BUNDLE MANAGEMENT -->
+			<!-- The Maven bundle plugin generates Meta-data required for OSGi -->
+
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Import-Package>${module.importedPackages}</Import-Package>
+						<Export-Package>${module.exportedPackages}</Export-Package>
+						<Service-Component>${module.serviceDefinitions}
+						</Service-Component>
+						<Embed-Dependency>${module.embeddedDependencies}
+						</Embed-Dependency>
+						<Embed-Directory>target/dependency</Embed-Directory>
+						<Embed-Transitive>${module.embedTransitive}</Embed-Transitive>
+						<_exportcontents>${module.exportedContents}</_exportcontents>
+						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6
+						</Bundle-RequiredExecutionEnvironment>
+					</instructions>
+				</configuration>
+			</plugin>
+
+
+
+			<!-- FOR MAVEN ECLIPSE PLUGIN -->
+			<!-- Dependency Plugin used to copy the dependency JARs into the root 
+				project folder. There the Maven eclipse plugin will add them to the classpath 
+				of PDE projects. -->
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					
+				</executions>
+			</plugin>
+
+			<!-- Cleanup necessary because of PDE tweaks, clear the project directory -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${basedir}</directory>
+							<includes>
+								<include>*.jar</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+			<!-- Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF 
+				created by the maven bundle plugin -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<delete file="${basedir}/META-INF/MANIFEST.MF" />
+								<copy file="target/classes/META-INF/MANIFEST.MF" tofile="${basedir}/META-INF/MANIFEST.MF" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+
+
+		<!-- RESOURCES -->
+		<resources>
+			<!-- Required to be valid GWT Library (requires *.java files in jar) -->
+
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.java</include>
+					<include>**/*.gwt.xml</include>
+				</includes>
+			</resource>
+
+			<!-- This entry makes sure that resources, which lie in the same package 
+				as Java classes, are copied into the target. Often external libraries require 
+				resources, which are loaded using Class.getResource or Class.getResourceAsStream 
+				and which are in a subpackage of the class. For instance, the NetBeans template 
+				for the Swing Application Framework does so. <resource> <filtering>false</filtering> 
+				<directory>src/main/java</directory> <includes> <include>**</include> </includes> 
+				<excludes> <exclude>**/*.java</exclude> </excludes> </resource> -->
+			<!-- This entry makes sure component definitions for OSGi declarative 
+				services are copied into the destination -->
+			<resource>
+				<targetPath>OSGI-INF</targetPath>
+				<filtering>false</filtering>
+				<directory>OSGI-INF</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+			<!-- I really do not know why know a manual entry for src/main/resources 
+				is necessary? It should be included following the Maven convention. -->
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+
+		</resources>
+
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>2.5</version>
+			</extension>
+
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.5</version>
+			</extension>
+		</extensions>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>appjangle-releases</id>
+			<url>${repos.appjangle-releases}</url>
+		</repository>
+		<snapshotRepository>
+			<id>appjangle-snapshots</id>
+			<url>${repos.appjangle-snapshots}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	
+
+
+</project>
