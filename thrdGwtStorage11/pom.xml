@@ -2,7 +2,7 @@
 
 <!-- Only Dependency 27.11.2010 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<groupId>de.mxro.thrd.gwtstorage11</groupId>
 	<artifactId>thrdGwtStorage11</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
@@ -10,10 +10,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<description>A dependency to gwt storage library.
 	</description>
 	<properties>
-		
+
 		<gwtversion>2.5.1</gwtversion>
 		<module.importedPackages>
-		
+
 			!org.timepedia.exporter.rebind,
 			!org.timepedia.exporter.doclet,
 			!com.sun*,
@@ -79,21 +79,27 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 	<!-- DEPENDENCIES -->
 	<dependencies>
-		
-		 <dependency>
+
+		<dependency>
+			<groupId>com.seanchenxi.gwt</groupId>
+			<artifactId>gwt-storage</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-user</artifactId>
 			<version>${gwtversion}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-dev</artifactId>
 			<version>${gwtversion}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.sun</groupId>
 			<artifactId>tools</artifactId>
@@ -183,7 +189,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.4</version>
 				<executions>
-					
+
 				</executions>
 			</plugin>
 
@@ -296,7 +302,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		</snapshotRepository>
 	</distributionManagement>
 
-	
+
 
 
 </project>
