@@ -21,6 +21,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.util.concurrent.Future;
 
 public class HttpHelloWorldServer {
 
@@ -30,7 +31,7 @@ public class HttpHelloWorldServer {
 		this.port = port;
 	}
 
-	public void run() throws Exception {
+	public Future<Void> run() throws Exception {
 		// Configure the server.
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
 		EventLoopGroup workerGroup = new NioEventLoopGroup();
@@ -42,8 +43,10 @@ public class HttpHelloWorldServer {
 					.childHandler(new HttpHelloWorldServerInitializer());
 
 			Channel ch = b.bind(port).sync().channel();
-			ch.closeFuture().sync();
+			return ch.closeFuture();
+			// ch.closeFuture().sync();
 		} finally {
+			new Futur
 			bossGroup.shutdownGracefully();
 			workerGroup.shutdownGracefully();
 		}
