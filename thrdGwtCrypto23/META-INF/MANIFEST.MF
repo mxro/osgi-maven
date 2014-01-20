@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1384210626597
+Build-Jdk: 1.7.0_45
+Built-By: adminuser
+Bundle-Description: A dependency to gwt-crypto library.
+Bundle-ManifestVersion: 2
+Bundle-Name: thrdGwtCrypto23
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-SymbolicName: thrdGwtCrypto23
+Bundle-Version: 0.0.2.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: !*
+Embed-Directory: target/dependency
+Embed-Transitive: false
+Tool: Bnd-2.1.0.20130426-122213

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1384211620779
+Build-Jdk: 1.7.0_45
+Built-By: adminuser
+Bundle-Description: A dependency to gwt-lzma library (https://code.googl
+ e.com/p/gwt-lzma/).
+Bundle-ManifestVersion: 2
+Bundle-Name: thrdGwtLzma11
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-SymbolicName: thrdGwtLzma11
+Bundle-Version: 0.0.2.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: !*
+Embed-Directory: target/dependency
+Embed-Transitive: false
+Export-Package: org.dellroad.lzma;version="0.0.2.SNAPSHOT",org.dellroad.
+ lzma.client;version="0.0.2.SNAPSHOT";uses:="com.google.gwt.core.client"
+ ,org.dellroad.lzma.client.SevenZip;version="0.0.2.SNAPSHOT",org.dellroa
+ d.lzma.client.SevenZip.Compression.LZ;version="0.0.2.SNAPSHOT",org.dell
+ road.lzma.client.SevenZip.Compression.LZMA;version="0.0.2.SNAPSHOT";use
+ s:="org.dellroad.lzma.client.SevenZip",org.dellroad.lzma.client.SevenZi
+ p.Compression.RangeCoder;version="0.0.2.SNAPSHOT",org.dellroad.lzma.cli
+ ent.emul.java.io;version="0.0.2.SNAPSHOT"
+Import-Package: com.google.gwt.core.client
+Tool: Bnd-2.1.0.20130426-122213

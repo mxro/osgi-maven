@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: LZMA.gwt.xml 2 2009-12-17 02:39:56Z archie.cobbs $ -->
+<module>
+    <source path="client"/>
+    <super-source path="client/emul"/>
+</module>
