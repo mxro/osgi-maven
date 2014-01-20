@@ -16,10 +16,17 @@ public class TestNetty4 {
 
 			@Override
 			public void run() {
-				server.run();
+				try {
+					server.run();
+				} catch (Exception e) {
+					throw new RuntimeException(e);
+				}
 			}
 			
 		}.start();
+		
+		
+		
 		
 	}
 	

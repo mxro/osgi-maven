@@ -15,6 +15,11 @@
  */
 package de.mxro.thrd.netty4.tests.http;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelOption;
@@ -22,6 +27,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.util.concurrent.Future;
+import io.netty.util.concurrent.GenericFutureListener;
 
 public class HttpHelloWorldServer {
 
@@ -46,7 +52,7 @@ public class HttpHelloWorldServer {
 			return ch.closeFuture();
 			// ch.closeFuture().sync();
 		} finally {
-			new Futur
+			
 			bossGroup.shutdownGracefully();
 			workerGroup.shutdownGracefully();
 		}
