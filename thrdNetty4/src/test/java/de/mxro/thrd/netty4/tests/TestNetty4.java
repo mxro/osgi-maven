@@ -9,7 +9,17 @@ public class TestNetty4 {
 	@Test
 	public void test_netty4_http_server() {
 		
-		HttpHelloWorldServer server = new HttpHelloWorldServer(18912);
+		final HttpHelloWorldServer server = new HttpHelloWorldServer(18912);
+		
+		
+		new Thread() {
+
+			@Override
+			public void run() {
+				server.run();
+			}
+			
+		}.start();
 		
 	}
 	
