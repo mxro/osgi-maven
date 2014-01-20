@@ -49,6 +49,7 @@ public class HttpHelloWorldServer {
 					.childHandler(new HttpHelloWorldServerInitializer());
 
 			Channel ch = b.bind(port).sync().channel();
+			
 			return ch.closeFuture();
 			// ch.closeFuture().sync();
 		} finally {
