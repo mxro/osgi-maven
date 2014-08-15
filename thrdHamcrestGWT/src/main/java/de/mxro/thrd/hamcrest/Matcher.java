@@ -21,7 +21,7 @@ import java.io.Serializable;
  * 
  * @see BaseMatcher
  */
-public interface Matcher<T> extends SelfDescribing, Serializable {
+public interface Matcher<T> extends SelfDescribing {
 
     /**
      * Evaluates the matcher for argument <var>item</var>.
