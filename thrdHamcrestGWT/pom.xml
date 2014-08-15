@@ -8,6 +8,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<version>0.1.0</version>
 	<name>${project.artifactId}</name>
 	
+	
 	<properties>
 		
 		<module.gwtVersion>2.2.0</module.gwtVersion>
