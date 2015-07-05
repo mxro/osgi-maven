@@ -2,10 +2,6 @@
  */
 package de.mxro.thrd.hamcrest;
 
-import java.io.Serializable;
-
-
-
 /**
  * A matcher over acceptable values.
  * A matcher is able to describe itself to give feedback when it fails.
