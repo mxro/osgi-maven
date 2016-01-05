@@ -3,7 +3,6 @@
   <!-- Inherit the core Web Toolkit stuff.                  -->
   <inherits name='com.google.gwt.user.User'/>
 
-
   <define-property name="export" values="yes,no"/>
 
   <replace-with class="org.timepedia.exporter.client.ExporterBaseImpl">
