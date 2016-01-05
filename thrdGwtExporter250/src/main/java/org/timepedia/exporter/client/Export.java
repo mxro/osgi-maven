@@ -12,6 +12,8 @@ import java.lang.annotation.Target;
  * 
  * When a class is marked, all public methods will be exported unless them are
  * marked with NoExport
+ * 
+ * Documented
  */
 @Target({ ElementType.METHOD, ElementType.FIELD, ElementType.CONSTRUCTOR, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
